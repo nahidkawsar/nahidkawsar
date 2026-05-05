@@ -6,9 +6,15 @@
 <title>Skills — H.M. Nahid Kawsar</title>
 <link rel="stylesheet" href="../style.css">
 <style>
-.skills-hero { background: var(--blue-900); color: var(--white); padding: 4rem 6rem 3rem; }
-.skills-hero h1 { font-family: var(--serif); font-size: 3rem; font-weight: 600; }
-.skills-hero p { color: var(--blue-200); max-width: 550px; margin-top: 0.75rem; font-weight: 300; }
+.skills-hero {
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
+  color: var(--white);
+  padding: 3rem 6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.skills-hero h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+.skills-hero p { color: var(--blue-200); max-width: 650px; margin-top: 0.75rem; font-weight: 300; }
 .skill-category { margin-bottom: 3.5rem; }
 .cat-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--blue-900); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 0.75rem; }
 .skill-bars { display: flex; flex-direction: column; gap: 1rem; }
@@ -28,8 +34,15 @@
 .lang-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gray-200); }
 .lang-dot.filled { background: var(--accent); }
 .skills-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
+.lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
+img { cursor: pointer; }
 @media (max-width: 900px) {
-  .skills-hero { padding: 4rem 1.5rem 3rem; }
+  .skills-hero { padding: 3rem 1.5rem; }
   .skills-two-col { grid-template-columns: 1fr; gap: 0; }
 }
 </style>
@@ -40,51 +53,23 @@
   <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="../index.html">Home</a>
-    <div class="dropdown">
-      <button class="dropbtn">Research</button>
-      <div class="dropdown-content">
-        <a href="research.html#publications">📄 Publications</a>
-        <a href="research.html#skills">🔬 Research Skills</a>
-        <a href="research.html#trainings">📚 Trainings & Workshops</a>
-        <a href="research.html#experience">👨‍🔬 Research Experience</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Activities</button>
-      <div class="dropdown-content">
-        <a href="activities.html#conferences">🎤 Conference Presentations</a>
-        <a href="activities.html#awards">🏆 Awards & Certificates</a>
-        <a href="activities.html#leadership">👥 Leadership Roles</a>
-        <a href="activities.html#volunteer">🤝 Volunteer Work</a>
-      </div>
-    </div>
-    <a href="certificates.html">📜 Certificates</a>
-    <div class="dropdown">
-      <button class="dropbtn">Skills</button>
-      <div class="dropdown-content">
-        <a href="skills.html#technical">💻 Technical Skills</a>
-        <a href="skills.html#soft">🤝 Soft Skills</a>
-        <a href="skills.html#languages">🌐 Languages</a>
-        <a href="skills.html#tools">🛠️ Tools & Platforms</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Personal</button>
-      <div class="dropdown-content">
-        <a href="personal.html#hobbies">🎨 Hobbies</a>
-        <a href="personal.html#workspace">🖊️ My Workspace</a>
-        <a href="personal.html#family">🐱 Family</a>
-      </div>
-    </div>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="activities.html">Activities</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="skills.html">Skills</a>
+    <a href="personal.html">Personal</a>
   </div>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="page">
   <div class="skills-hero">
-    <span class="section-label" style="color:var(--blue-200);">Expertise</span>
-    <h1>Skills & Tools</h1>
-    <p>A toolkit built through years of research, project work, and continuous self-directed learning.</p>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <span class="section-label" style="color:var(--blue-200);">Expertise</span>
+      <h1>Skills & Tools</h1>
+      <p>A toolkit built through years of research, project work, and continuous self-directed learning.</p>
+    </div>
   </div>
 
   <section class="section">
@@ -128,6 +113,8 @@
             <div class="skill-pill-lg">LaTeX (Overleaf)</div>
             <div class="skill-pill-lg">Microsoft Office</div>
             <div class="skill-pill-lg">Photoshop</div>
+            <div class="skill-pill-lg">Groq API</div>
+            <div class="skill-pill-lg">LangChain</div>
           </div>
         </div>
         <div id="languages" class="skill-category">
@@ -144,16 +131,45 @@
   </section>
 </div>
 
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
 <footer class="sitefooter">
   © 2025 H.M. Nahid Kawsar · <a href="mailto:nahid.amth@gmail.com">nahid.amth@gmail.com</a>
 </footer>
 
 <script src="../nav.js"></script>
 <script>
-initNav('../');
+initNav();
 const fills = document.querySelectorAll('.skill-fill');
 const observer = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting){ e.target.style.width = e.target.dataset.width + '%'; } }); }, { threshold: 0.3 });
 fills.forEach(f => observer.observe(f));
+function openLightbox(imageSrc, caption) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  lightboxImg.src = imageSrc;
+  lightboxCaption.textContent = caption || 'Image';
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openLightbox(this.src, this.alt || this.title || 'Image preview');
+    });
+  });
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>

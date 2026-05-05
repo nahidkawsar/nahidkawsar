@@ -6,9 +6,15 @@
 <title>Activities — H.M. Nahid Kawsar</title>
 <link rel="stylesheet" href="../style.css">
 <style>
-.act-hero { background: var(--blue-900); color: var(--white); padding: 4rem 6rem 3rem; }
-.act-hero h1 { font-family: var(--serif); font-size: 3rem; font-weight: 600; }
-.act-hero p { color: var(--blue-200); max-width: 580px; margin-top: 0.75rem; font-weight: 300; }
+.act-hero {
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
+  color: var(--white);
+  padding: 3rem 6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.act-hero h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+.act-hero p { color: var(--blue-200); max-width: 650px; margin-top: 0.75rem; font-weight: 300; line-height: 1.6; }
 .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
 .video-container { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; transition: transform 0.18s, box-shadow 0.18s; }
 .video-container:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(43,77,184,0.09); }
@@ -42,96 +48,25 @@
 .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
 .gallery-photo { overflow: hidden; border-radius: 10px; background: var(--gray-100); aspect-ratio: 1 / 1; border: 1px solid var(--gray-200); transition: transform 0.18s, box-shadow 0.18s; cursor: pointer; position: relative; }
 .gallery-photo:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(43,77,184,0.12); }
-.gallery-photo::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-.gallery-photo:hover::after { opacity: 1; }
 .gallery-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .photo-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: var(--gray-400); font-size: 0.7rem; text-align: center; padding: 1rem; }
 .additional-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
 .photo-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; transition: transform 0.18s; }
 .photo-item:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(43,77,184,0.09); }
 .photo-item-image { width: 100%; height: 200px; overflow: hidden; background: var(--gray-100); cursor: pointer; position: relative; }
-.photo-item-image::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-.photo-item-image:hover::after { opacity: 1; }
 .photo-item-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .photo-item-info { padding: 1rem; }
 .photo-item-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
 .photo-item-desc { font-size: 0.8rem; color: var(--gray-600); line-height: 1.4; }
-
-/* Lightbox */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
+.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
 .lightbox.active { display: flex; }
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  border-radius: 8px;
-}
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
+.lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; }
 .lightbox-close:hover { color: var(--accent); }
-.lightbox-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: white;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.6);
-  padding: 8px;
-  margin: 0 auto;
-  width: fit-content;
-  border-radius: 8px;
-}
-
+.lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
+img { cursor: pointer; }
 @media (max-width: 900px) {
-  .act-hero { padding: 4rem 1.5rem 3rem; }
+  .act-hero { padding: 3rem 1.5rem; }
   .club-item { grid-template-columns: 1fr; gap: 0.5rem; }
   .club-period { text-align: left; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
@@ -146,54 +81,25 @@
   <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="../index.html">Home</a>
-    <div class="dropdown">
-      <button class="dropbtn">Research</button>
-      <div class="dropdown-content">
-        <a href="research.html#publications">📄 Publications</a>
-        <a href="research.html#skills">🔬 Research Skills</a>
-        <a href="research.html#trainings">📚 Trainings & Workshops</a>
-        <a href="research.html#experience">👨‍🔬 Research Experience</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Activities</button>
-      <div class="dropdown-content">
-        <a href="activities.html#conferences">🎤 Conference Presentations</a>
-        <a href="activities.html#awards">🏆 Awards & Certificates</a>
-        <a href="activities.html#leadership">👥 Leadership Roles</a>
-        <a href="activities.html#volunteer">🤝 Volunteer Work</a>
-      </div>
-    </div>
-    <a href="certificates.html">📜 Certificates</a>
-    <div class="dropdown">
-      <button class="dropbtn">Skills</button>
-      <div class="dropdown-content">
-        <a href="skills.html#technical">💻 Technical Skills</a>
-        <a href="skills.html#soft">🤝 Soft Skills</a>
-        <a href="skills.html#languages">🌐 Languages</a>
-        <a href="skills.html#tools">🛠️ Tools & Platforms</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Personal</button>
-      <div class="dropdown-content">
-        <a href="personal.html#hobbies">🎨 Hobbies</a>
-        <a href="personal.html#workspace">🖊️ My Workspace</a>
-        <a href="personal.html#family">🐱 Family</a>
-      </div>
-    </div>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="activities.html">Activities</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="skills.html">Skills</a>
+    <a href="personal.html">Personal</a>
   </div>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="page">
   <div class="act-hero">
-    <span class="section-label" style="color:var(--blue-200);">Involvement</span>
-    <h1>Activities & Leadership</h1>
-    <p>Presentations, awards, roles, and impact across university clubs and conferences.</p>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <span class="section-label" style="color:var(--blue-200);">Involvement</span>
+      <h1>Activities & Leadership</h1>
+      <p>Presentations, awards, roles, and impact across university clubs and international conferences.</p>
+    </div>
   </div>
 
-  <!-- Conference Presentations Section -->
   <section id="conferences" class="section">
     <span class="section-label">Video Documentation</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">IEEE ICCIT 2024 — Conference Presentations</h2>
@@ -209,7 +115,6 @@
     </div>
   </section>
 
-  <!-- Awards Section -->
   <section id="awards" class="section section-alt">
     <span class="section-label">Recognition</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Major Awards</h2>
@@ -220,100 +125,88 @@
     </div>
   </section>
 
-  <!-- Gallery Section - All Events -->
   <section class="section">
     <span class="section-label">Photo Gallery</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Activities & Events</h2>
     <div class="gallery-container">
-
-      <!-- IEEE ICCIT 2024 -->
       <div class="gallery-item">
         <div class="gallery-title"><span>🎤</span> IEEE ICCIT 2024 — Best Technical Presenter</div>
         <p class="gallery-desc">Presented two research papers at the IEEE International Conference on Computer and Information Technology in Cox's Bazar. Recognized with the Best Technical Presentation Award.</p>
         <div class="photo-grid grid-2">
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Presenting Paper 1 at IEEE ICCIT 2024')"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper1-presenting.jpg" alt="Paper 1 Presenting" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>ieee-iccit-paper1-presenting.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Certificate for Paper 1 at IEEE ICCIT 2024')"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper1-certificate.jpg" alt="Paper 1 Certificate" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏅<br><small>ieee-iccit-paper1-certificate.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Presenting Paper 2 at IEEE ICCIT 2024')"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper2-presenting.jpg" alt="Paper 2 Presenting" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>ieee-iccit-paper2-presenting.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Certificate for Paper 2 at IEEE ICCIT 2024')"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper2-certificate.jpg" alt="Paper 2 Certificate" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏅<br><small>ieee-iccit-paper2-certificate.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper1-presenting.jpg" alt="Presenting Paper 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>ieee-iccit-paper1-presenting.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper1-certificate.jpg" alt="Certificate Paper 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏅<br><small>ieee-iccit-paper1-certificate.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper2-presenting.jpg" alt="Presenting Paper 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>ieee-iccit-paper2-presenting.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper2-certificate.jpg" alt="Certificate Paper 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏅<br><small>ieee-iccit-paper2-certificate.jpg</small></div>'"></div>
         </div>
       </div>
 
-      <!-- Sign Language Program -->
       <div class="gallery-item">
         <div class="gallery-title"><span>🤝</span> NSTU Shine — Bangla Sign Language Program</div>
         <p class="gallery-desc">Served as Joint Secretary of NSTU Shine. Actively participated in organizing a sign language awareness program for the university community.</p>
         <div class="photo-grid grid-2">
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Sign Language Program Event - NSTU Shine')"><img src="../images/activities/shine-sign-language/shine-sign-language-event.jpg" alt="Sign Language Event" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🤝<br><small>shine-sign-language-event.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Sign Language Program Prize - NSTU Shine')"><img src="../images/activities/shine-sign-language/shine-sign-language-prize.jpg" alt="Sign Language Prize" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏆<br><small>shine-sign-language-prize.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/shine-sign-language/shine-sign-language-event.jpg" alt="Sign Language Event" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🤝<br><small>shine-sign-language-event.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/shine-sign-language/shine-sign-language-prize.jpg" alt="Sign Language Prize" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏆<br><small>shine-sign-language-prize.jpg</small></div>'"></div>
         </div>
       </div>
 
-      <!-- Fire Safety Program -->
       <div class="gallery-item">
         <div class="gallery-title"><span>🔥</span> NSTU Blood Brigade — Fire Safety Program</div>
         <p class="gallery-desc">Participated in comprehensive fire safety awareness program. Competed in fire safety quiz and secured 2nd prize.</p>
         <div class="photo-grid grid-2">
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Fire Safety Work 1')"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-fire-work-1.jpg" alt="Fire Work 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔥<br><small>blood-brigade-fire-work-1.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Fire Safety Work 2')"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-fire-work-2.jpg" alt="Fire Work 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔥<br><small>blood-brigade-fire-work-2.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Fire Safety Quiz Prize')"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-fire-quiz-prize.jpg" alt="Quiz Prize" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🎖️<br><small>blood-brigade-fire-quiz-prize.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'First Aid Training')"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-first-aid.jpg" alt="First Aid" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏥<br><small>blood-brigade-first-aid.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-fire-work-1.jpg" alt="Fire Work 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔥<br><small>blood-brigade-fire-work-1.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-fire-work-2.jpg" alt="Fire Work 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔥<br><small>blood-brigade-fire-work-2.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-fire-quiz-prize.jpg" alt="Quiz Prize" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🎖️<br><small>blood-brigade-fire-quiz-prize.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-first-aid.jpg" alt="First Aid" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏥<br><small>blood-brigade-first-aid.jpg</small></div>'"></div>
         </div>
       </div>
 
-      <!-- Cancer Awareness Run -->
       <div class="gallery-item">
         <div class="gallery-title"><span>🏃</span> NSTU Blood Brigade — Cancer Awareness Long Run</div>
         <p class="gallery-desc">Participated as Associate Member in organizing a long-distance charity run for cancer awareness.</p>
         <div class="photo-grid grid-2">
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Cancer Awareness Run Event 1')"><img src="../images/activities/cancer-awareness-run/cancer-run-event-1.jpg" alt="Run Event 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏃<br><small>cancer-run-event-1.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Cancer Awareness Run Event 2')"><img src="../images/activities/cancer-awareness-run/cancer-run-event-2.jpg" alt="Run Event 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏃<br><small>cancer-run-event-2.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/cancer-awareness-run/cancer-run-event-1.jpg" alt="Run Event 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏃<br><small>cancer-run-event-1.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/cancer-awareness-run/cancer-run-event-2.jpg" alt="Run Event 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏃<br><small>cancer-run-event-2.jpg</small></div>'"></div>
         </div>
       </div>
 
-      <!-- Math Olympiad -->
       <div class="gallery-item">
         <div class="gallery-title"><span>🔢</span> NSTU Math Club — Math Olympiad (Runner-up)</div>
         <p class="gallery-desc">Served as Vice President of NSTU Math Club. Competed in university Math Olympiad and achieved runner-up prize.</p>
         <div class="photo-grid grid-2">
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Math Olympiad Prize')"><img src="../images/activities/math-olympiad/math-olympiad-prize.jpg" alt="Math Prize" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏆<br><small>math-olympiad-prize.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Math Olympiad Event')"><img src="../images/activities/math-olympiad/math-olympiad-event.jpg" alt="Math Event" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔢<br><small>math-olympiad-event.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/math-olympiad/math-olympiad-prize.jpg" alt="Math Prize" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏆<br><small>math-olympiad-prize.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/math-olympiad/math-olympiad-event.jpg" alt="Math Event" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔢<br><small>math-olympiad-event.jpg</small></div>'"></div>
         </div>
       </div>
 
-      <!-- Plate Drawing -->
       <div class="gallery-item">
         <div class="gallery-title"><span>🎨</span> Chitrokrit — Plate Drawing & Documentation</div>
         <p class="gallery-desc">Served as Documentation Secretary of Chitrokrit, the university art club. Participated in plate drawing workshops.</p>
         <div class="photo-grid grid-1">
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Plate Drawing Art - Chitrokrit')"><img src="../images/activities/chitrokrit-art/chitrokrit-plate-drawing.jpg" alt="Plate Drawing" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🎨<br><small>chitrokrit-plate-drawing.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/chitrokrit-art/chitrokrit-plate-drawing.jpg" alt="Plate Drawing" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🎨<br><small>chitrokrit-plate-drawing.jpg</small></div>'"></div>
         </div>
       </div>
 
-      <!-- Research Methodology Course -->
       <div class="gallery-item">
         <div class="gallery-title"><span>📚</span> Research Methodology Course Completion</div>
         <p class="gallery-desc">Successfully completed "Introduction to Research Methodology" course from NSTU Research Society.</p>
         <div class="photo-grid grid-2">
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Research Methodology Certificate 1')"><img src="../images/activities/research-methodology/research-methodology-cert-1.jpg" alt="Certificate 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📜<br><small>research-methodology-cert-1.jpg</small></div>'"></div>
-          <div class="gallery-photo" onclick="openLightbox(this.querySelector('img').src, 'Research Methodology Certificate 2')"><img src="../images/activities/research-methodology/research-methodology-cert-2.jpg" alt="Certificate 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📜<br><small>research-methodology-cert-2.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/research-methodology/research-methodology-cert-1.jpg" alt="Certificate 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📜<br><small>research-methodology-cert-1.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/research-methodology/research-methodology-cert-2.jpg" alt="Certificate 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📜<br><small>research-methodology-cert-2.jpg</small></div>'"></div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Personal Journey Photos -->
   <section class="section section-alt">
     <span class="section-label">Academic Journey</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Personal Milestones</h2>
     <div class="additional-photos">
-      <div class="photo-item"><div class="photo-item-image" onclick="openLightbox(this.querySelector('img').src, 'With FYP Supervisor')"><img src="../images/activities/academic-journey/fyp-supervisor.jpg" alt="FYP Supervisor" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\' style=\'height:100%;\'>👨‍🎓<br><small>fyp-supervisor.jpg</small></div>'"></div><div class="photo-item-info"><div class="photo-item-title">Final Year Project Supervision</div><div class="photo-item-desc">With my FYP supervisor, completing honors project on ML for mental health.</div></div></div>
-      <div class="photo-item"><div class="photo-item-image" onclick="openLightbox(this.querySelector('img').src, 'BSc Final Day at Department Gate')"><img src="../images/activities/academic-journey/bsc-final-day-department.jpg" alt="BSc Final Day" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\' style=\'height:100%;\'>📚<br><small>bsc-final-day-department.jpg</small></div>'"></div><div class="photo-item-info"><div class="photo-item-title">BSc Final Day — Department Gate</div><div class="photo-item-desc">Last day as undergraduate, marking the end of 6 years of academic journey.</div></div></div>
-      <div class="photo-item"><div class="photo-item-image" onclick="openLightbox(this.querySelector('img').src, 'My Workspace - Study Table')"><img src="../images/activities/academic-journey/my-workspace-study-table.jpg" alt="My Workspace" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\' style=\'height:100%;\'>🖊️<br><small>my-workspace-study-table.jpg</small></div>'"></div><div class="photo-item-info"><div class="photo-item-title">My Workspace — Study Table</div><div class="photo-item-desc">Where it all happened — from coursework to final research papers.</div></div></div>
+      <div class="photo-item"><div class="photo-item-image"><img src="../images/activities/academic-journey/fyp-supervisor.jpg" alt="FYP Supervisor" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\' style=\'height:100%;\'>👨‍🎓<br><small>fyp-supervisor.jpg</small></div>'"></div><div class="photo-item-info"><div class="photo-item-title">Final Year Project Supervision</div><div class="photo-item-desc">With my FYP supervisor, completing honors project on ML for mental health.</div></div></div>
+      <div class="photo-item"><div class="photo-item-image"><img src="../images/activities/academic-journey/bsc-final-day-department.jpg" alt="BSc Final Day" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\' style=\'height:100%;\'>📚<br><small>bsc-final-day-department.jpg</small></div>'"></div><div class="photo-item-info"><div class="photo-item-title">BSc Final Day — Department Gate</div><div class="photo-item-desc">Last day as undergraduate, marking the end of 6 years of academic journey.</div></div></div>
+      <div class="photo-item"><div class="photo-item-image"><img src="../images/activities/academic-journey/my-workspace-study-table.jpg" alt="My Workspace" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\' style=\'height:100%;\'>🖊️<br><small>my-workspace-study-table.jpg</small></div>'"></div><div class="photo-item-info"><div class="photo-item-title">My Workspace — Study Table</div><div class="photo-item-desc">Where it all happened — from coursework to final research papers.</div></div></div>
     </div>
   </section>
 
-  <!-- Leadership Roles -->
   <section id="leadership" class="section">
     <span class="section-label">Leadership</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Club Positions & Roles</h2>
@@ -325,7 +218,6 @@
     </div>
   </section>
 
-  <!-- Volunteer Work -->
   <section id="volunteer" class="section section-alt">
     <span class="section-label">Community Service</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Volunteer Work</h2>
@@ -336,7 +228,6 @@
   </section>
 </div>
 
-<!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close">&times;</span>
   <img id="lightbox-img" src="" alt="">
@@ -349,8 +240,7 @@
 
 <script src="../nav.js"></script>
 <script>
-initNav('../');
-
+initNav();
 function openLightbox(imageSrc, caption) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
@@ -360,16 +250,20 @@ function openLightbox(imageSrc, caption) {
   lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
 }
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeLightbox();
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openLightbox(this.src, this.alt || this.title || 'Image preview');
+    });
+  });
 });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>

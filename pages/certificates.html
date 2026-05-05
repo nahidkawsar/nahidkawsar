@@ -9,10 +9,12 @@
 .cert-hero {
   background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
   color: var(--white);
-  padding: 4rem 6rem 3rem;
+  padding: 3rem 6rem;
+  width: 100%;
+  box-sizing: border-box;
 }
-.cert-hero h1 { font-family: var(--serif); font-size: 3rem; font-weight: 600; margin-bottom: 0.5rem; }
-.cert-hero p { color: var(--blue-200); max-width: 600px; margin-top: 0.75rem; font-weight: 300; }
+.cert-hero h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+.cert-hero p { color: var(--blue-200); max-width: 650px; margin-top: 0.75rem; font-weight: 300; }
 .cert-stats { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
 .cert-stat { text-align: center; }
 .cert-stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--white); }
@@ -61,83 +63,24 @@
   transition: transform 0.3s ease;
 }
 .cert-card:hover .cert-image img { transform: scale(1.02); }
-.cert-image::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-.cert-image:hover::after { opacity: 1; }
 .cert-info { padding: 1.25rem; }
 .cert-name { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.4; }
 .cert-issuer { font-size: 0.75rem; color: var(--accent); font-weight: 500; letter-spacing: 0.03em; margin-bottom: 0.5rem; }
 .cert-date { font-size: 0.7rem; color: var(--gray-400); margin-bottom: 0.75rem; }
-.cert-desc { font-size: 0.8rem; color: var(--gray-600); line-height: 1.5; margin-bottom: 1rem; }
+.cert-desc { font-size: 0.8rem; color: var(--gray-600); line-height: 1.5; margin-bottom: 1rem; text-align: justify; }
 .cert-link { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; color: var(--blue-600); text-decoration: none; font-weight: 500; }
 .cert-link:hover { text-decoration: underline; color: var(--accent); }
 .appointment-card { background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%); border-left: 4px solid var(--accent); }
 .professor-letter { background: linear-gradient(135deg, #FFF8E6 0%, var(--white) 100%); border-left: 4px solid #F5D88A; }
-
-/* Lightbox Modal */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-.lightbox.active {
-  display: flex;
-}
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.3);
-}
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
+.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; }
 .lightbox-close:hover { color: var(--accent); }
-.lightbox-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: white;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.6);
-  padding: 8px;
-  margin: 0 auto;
-  width: fit-content;
-  border-radius: 8px;
-}
-
+.lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
+img { cursor: pointer; }
 @media (max-width: 900px) {
-  .cert-hero { padding: 4rem 1.5rem 3rem; }
+  .cert-hero { padding: 3rem 1.5rem; }
   .cert-grid { grid-template-columns: 1fr; }
   .cert-image { height: 140px; }
 }
@@ -149,69 +92,38 @@
   <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="../index.html">Home</a>
-    <div class="dropdown">
-      <button class="dropbtn">Research</button>
-      <div class="dropdown-content">
-        <a href="research.html#publications">📄 Publications</a>
-        <a href="research.html#skills">🔬 Research Skills</a>
-        <a href="research.html#trainings">📚 Trainings & Workshops</a>
-        <a href="research.html#experience">👨‍🔬 Research Experience</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Activities</button>
-      <div class="dropdown-content">
-        <a href="activities.html#conferences">🎤 Conference Presentations</a>
-        <a href="activities.html#awards">🏆 Awards & Certificates</a>
-        <a href="activities.html#leadership">👥 Leadership Roles</a>
-        <a href="activities.html#volunteer">🤝 Volunteer Work</a>
-      </div>
-    </div>
-    <a href="certificates.html" class="active">📜 Certificates</a>
-    <div class="dropdown">
-      <button class="dropbtn">Skills</button>
-      <div class="dropdown-content">
-        <a href="skills.html#technical">💻 Technical Skills</a>
-        <a href="skills.html#soft">🤝 Soft Skills</a>
-        <a href="skills.html#languages">🌐 Languages</a>
-        <a href="skills.html#tools">🛠️ Tools & Platforms</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Personal</button>
-      <div class="dropdown-content">
-        <a href="personal.html#hobbies">🎨 Hobbies</a>
-        <a href="personal.html#workspace">🖊️ My Workspace</a>
-        <a href="personal.html#family">🐱 Family</a>
-      </div>
-    </div>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="activities.html">Activities</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="skills.html">Skills</a>
+    <a href="personal.html">Personal</a>
   </div>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="page">
   <div class="cert-hero">
-    <span class="section-label" style="color: var(--blue-200);">Credentials</span>
-    <h1>Certificates & Recognitions</h1>
-    <p>Academic achievements, professional certifications, and letters of appreciation earned throughout my academic and research journey.</p>
-    <div class="cert-stats">
-      <div class="cert-stat"><div class="cert-stat-num">20+</div><div class="cert-stat-label">Certificates</div></div>
-      <div class="cert-stat"><div class="cert-stat-num">7</div><div class="cert-stat-label">Categories</div></div>
-      <div class="cert-stat"><div class="cert-stat-num">4</div><div class="cert-stat-label">Institutions</div></div>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <span class="section-label" style="color: var(--blue-200);">Credentials</span>
+      <h1>Certificates & Recognitions</h1>
+      <p>Academic achievements, professional certifications, and letters of appreciation earned throughout my academic and research journey.</p>
+      <div class="cert-stats">
+        <div class="cert-stat"><div class="cert-stat-num">20+</div><div class="cert-stat-label">Certificates</div></div>
+        <div class="cert-stat"><div class="cert-stat-num">7</div><div class="cert-stat-label">Categories</div></div>
+        <div class="cert-stat"><div class="cert-stat-num">4</div><div class="cert-stat-label">Institutions</div></div>
+      </div>
     </div>
   </div>
 
   <section class="section">
-    
-    <!-- GROUP 1: Research & Academic Certificates -->
+    <!-- GROUP 1: Research & Academic -->
     <div class="cert-group">
       <div class="group-title"><span>🔬</span> Research & Academic Certificates</div>
-      <p class="group-desc">Formal training in research methodology, academic writing, and literature review techniques.</p>
+      <p class="group-desc">Formal training in research methodology, academic writing, and literature review techniques from NSTU Research Society and ABS Research Academy.</p>
       <div class="cert-grid">
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Introduction to Research Methodology - NSTU Research Society')">
-            <img src="../images/certificates/research-academic/cert-research-methodology.jpg" alt="Research Methodology Certificate" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-research-methodology.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/research-academic/cert-research-methodology.jpg" alt="Research Methodology" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-research-methodology.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Introduction to Research Methodology</div>
             <div class="cert-issuer">NSTU Research Society</div>
@@ -221,26 +133,22 @@
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Workshop on Literature Review Using AI - ABS Research Academy')">
-            <img src="../images/certificates/research-academic/cert-literature-review-ai.jpg" alt="Literature Review Using AI" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-literature-review-ai.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/research-academic/cert-literature-review-ai.jpg" alt="Literature Review AI" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-literature-review-ai.jpg</small></div>'"></div>
           <div class="cert-info">
-            <div class="cert-name">Workshop on Literature Review Using Online Tools & AI</div>
+            <div class="cert-name">Workshop on Literature Review Using AI Tools</div>
             <div class="cert-issuer">ABS Research Academy</div>
             <div class="cert-date">September 2025</div>
-            <div class="cert-desc">Hands-on workshop on using AI-powered tools including Connected Papers, Litmaps, Elicit, and Scite for efficient and systematic literature reviews.</div>
+            <div class="cert-desc">Hands-on workshop on using AI-powered tools including Connected Papers, Litmaps, Elicit, and Scite for systematic literature reviews.</div>
             <a href="https://drive.google.com/file/d/1_Z8j6b-MtpJrTGBfiW7jWlWGhABP3rO4/view?usp=sharing" target="_blank" class="cert-link">📜 View Certificate →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Scientific Article Writing Competition - Science Club, NSTU')">
-            <img src="../images/certificates/research-academic/cert-scientific-article-writing.jpg" alt="Scientific Article Writing" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-scientific-article-writing.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/research-academic/cert-scientific-article-writing.jpg" alt="Scientific Writing" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-scientific-article-writing.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Scientific Article Writing Competition</div>
             <div class="cert-issuer">Science Club, NSTU</div>
             <div class="cert-date">December 2023</div>
-            <div class="cert-desc">Merit award for excellence in scientific writing. Competition focused on research communication skills, article structure, clarity, and academic integrity.</div>
+            <div class="cert-desc">Merit award for excellence in scientific writing, article structure, clarity, and academic integrity.</div>
             <a href="https://drive.google.com/file/d/1AF6ctS7vDfOeoB25jiJdI5-C6WSdFEC5/view?usp=sharing" target="_blank" class="cert-link">📜 View Certificate →</a>
           </div>
         </div>
@@ -250,78 +158,66 @@
     <!-- GROUP 2: Machine Learning & Data Science -->
     <div class="cert-group">
       <div class="group-title"><span>🤖</span> Machine Learning & Data Science</div>
-      <p class="group-desc">Comprehensive training in data science, machine learning, neural networks, and NLP from leading platforms.</p>
+      <p class="group-desc">Comprehensive training in data science, machine learning, neural networks, and NLP from Great Learning, Simplilearn, iNeuron, and Skillshare.</p>
       <div class="cert-grid">
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Data Science Foundations - Great Learning')">
-            <img src="../images/certificates/ml-data-science/cert-data-science-foundations.jpg" alt="Data Science Foundations" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-data-science-foundations.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/ml-data-science/cert-data-science-foundations.jpg" alt="Data Science Foundations" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-data-science-foundations.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Data Science Foundations</div>
             <div class="cert-issuer">Great Learning</div>
             <div class="cert-date">March 2024</div>
-            <div class="cert-desc">Fundamentals of data science including statistical analysis, data visualization, exploratory data analysis, and introduction to machine learning concepts.</div>
-            <a href="https://olympus.mygreatlearning.com/courses/13680/certificate" target="_blank" class="cert-link">🔗 Verify Certificate →</a>
+            <div class="cert-desc">Fundamentals of data science including statistical analysis, data visualization, exploratory data analysis, and ML concepts.</div>
+            <a href="https://olympus.mygreatlearning.com/courses/13680/certificate" target="_blank" class="cert-link">🔗 Verify →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Data Science with Python - Simplilearn')">
-            <img src="../images/certificates/ml-data-science/cert-data-science-python.jpg" alt="Data Science with Python" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-data-science-python.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/ml-data-science/cert-data-science-python.jpg" alt="Data Science Python" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-data-science-python.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Data Science with Python</div>
             <div class="cert-issuer">Simplilearn</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Comprehensive course on Python for data science including NumPy, Pandas, Matplotlib, Seaborn, and data manipulation techniques.</div>
-            <a href="https://simpli-web.app.link/e/7VVmJXrPLHb" target="_blank" class="cert-link">🔗 Verify Certificate →</a>
+            <div class="cert-desc">NumPy, Pandas, Matplotlib, Seaborn, and data manipulation techniques.</div>
+            <a href="https://simpli-web.app.link/e/7VVmJXrPLHb" target="_blank" class="cert-link">🔗 Verify →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Excel for Data Science - Great Learning')">
-            <img src="../images/certificates/ml-data-science/cert-excel-data-science.jpg" alt="Excel for Data Science" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-excel-data-science.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/ml-data-science/cert-excel-data-science.jpg" alt="Excel Data Science" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-excel-data-science.jpg</small></div>'"></div>
           <div class="cert-info">
-            <div class="cert-name">Excel for Data Science for Beginners</div>
+            <div class="cert-name">Excel for Data Science</div>
             <div class="cert-issuer">Great Learning</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Advanced Excel techniques including PivotTables, Power Query, data cleaning, dashboards, and statistical analysis functions.</div>
-            <a href="https://olympus.mygreatlearning.com/courses/84183/certificate" target="_blank" class="cert-link">🔗 Verify Certificate →</a>
+            <div class="cert-desc">PivotTables, Power Query, data cleaning, dashboards, and statistical analysis.</div>
+            <a href="https://olympus.mygreatlearning.com/courses/84183/certificate" target="_blank" class="cert-link">🔗 Verify →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Introduction to Neural Networks - Great Learning')">
-            <img src="../images/certificates/ml-data-science/cert-neural-networks.jpg" alt="Neural Networks" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-neural-networks.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/ml-data-science/cert-neural-networks.jpg" alt="Neural Networks" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-neural-networks.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Introduction to Neural Networks</div>
             <div class="cert-issuer">Great Learning</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Foundational concepts of neural networks including perceptrons, activation functions, backpropagation, and basic architecture design.</div>
-            <a href="https://olympus.mygreatlearning.com/courses/81077/certificate" target="_blank" class="cert-link">🔗 Verify Certificate →</a>
+            <div class="cert-desc">Perceptrons, activation functions, backpropagation, and basic architecture design.</div>
+            <a href="https://olympus.mygreatlearning.com/courses/81077/certificate" target="_blank" class="cert-link">🔗 Verify →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Machine Learning Certificate - Skillshare')">
-            <img src="../images/certificates/ml-data-science/cert-machine-learning-skillshare.jpg" alt="Machine Learning" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-machine-learning-skillshare.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/ml-data-science/cert-machine-learning-skillshare.jpg" alt="Machine Learning" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-machine-learning-skillshare.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Machine Learning Certificate</div>
             <div class="cert-issuer">Skillshare</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Practical machine learning course covering supervised/unsupervised learning, model evaluation metrics, cross-validation, and real-world applications.</div>
-            <a href="https://simpli-web.app.link/e/zRTDMHcRLHb" target="_blank" class="cert-link">🔗 Verify Certificate →</a>
+            <div class="cert-desc">Supervised/unsupervised learning, model evaluation, cross-validation, real-world applications.</div>
+            <a href="https://simpli-web.app.link/e/zRTDMHcRLHb" target="_blank" class="cert-link">🔗 Verify →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'NLP End-to-End Project - iNeuron.ai')">
-            <img src="../images/certificates/ml-data-science/cert-nlp-end-to-end.jpg" alt="NLP End-to-End" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-nlp-end-to-end.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/ml-data-science/cert-nlp-end-to-end.jpg" alt="NLP End-to-End" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-nlp-end-to-end.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">NLP End-to-End Project Implementation</div>
             <div class="cert-issuer">iNeuron.ai</div>
             <div class="cert-date">March 2024</div>
-            <div class="cert-desc">Complete NLP pipeline from data preprocessing to deployment. Includes text classification, sentiment analysis, named entity recognition, and transformer models.</div>
-            <a href="https://learn.ineuron.ai/certificate/1b29285b-cda6-447a-b6a5-b788868a8d71" target="_blank" class="cert-link">📜 View Certificate →</a>
+            <div class="cert-desc">Complete NLP pipeline: text classification, sentiment analysis, NER, transformer models.</div>
+            <a href="https://learn.ineuron.ai/certificate/1b29285b-cda6-447a-b6a5-b788868a8d71" target="_blank" class="cert-link">📜 View →</a>
           </div>
         </div>
       </div>
@@ -330,30 +226,26 @@
     <!-- GROUP 3: Programming & Tools -->
     <div class="cert-group">
       <div class="group-title"><span>💻</span> Programming & Tools</div>
-      <p class="group-desc">Technical certifications in programming languages and development tools.</p>
+      <p class="group-desc">Technical certifications in programming languages and development tools from Simplilearn.</p>
       <div class="cert-grid">
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Python OpenCV - Simplilearn')">
-            <img src="../images/certificates/programming-tools/cert-python-opencv.jpg" alt="Python OpenCV" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-python-opencv.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/programming-tools/cert-python-opencv.jpg" alt="Python OpenCV" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-python-opencv.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Introduction to Python OpenCV</div>
             <div class="cert-issuer">Simplilearn</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Image processing fundamentals using OpenCV library. Topics include image transformations, face detection, object tracking, and computer vision basics.</div>
-            <a href="https://simpli-web.app.link/e/ouCzJyGQdJb" target="_blank" class="cert-link">🔗 Verify Certificate →</a>
+            <div class="cert-desc">Image processing, face detection, object tracking, computer vision basics.</div>
+            <a href="https://simpli-web.app.link/e/ouCzJyGQdJb" target="_blank" class="cert-link">🔗 Verify →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Introduction to SQL - Simplilearn')">
-            <img src="../images/certificates/programming-tools/cert-sql-introduction.jpg" alt="SQL Certificate" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-sql-introduction.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/programming-tools/cert-sql-introduction.jpg" alt="SQL" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-sql-introduction.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Introduction to SQL</div>
             <div class="cert-issuer">Simplilearn</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Database fundamentals including SQL queries, JOIN operations, subqueries, aggregate functions, and data manipulation language (DML).</div>
-            <a href="https://simpli-web.app.link/e/krm92VkULHb" target="_blank" class="cert-link">🔗 Verify Certificate →</a>
+            <div class="cert-desc">SQL queries, JOIN operations, subqueries, aggregate functions, DML.</div>
+            <a href="https://simpli-web.app.link/e/krm92VkULHb" target="_blank" class="cert-link">🔗 Verify →</a>
           </div>
         </div>
       </div>
@@ -362,29 +254,25 @@
     <!-- GROUP 4: Professional Development -->
     <div class="cert-group">
       <div class="group-title"><span>💼</span> Professional Development</div>
-      <p class="group-desc">Career readiness training and professional skills development programs.</p>
+      <p class="group-desc">Career readiness training and professional skills development programs from Wadhwani Foundation.</p>
       <div class="cert-grid">
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Employability Skills - Wadhwani Foundation')">
-            <img src="../images/certificates/professional-development/cert-employability-skills.jpg" alt="Employability Skills" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-employability-skills.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/professional-development/cert-employability-skills.jpg" alt="Employability Skills" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-employability-skills.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Employability Skills – JobReady Program</div>
             <div class="cert-issuer">Wadhwani Foundation</div>
             <div class="cert-date">November 2024</div>
-            <div class="cert-desc">Comprehensive career readiness program covering professional communication, resume writing, interview preparation, workplace etiquette, problem-solving, and ethical practices.</div>
+            <div class="cert-desc">Communication, resume writing, interview preparation, workplace etiquette, problem-solving, and ethical practices. Recognized for outstanding contribution.</div>
             <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=6734b5a33a71b5ad81220976" target="_blank" class="cert-link">📜 View Certificate →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Employability Skills Score Card - Wadhwani Foundation')">
-            <img src="../images/certificates/professional-development/cert-employability-scorecard.jpg" alt="Employability Score Card" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-employability-scorecard.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/professional-development/cert-employability-scorecard.jpg" alt="Score Card" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-employability-scorecard.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Employability Skills Score Card</div>
             <div class="cert-issuer">Wadhwani Foundation</div>
             <div class="cert-date">November 2024</div>
-            <div class="cert-desc">Detailed performance assessment across multiple competencies including communication, teamwork, problem-solving, digital literacy, and professional ethics.</div>
+            <div class="cert-desc">Detailed performance assessment across communication, teamwork, problem-solving, digital literacy, and professional ethics.</div>
             <a href="#" class="cert-link">📊 View Score Card →</a>
           </div>
         </div>
@@ -397,27 +285,23 @@
       <p class="group-desc">International conference presentations and recognition at IEEE ICCIT 2024 in Cox's Bazar.</p>
       <div class="cert-grid">
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'IEEE ICCIT 2024 Paper Presentation Certificate')">
-            <img src="../images/certificates/ieee-iccit-2024/cert-ieee-iccit-presentation.jpg" alt="IEEE ICCIT Presentation" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-ieee-iccit-presentation.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/ieee-iccit-2024/cert-ieee-iccit-presentation.jpg" alt="IEEE Presentation" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-ieee-iccit-presentation.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">IEEE ICCIT 2024 Paper Presentation</div>
             <div class="cert-issuer">IEEE</div>
             <div class="cert-date">December 2024</div>
-            <div class="cert-desc">Certificate of presentation for two research papers at the 27th International Conference on Computer and Information Technology, Cox's Bazar, Bangladesh.</div>
+            <div class="cert-desc">Two research papers presented at 27th ICCIT, Cox's Bazar, Bangladesh.</div>
             <a href="https://ieeexplore.ieee.org/document/11022194" target="_blank" class="cert-link">📄 View Papers →</a>
           </div>
         </div>
         <div class="cert-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Best Technical Presenter Award - IEEE ICCIT 2024')">
-            <img src="../images/certificates/ieee-iccit-2024/cert-best-presenter-award.jpg" alt="Best Presenter Award" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>cert-best-presenter-award.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/ieee-iccit-2024/cert-best-presenter-award.jpg" alt="Best Presenter" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>cert-best-presenter-award.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Best Technical Presenter Award</div>
             <div class="cert-issuer">IEEE ICCIT 2024</div>
             <div class="cert-date">December 2024</div>
             <div class="cert-desc">Team award for outstanding technical presentation of Session 37 (AIHS). Recognized for exceptional delivery, slide quality, and research contribution.</div>
-            <a href="https://drive.google.com/file/d/1h5kXBLHlk9Svo7Fp4eOcy5hZT6GCBMYA/view" target="_blank" class="cert-link">📜 View Certificate →</a>
+            <a href="https://drive.google.com/file/d/1h5kXBLHlk9Svo7Fp4eOcy5hZT6GCBMYA/view" target="_blank" class="cert-link">📜 View →</a>
           </div>
         </div>
       </div>
@@ -426,12 +310,10 @@
     <!-- GROUP 6: Appointment Letters -->
     <div class="cert-group">
       <div class="group-title"><span>📄</span> Appointment Letters</div>
-      <p class="group-desc">Professional appointments and research assistantship letters.</p>
+      <p class="group-desc">Professional appointments and research assistantship letters from Brilliant Brains Valley and NSTU.</p>
       <div class="cert-grid">
         <div class="cert-card appointment-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Junior Associate Appointment - Brilliant Brains Valley')">
-            <img src="../images/certificates/appointment-letters/appointment-bbv-junior-associate.jpg" alt="BBV Junior Associate" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>appointment-bbv-junior-associate.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/appointment-letters/appointment-bbv-junior-associate.jpg" alt="BBV Junior Associate" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>appointment-bbv-junior-associate.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Junior Associate - Business Development</div>
             <div class="cert-issuer">Brilliant Brains Valley (BBV)</div>
@@ -441,26 +323,22 @@
           </div>
         </div>
         <div class="cert-card appointment-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Course Coordinator Appointment - Brilliant Brains Valley')">
-            <img src="../images/certificates/appointment-letters/appointment-bbv-course-coordinator.jpg" alt="BBV Course Coordinator" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>appointment-bbv-course-coordinator.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/appointment-letters/appointment-bbv-course-coordinator.jpg" alt="Course Coordinator" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>appointment-bbv-course-coordinator.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Course Coordinator</div>
             <div class="cert-issuer">Brilliant Brains Valley (BBV)</div>
             <div class="cert-date">December 2024 – May 2025</div>
-            <div class="cert-desc">6-month appointment (15-20 hours/week) for course coordination and student success management. Approved by CEO Huree Jannat.</div>
+            <div class="cert-desc">6-month appointment (15-20 hours/week) for course coordination and student success management.</div>
             <a href="https://drive.google.com/file/d/1hhiBp3wPXTO4M6DJ4Z4feCkNZjuj68Oc/view" target="_blank" class="cert-link">📜 View Letter →</a>
           </div>
         </div>
         <div class="cert-card appointment-card">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Research Assistant Appointment - NSTU')">
-            <img src="../images/certificates/appointment-letters/appointment-research-assistant.jpg" alt="Research Assistant" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>appointment-research-assistant.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/appointment-letters/appointment-research-assistant.jpg" alt="Research Assistant" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>appointment-research-assistant.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Research Assistant</div>
             <div class="cert-issuer">Noakhali Science and Technology University</div>
             <div class="cert-date">April 2024 – October 2025</div>
-            <div class="cert-desc">Research on infectious disease dynamics using deep learning and numerical methods. Worked under supervision of Forhad Mahmud. Led to a Q2 journal publication.</div>
+            <div class="cert-desc">Infectious disease dynamics using deep learning. Led to Q2 journal publication.</div>
             <a href="https://drive.google.com/file/d/1hTYfoJgksPUjtKTpt3AdW8i64zhlaWnG/view" target="_blank" class="cert-link">📜 View Letter →</a>
           </div>
         </div>
@@ -473,56 +351,46 @@
       <p class="group-desc">Recognition from professors for excellence in course presentations across three evaluation categories.</p>
       <div class="cert-grid">
         <div class="cert-card professor-letter">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Best Slide Making Award - Dept. of Applied Mathematics, NSTU')">
-            <img src="../images/certificates/professor-appreciations/letter-appreciation-slide-making.jpg" alt="Best Slide Making" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>letter-appreciation-slide-making.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/professor-appreciations/letter-appreciation-slide-making.jpg" alt="Slide Making" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>letter-appreciation-slide-making.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Best Slide Making Award</div>
-            <div class="cert-issuer">Department of Applied Mathematics, NSTU</div>
+            <div class="cert-issuer">Dept. of Applied Mathematics, NSTU</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Awarded for exceptional slide design, clarity of content, visual communication, and effective use of graphics and animations in course presentation.</div>
+            <div class="cert-desc">Exceptional slide design, clarity, visual communication, and effective graphics.</div>
           </div>
         </div>
         <div class="cert-card professor-letter">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Best Presentation Delivery Award - Dept. of Applied Mathematics, NSTU')">
-            <img src="../images/certificates/professor-appreciations/letter-appreciation-presentation.jpg" alt="Best Presentation Delivery" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>letter-appreciation-presentation.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/professor-appreciations/letter-appreciation-presentation.jpg" alt="Presentation Delivery" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>letter-appreciation-presentation.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Best Presentation Delivery Award</div>
-            <div class="cert-issuer">Department of Applied Mathematics, NSTU</div>
+            <div class="cert-issuer">Dept. of Applied Mathematics, NSTU</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Recognized for confident delivery, clear articulation, effective audience engagement, professional demeanor, and exceptional Q&A handling.</div>
+            <div class="cert-desc">Confident delivery, clear articulation, audience engagement, excellent Q&A.</div>
           </div>
         </div>
         <div class="cert-card professor-letter">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Best Formal Appearance Award - Dept. of Applied Mathematics, NSTU')">
-            <img src="../images/certificates/professor-appreciations/letter-appreciation-formal-appearance.jpg" alt="Best Formal Appearance" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>letter-appreciation-formal-appearance.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/professor-appreciations/letter-appreciation-formal-appearance.jpg" alt="Formal Appearance" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>letter-appreciation-formal-appearance.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Best Formal Appearance Award</div>
-            <div class="cert-issuer">Department of Applied Mathematics, NSTU</div>
+            <div class="cert-issuer">Dept. of Applied Mathematics, NSTU</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Acknowledged for professional demeanor, appropriate formal attire, confident body language, and overall presentation professionalism.</div>
+            <div class="cert-desc">Professional demeanor, appropriate formal attire, confident body language.</div>
           </div>
         </div>
         <div class="cert-card professor-letter">
-          <div class="cert-image" onclick="openLightbox(this.querySelector('img').src, 'Overall Best Presenter Award - Dept. of Applied Mathematics, NSTU')">
-            <img src="../images/certificates/professor-appreciations/letter-appreciation-overall-best.jpg" alt="Overall Best Presenter" onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;\'>📷 Placeholder<br><small>letter-appreciation-overall-best.jpg</small></div>'">
-          </div>
+          <div class="cert-image"><img src="../images/certificates/professor-appreciations/letter-appreciation-overall-best.jpg" alt="Overall Best" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>letter-appreciation-overall-best.jpg</small></div>'"></div>
           <div class="cert-info">
             <div class="cert-name">Overall Best Presenter Award</div>
-            <div class="cert-issuer">Department of Applied Mathematics, NSTU</div>
+            <div class="cert-issuer">Dept. of Applied Mathematics, NSTU</div>
             <div class="cert-date">2024</div>
-            <div class="cert-desc">Combined excellence across slide making, presentation delivery, and formal appearance. Top position overall among all course participants.</div>
+            <div class="cert-desc">Combined excellence across all categories. Top position overall.</div>
           </div>
         </div>
       </div>
     </div>
-
   </section>
 </div>
 
-<!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close">&times;</span>
   <img id="lightbox-img" src="" alt="">
@@ -535,32 +403,30 @@
 
 <script src="../nav.js"></script>
 <script>
-initNav('../');
-
-// Lightbox functionality
+initNav();
 function openLightbox(imageSrc, caption) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
-  
   lightboxImg.src = imageSrc;
   lightboxCaption.textContent = caption || 'Certificate';
   lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
 }
-
-// Close lightbox with Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeLightbox();
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openLightbox(this.src, this.alt || this.title || 'Certificate preview');
+    });
+  });
 });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>

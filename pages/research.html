@@ -6,7 +6,6 @@
 <title>Research — H.M. Nahid Kawsar</title>
 <link rel="stylesheet" href="../style.css">
 <style>
-/* Research page specific styles */
 .research-hero {
   background: var(--blue-900);
   color: var(--white);
@@ -14,49 +13,12 @@
   width: 100%;
   box-sizing: border-box;
 }
-.research-hero .hero-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-.research-hero h1 { 
-  font-family: var(--serif); 
-  font-size: 2.8rem; 
-  font-weight: 600; 
-  margin: 0.5rem 0; 
-}
-.research-hero p { 
-  color: var(--blue-200); 
-  max-width: 650px; 
-  margin-top: 0.75rem; 
-  font-weight: 300; 
-  text-align: justify;
-}
-.stat-row { 
-  display: flex; 
-  gap: 2.5rem; 
-  margin-top: 2rem; 
-  flex-wrap: wrap; 
-}
-.r-stat { 
-  text-align: center;
-}
-.r-stat-num { 
-  font-family: var(--serif); 
-  font-size: 2.2rem; 
-  font-weight: 700; 
-  color: var(--white); 
-  line-height: 1; 
-}
-.r-stat-label { 
-  font-size: 0.7rem; 
-  color: var(--blue-200); 
-  letter-spacing: 0.08em; 
-  text-transform: uppercase; 
-  margin-top: 4px; 
-}
-
-/* Rest of the styles remain the same as before */
+.research-hero h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; margin: 0.5rem 0; }
+.research-hero p { color: var(--blue-200); max-width: 650px; margin-top: 0.75rem; font-weight: 300; text-align: justify; }
+.stat-row { display: flex; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap; }
+.r-stat { text-align: center; }
+.r-stat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; color: var(--white); line-height: 1; }
+.r-stat-label { font-size: 0.7rem; color: var(--blue-200); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
 .papers { display: flex; flex-direction: column; gap: 2rem; }
 .paper { border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; background: var(--white); transition: box-shadow 0.25s ease; }
 .paper:hover { box-shadow: 0 8px 28px rgba(43,77,184,0.12); }
@@ -75,7 +37,6 @@
 .paper-link-doi:hover { background: var(--accent); transform: translateY(-1px); }
 .paper-link-ieee { background: var(--blue-50); color: var(--blue-800); border: 1px solid var(--blue-100); }
 .paper-link-ieee:hover { background: var(--blue-100); transform: translateY(-1px); }
-
 .coauthors { border-top: 1px solid var(--gray-200); padding: 1.25rem 2rem; background: var(--gray-50); }
 .coauthors-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.75rem; }
 .coauthors-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
@@ -86,7 +47,6 @@
 .coauthor-info { display: flex; flex-direction: column; }
 .coauthor-name { font-size: 0.8rem; font-weight: 600; color: var(--ink); }
 .coauthor-affil { font-size: 0.65rem; color: var(--gray-500); max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
 .ra-card { background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%); border: 1px solid var(--blue-100); border-radius: 16px; padding: 2rem; display: grid; grid-template-columns: 1fr 200px; gap: 2rem; }
 .ra-role { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--blue-900); margin-bottom: 0.4rem; }
 .ra-org { color: var(--accent); font-size: 0.88rem; font-weight: 500; margin-bottom: 0.3rem; }
@@ -94,19 +54,17 @@
 .ra-desc { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; text-align: justify; }
 .ra-photo { height: 160px; border-radius: 12px; overflow: hidden; background: var(--white); cursor: pointer; position: relative; border: 1px solid var(--gray-200); }
 .ra-photo img { width: 100%; height: 100%; object-fit: cover; }
-
 .skills-grid, .trainings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
 .skill-card, .training-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 1rem; transition: all 0.2s; text-align: justify; }
 .skill-card:hover, .training-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(43,77,184,0.08); border-color: var(--accent); }
 .skill-card span, .training-card span { font-size: 1.3rem; display: block; margin-bottom: 0.5rem; }
-
 .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
 .lightbox.active { display: flex; }
 .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
 .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; }
 .lightbox-close:hover { color: var(--accent); }
 .lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
-
+img { cursor: pointer; }
 @media (max-width: 900px) {
   .research-hero { padding: 3rem 1.5rem; }
   .paper-header { flex-direction: column; gap: 0.75rem; padding: 1.25rem; }
@@ -125,25 +83,9 @@
   <div class="nav-links">
     <a href="../index.html">Home</a>
     <a href="about.html">About</a>
-    <div class="dropdown">
-      <button class="dropbtn">Research</button>
-      <div class="dropdown-content">
-        <a href="research.html#publications">📄 Publications</a>
-        <a href="research.html#skills">🔬 Research Skills</a>
-        <a href="research.html#trainings">📚 Trainings & Workshops</a>
-        <a href="research.html#experience">👨‍🔬 Research Experience</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Activities</button>
-      <div class="dropdown-content">
-        <a href="activities.html#conferences">🎤 Conference Presentations</a>
-        <a href="activities.html#awards">🏆 Awards & Certificates</a>
-        <a href="activities.html#leadership">👥 Leadership Roles</a>
-        <a href="activities.html#volunteer">🤝 Volunteer Work</a>
-      </div>
-    </div>
-    <a href="certificates.html">📜 Certificates</a>
+    <a href="research.html">Research</a>
+    <a href="activities.html">Activities</a>
+    <a href="certificates.html">Certificates</a>
     <a href="skills.html">Skills</a>
     <a href="personal.html">Personal</a>
   </div>
@@ -152,7 +94,7 @@
 
 <div class="page">
   <div class="research-hero">
-    <div class="hero-content">
+    <div style="max-width: 1200px; margin: 0 auto;">
       <span class="section-label" style="color: var(--blue-200);">Scholarship</span>
       <h1>Research & Publications</h1>
       <p>Peer-reviewed research across machine learning, mathematical modelling, and biomedical signal processing — published in high-impact international journals and presented at IEEE conferences.</p>
@@ -165,7 +107,6 @@
     </div>
   </div>
 
-  <!-- Rest of the research page content remains the same -->
   <section id="experience" class="section">
     <span class="section-label">Professional Experience</span>
     <h2 class="section-title" style="margin-bottom: 2rem;">Research Assistantship</h2>
@@ -178,12 +119,11 @@
         <div style="margin-top:1.25rem;"><a href="https://drive.google.com/file/d/1hTYfoJgksPUjtKTpt3AdW8i64zhlaWnG/view" class="btn btn-primary" target="_blank" style="font-size:0.82rem; padding:8px 18px;">📄 View Appointment Letter</a></div>
       </div>
       <div class="ra-photo" onclick="openLightbox(this.querySelector('img').src, 'Research Assistant - NSTU')">
-        <img src="../images/activities/academic-journey/fyp-supervisor.jpg" alt="Research Assistant Supervision" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📷<br><small>fyp-supervisor.jpg</small></div>'">
+        <img src="../images/activities/academic-journey/fyp-supervisor.jpg" alt="Research Assistant Supervision" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📷<br><small>fyp-supervisor.jpg</small></div>'">
       </div>
     </div>
   </section>
 
-  <!-- Publications Section -->
   <section id="publications" class="section section-alt">
     <span class="section-label">Publications</span>
     <h2 class="section-title" style="margin-bottom: 2rem;">Published Research</h2>
@@ -280,7 +220,6 @@
       </div>
     </div>
 
-    <!-- In Review & In Preparation -->
     <div style="margin-top: 2rem;">
       <div class="paper" style="border-color: var(--blue-100); background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%); margin-bottom: 1rem;">
         <div class="paper-header">
@@ -307,7 +246,6 @@
     </div>
   </section>
 
-  <!-- Research Skills Section -->
   <section id="skills" class="section">
     <span class="section-label">Core Competencies</span>
     <h2 class="section-title" style="margin-bottom: 1.5rem;">Research Skills</h2>
@@ -325,7 +263,6 @@
     </div>
   </section>
 
-  <!-- Trainings Section -->
   <section id="trainings" class="section section-alt">
     <span class="section-label">Professional Development</span>
     <h2 class="section-title" style="margin-bottom: 1.5rem;">Trainings & Workshops</h2>
@@ -341,7 +278,6 @@
   </section>
 </div>
 
-<!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close">&times;</span>
   <img id="lightbox-img" src="" alt="">
@@ -354,29 +290,30 @@
 
 <script src="../nav.js"></script>
 <script>
-initNav('../');
-
+initNav();
 function openLightbox(imageSrc, caption) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
-  if (imageSrc && !imageSrc.includes('undefined')) {
-    lightboxImg.src = imageSrc;
-    lightboxCaption.textContent = caption || 'Image';
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  lightboxImg.src = imageSrc;
+  lightboxCaption.textContent = caption || 'Image';
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
-
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
 }
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeLightbox();
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openLightbox(this.src, this.alt || this.title || 'Image preview');
+    });
+  });
 });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>

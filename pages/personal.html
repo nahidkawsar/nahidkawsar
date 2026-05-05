@@ -6,55 +6,27 @@
 <title>Personal — H.M. Nahid Kawsar</title>
 <link rel="stylesheet" href="../style.css">
 <style>
-.personal-hero { background: var(--blue-900); color: var(--white); padding: 4rem 6rem 3rem; }
-.personal-hero h1 { font-family: var(--serif); font-size: 3rem; font-weight: 600; }
-.personal-hero p { color: var(--blue-200); max-width: 550px; margin-top: 0.75rem; font-weight: 300; }
-
+.personal-hero {
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
+  color: var(--white);
+  padding: 3rem 6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.personal-hero h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+.personal-hero p { color: var(--blue-200); max-width: 650px; margin-top: 0.75rem; font-weight: 300; }
 .family-card { display: grid; grid-template-columns: 280px 1fr; gap: 3rem; align-items: center; background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2.5rem; }
 .family-photo { width: 100%; height: 260px; border-radius: 12px; overflow: hidden; background: var(--gray-100); cursor: pointer; position: relative; }
-.family-photo::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-.family-photo:hover::after { opacity: 1; }
 .family-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .family-name { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
 .family-type { color: var(--accent); font-size: 0.85rem; font-weight: 500; margin-bottom: 1rem; }
-.family-desc { color: var(--gray-600); font-weight: 300; font-size: 0.97rem; line-height: 1.8; }
-
+.family-desc { color: var(--gray-600); font-weight: 300; font-size: 0.97rem; line-height: 1.8; text-align: justify; }
 .workspace-card { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: center; background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2.5rem; }
 .workspace-photo { width: 100%; height: 260px; border-radius: 12px; overflow: hidden; background: var(--gray-100); order: 2; cursor: pointer; position: relative; }
-.workspace-photo::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-.workspace-photo:hover::after { opacity: 1; }
 .workspace-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .workspace-content { order: 1; }
 .workspace-title { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--ink); margin-bottom: 0.75rem; }
-.workspace-desc { color: var(--gray-600); font-weight: 300; font-size: 0.97rem; line-height: 1.8; }
-
-/* Books Section */
+.workspace-desc { color: var(--gray-600); font-weight: 300; font-size: 0.97rem; line-height: 1.8; text-align: justify; }
 .books-section { margin-top: 2rem; }
 .section-subtitle {
   font-family: var(--serif);
@@ -94,21 +66,6 @@
   cursor: pointer;
   position: relative;
 }
-.book-cover::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-.book-cover:hover::after { opacity: 1; }
 .book-cover img {
   width: 100%;
   height: 100%;
@@ -135,6 +92,7 @@
   color: var(--gray-600);
   line-height: 1.6;
   margin-top: 0.5rem;
+  text-align: justify;
 }
 .book-badge {
   display: inline-block;
@@ -145,77 +103,25 @@
   border-radius: 20px;
   margin-top: 0.75rem;
 }
-
-/* Manuscript Cards */
 .manuscript-card {
   background: linear-gradient(135deg, #FFF8E6 0%, var(--white) 100%);
   border-left: 4px solid #F5D88A;
 }
-.manuscript-card .book-title {
-  color: #7C4A00;
-}
-.manuscript-card .book-badge {
-  background: #FFF4E5;
-  color: #7C4A00;
-}
-
-/* Hobby Grid */
 .hobby-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
 .hobby-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; text-align: center; transition: transform 0.18s; }
 .hobby-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(43,77,184,0.09); }
 .hobby-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
 .hobby-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); }
 .hobby-desc { font-size: 0.82rem; color: var(--gray-400); margin-top: 0.35rem; line-height: 1.5; }
-
-/* Lightbox */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
+.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
 .lightbox.active { display: flex; }
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  border-radius: 8px;
-}
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
+.lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; }
 .lightbox-close:hover { color: var(--accent); }
-.lightbox-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: white;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.6);
-  padding: 8px;
-  margin: 0 auto;
-  width: fit-content;
-  border-radius: 8px;
-}
-
+.lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
+img { cursor: pointer; }
 @media (max-width: 900px) {
-  .personal-hero { padding: 4rem 1.5rem 3rem; }
+  .personal-hero { padding: 3rem 1.5rem; }
   .family-card { grid-template-columns: 1fr; text-align: center; }
   .workspace-card { grid-template-columns: 1fr; text-align: center; }
   .workspace-photo { order: unset; margin-top: 1rem; }
@@ -232,46 +138,29 @@
   <div class="nav-links">
     <a href="../index.html">Home</a>
     <a href="about.html">About</a>
-    <div class="dropdown">
-      <button class="dropbtn">Research</button>
-      <div class="dropdown-content">
-        <a href="research.html#publications">📄 Publications</a>
-        <a href="research.html#skills">🔬 Research Skills</a>
-        <a href="research.html#trainings">📚 Trainings & Workshops</a>
-        <a href="research.html#experience">👨‍🔬 Research Experience</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Activities</button>
-      <div class="dropdown-content">
-        <a href="activities.html#conferences">🎤 Conference Presentations</a>
-        <a href="activities.html#awards">🏆 Awards & Certificates</a>
-        <a href="activities.html#leadership">👥 Leadership Roles</a>
-        <a href="activities.html#volunteer">🤝 Volunteer Work</a>
-      </div>
-    </div>
-    <a href="certificates.html">📜 Certificates</a>
+    <a href="research.html">Research</a>
+    <a href="activities.html">Activities</a>
+    <a href="certificates.html">Certificates</a>
     <a href="skills.html">Skills</a>
-    <a href="personal.html" class="active">Personal</a>
+    <a href="personal.html">Personal</a>
   </div>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="page">
   <div class="personal-hero">
-    <span class="section-label" style="color:var(--blue-200);">Beyond Work</span>
-    <h1>Personal Interests</h1>
-    <p>The things that make life meaningful — not just data and equations.</p>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <span class="section-label" style="color:var(--blue-200);">Beyond Work</span>
+      <h1>Personal Interests</h1>
+      <p>The things that make life meaningful — not just data and equations.</p>
+    </div>
   </div>
 
-  <!-- Family Section -->
   <section id="family" class="section section-alt">
     <span class="section-label">The Important One</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Honorable Family Member</h2>
     <div class="family-card">
-      <div class="family-photo" onclick="openLightbox(this.querySelector('img').src, 'Mizuki - My Beloved Cat')">
-        <img src="../images/profile/pet-mizuki-family.jpg" alt="Mizuki" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🐱<br><small>pet-mizuki-family.jpg</small></div>'">
-      </div>
+      <div class="family-photo"><img src="../images/profile/pet-mizuki-family.jpg" alt="Mizuki" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🐱<br><small>pet-mizuki-family.jpg</small></div>'"></div>
       <div>
         <div class="family-name">Mizuki</div>
         <div class="family-type">Persian Cat · 3 years old</div>
@@ -281,113 +170,80 @@
     </div>
   </section>
 
-  <!-- Books I Love Section -->
-  <section class="section">
-    <div class="books-section">
-      <div class="section-subtitle">
-        <span>📚</span> Books That Shaped My Imagination
+  <section id="workspace" class="section">
+    <span class="section-label">My Space</span>
+    <h2 class="section-title" style="margin-bottom: 2.5rem;">Where It All Happens</h2>
+    <div class="workspace-card">
+      <div class="workspace-content">
+        <div class="workspace-title">My Workspace</div>
+        <p class="workspace-desc">This is where the journey happened. From the first day of my BSc, through countless research papers, late-night problem-solving sessions, and the final draft of my honours project — this table witnessed it all.</p>
+        <p class="workspace-desc" style="margin-top: 1rem;">It's not about the desk or the chair. It's about the coffee cups, the scattered notes, the books stacked higher than my ambitions, and the determination that lived in this small corner. It's also where two novels were born during the quiet days of COVID-19 lockdown — stories of wormholes, time travel, and mysteries waiting to be told.</p>
       </div>
-      <div class="books-grid">
-        
-        <!-- Sherlock Holmes -->
-        <div class="book-card">
-          <div class="book-cover" onclick="openLightbox(this.querySelector('img').src, 'Sherlock Holmes - Bengali Translation')">
-            <img src="../images/books/sherlock-holmes.jpg" alt="Sherlock Holmes" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;background:#f0f0f0;\'>🔍<br><small>sherlock-holmes.jpg</small></div>'">
-          </div>
-          <div class="book-info">
-            <div class="book-title">Sherlock Holmes</div>
-            <div class="book-author">Sir Arthur Conan Doyle (Bengali Translation)</div>
-            <div class="book-desc">The legendary detective who taught me that every problem has a logical solution. First read during Class 10, and the art of deduction has stayed with me ever since. From BBC's Sherlock to Young Sherlock and RDJ's movies — the brilliance of Holmes continues to inspire.</div>
-            <span class="book-badge">🔍 Mystery · Detective</span>
-          </div>
-        </div>
-
-        <!-- Greece & Troy -->
-        <div class="book-card">
-          <div class="book-cover" onclick="openLightbox(this.querySelector('img').src, 'গ্রিস ও ট্রয়ের উপাখ্যান - Greece & Troy')">
-            <img src="../images/books/greece-troy.jpg" alt="Greece & Troy" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;background:#f0f0f0;\'>🏛️<br><small>greece-troy.jpg</small></div>'">
-          </div>
-          <div class="book-info">
-            <div class="book-title">গ্রিস ও ট্রয়ের উপাখ্যান</div>
-            <div class="book-author">Greece & Troy — Bengali Translation</div>
-            <div class="book-desc">The epic tales of heroes, gods, and the legendary Trojan War. This book introduced me to the rich mythology of ancient Greece — Achilles, Hector, Odysseus, and the timeless struggle between honor, love, and destiny. A foundation for understanding storytelling itself.</div>
-            <span class="book-badge">🏛️ Mythology · Epic</span>
-          </div>
-        </div>
-
-        <!-- White Fang -->
-        <div class="book-card">
-          <div class="book-cover" onclick="openLightbox(this.querySelector('img').src, 'White Fang - Bengali Translation')">
-            <img src="../images/books/white-fang.jpg" alt="White Fang" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;background:#f0f0f0;\'>🐺<br><small>white-fang.jpg</small></div>'">
-          </div>
-          <div class="book-info">
-            <div class="book-title">White Fang (হোয়াইট ফ্যাং)</div>
-            <div class="book-author">Jack London (Bengali Translation)</div>
-            <div class="book-desc">The journey of a wild wolf-dog from the brutal wilderness to finding loyalty and love. A powerful story about survival, transformation, and the bond between humans and animals. One of the most emotional reads that stayed with me long after finishing.</div>
-            <span class="book-badge">🐺 Adventure · Survival</span>
-          </div>
-        </div>
-
-      </div>
+      <div class="workspace-photo"><img src="../images/activities/academic-journey/my-workspace-study-table.jpg" alt="Workspace" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🖊️<br><small>my-workspace-study-table.jpg</small></div>'"></div>
     </div>
   </section>
 
-  <!-- My Manuscripts Section -->
-  <section class="section section-alt">
-    <div class="books-section">
-      <div class="section-subtitle">
-        <span>✍️</span> My Own Manuscripts (Written During COVID-19)
-      </div>
-      <div class="books-grid">
-        
-        <!-- The Briefing Lord -->
-        <div class="book-card manuscript-card">
-          <div class="book-cover" onclick="openLightbox(this.querySelector('img').src, 'The Briefing Lord - Manuscript Cover')">
-            <img src="../images/books/briefing-lord.jpg" alt="The Briefing Lord" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;background:#FFF8E6;\'>📖<br><small>briefing-lord.jpg</small></div>'">
-          </div>
-          <div class="book-info">
-            <div class="book-title">The Briefing Lord</div>
-            <div class="book-author">H.M. Nahid Kawsar (Unpublished Manuscript)</div>
-            <div class="book-desc">A romantic science fiction novel about a group of friends who discover an unknown species on Earth. The protagonist <strong>Sejan</strong>, along with his friends and his crush, travels through a wormhole to a world 1003 light-years away. A thrilling journey of discovery, shocking twists, and the ultimate revelation: <em>Who is he really?</em></div>
-            <span class="book-badge">✨ Sci-Fi · Romance · Wormhole Adventure</span>
-          </div>
-        </div>
-
-        <!-- Sayost -->
-        <div class="book-card manuscript-card">
-          <div class="book-cover" onclick="openLightbox(this.querySelector('img').src, 'Sayost - Manuscript Cover')">
-            <img src="../images/books/memiraze.jpg" alt="Sayost" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;background:#FFF8E6;\'>📖<br><small>memiraze.jpg</small></div>'">
-          </div>
-          <div class="book-info">
-            <div class="book-title">Sayost</div>
-            <div class="book-author">H.M. Nahid Kawsar (Unpublished Manuscript)</div>
-            <div class="book-desc">A time-travel suspense thriller with horror elements. A group of friends discovers a hidden canal beneath an ancient king's palace. They uncover the truth behind mysterious deaths, a brutally killed monkey hanging from the ceiling, and a silent mysterious girl. A gripping tale of love at first sight that shapes an entire destiny.</div>
-            <span class="book-badge">⏰ Time Travel · Suspense · Horror</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-<!-- Workspace Section -->
-<section id="workspace" class="section">
-  <span class="section-label">My Space</span>
-  <h2 class="section-title" style="margin-bottom: 2.5rem;">Where It All Happens</h2>
-  <div class="workspace-card">
-    <div class="workspace-content">
-      <div class="workspace-title">My Workspace</div>
-      <p class="workspace-desc" style="text-align: justify;">This is where the journey happened. From the first day of my BSc, through countless research papers, late-night problem-solving sessions, and the final draft of my honours project — this table witnessed it all.</p>
-      <p class="workspace-desc" style="margin-top: 1rem; text-align: justify;">It's not about the desk or the chair. It's about the coffee cups, the scattered notes, the books stacked higher than my ambitions, and the determination that lived in this small corner. It's also where two novels were born during the quiet days of COVID-19 lockdown — stories of wormholes, time travel, and mysteries waiting to be told.</p>
-    </div>
-    <div class="workspace-photo" onclick="openLightbox(this.querySelector('img').src, 'My Workspace - Study Table')">
-      <img src="../images/activities/academic-journey/my-workspace-study-table.jpg" alt="Workspace" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🖊️<br><small>my-workspace-study-table.jpg</small></div>'">
-    </div>
-  </div>
-</section>
-
-  <!-- Hobbies Section -->
   <section id="hobbies" class="section section-alt">
+    <span class="section-label">Personal</span>
+    <h2 class="section-title" style="margin-bottom: 2.5rem;">Books That Shaped My Imagination</h2>
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover"><img src="../images/books/sherlock-holmes.jpg" alt="Sherlock Holmes" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🔍<br><small>sherlock-holmes.jpg</small></div>'"></div>
+        <div class="book-info">
+          <div class="book-title">Sherlock Holmes</div>
+          <div class="book-author">Sir Arthur Conan Doyle (Bengali Translation)</div>
+          <div class="book-desc">The legendary detective who taught me that every problem has a logical solution. First read during Class 10, and the art of deduction has stayed with me ever since. From BBC's Sherlock to Young Sherlock and RDJ's movies — the brilliance of Holmes continues to inspire.</div>
+          <span class="book-badge">🔍 Mystery · Detective</span>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover"><img src="../images/books/greece-troy.jpg" alt="Greece & Troy" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🏛️<br><small>greece-troy.jpg</small></div>'"></div>
+        <div class="book-info">
+          <div class="book-title">গ্রিস ও ট্রয়ের উপাখ্যান</div>
+          <div class="book-author">Greece & Troy — Bengali Translation</div>
+          <div class="book-desc">The epic tales of heroes, gods, and the legendary Trojan War. This book introduced me to the rich mythology of ancient Greece — Achilles, Hector, Odysseus, and the timeless struggle between honor, love, and destiny. A foundation for understanding storytelling itself.</div>
+          <span class="book-badge">🏛️ Mythology · Epic</span>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover"><img src="../images/books/white-fang.jpg" alt="White Fang" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🐺<br><small>white-fang.jpg</small></div>'"></div>
+        <div class="book-info">
+          <div class="book-title">White Fang (হোয়াইট ফ্যাং)</div>
+          <div class="book-author">Jack London (Bengali Translation)</div>
+          <div class="book-desc">The journey of a wild wolf-dog from the brutal wilderness to finding loyalty and love. A powerful story about survival, transformation, and the bond between humans and animals. One of the most emotional reads that stayed with me long after finishing.</div>
+          <span class="book-badge">🐺 Adventure · Survival</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-subtitle">
+      <span>✍️</span> My Own Manuscripts (Written During COVID-19)
+    </div>
+    <div class="books-grid">
+      <div class="book-card manuscript-card">
+        <div class="book-cover"><img src="../images/books/briefing-lord.jpg" alt="The Briefing Lord" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📖<br><small>briefing-lord.jpg</small></div>'"></div>
+        <div class="book-info">
+          <div class="book-title">The Briefing Lord</div>
+          <div class="book-author">H.M. Nahid Kawsar (Unpublished Manuscript)</div>
+          <div class="book-desc">A romantic science fiction novel about a group of friends who discover an unknown species on Earth. The protagonist <strong>Sejan</strong>, along with his friends and his crush, travels through a wormhole to a world 1003 light-years away. A thrilling journey of discovery, shocking twists, and the ultimate revelation: <em>Who is he really?</em></div>
+          <span class="book-badge">✨ Sci-Fi · Romance · Wormhole Adventure</span>
+        </div>
+      </div>
+      <div class="book-card manuscript-card">
+        <div class="book-cover"><img src="../images/books/memiraze.jpg" alt="The Memiraze" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📖<br><small>memiraze.jpg</small></div>'"></div>
+        <div class="book-info">
+          <div class="book-title">The Memiraze</div>
+          <div class="book-author">H.M. Nahid Kawsar (Unpublished Manuscript)</div>
+          <div class="book-desc">A time-travel suspense thriller with horror elements. A group of friends discovers a hidden canal beneath an ancient king's palace. They uncover the truth behind mysterious deaths, a brutally killed monkey hanging from the ceiling, and a silent mysterious girl. A gripping tale of love at first sight that shapes an entire destiny.</div>
+          <span class="book-badge">⏰ Time Travel · Suspense · Horror</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
     <span class="section-label">Personal</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Hobbies & Interests</h2>
     <div class="hobby-grid">
@@ -401,7 +257,6 @@
   </section>
 </div>
 
-<!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close">&times;</span>
   <img id="lightbox-img" src="" alt="">
@@ -414,29 +269,30 @@
 
 <script src="../nav.js"></script>
 <script>
-initNav('../');
-
+initNav();
 function openLightbox(imageSrc, caption) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
-  if (imageSrc && !imageSrc.includes('undefined')) {
-    lightboxImg.src = imageSrc;
-    lightboxCaption.textContent = caption || 'Image';
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  lightboxImg.src = imageSrc;
+  lightboxCaption.textContent = caption || 'Image';
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
-
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
 }
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeLightbox();
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openLightbox(this.src, this.alt || this.title || 'Image preview');
+    });
+  });
 });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
