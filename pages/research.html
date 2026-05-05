@@ -43,6 +43,7 @@
 .coauthor-card { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--white); border: 1px solid var(--gray-200); border-radius: 40px; padding: 0.3rem 0.75rem 0.3rem 0.3rem; transition: all 0.2s; text-decoration: none; }
 .coauthor-card:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(43,77,184,0.1); border-color: var(--accent); }
 .coauthor-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--blue-100); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+.coauthor-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .coauthor-avatar .initial { font-size: 0.75rem; font-weight: 600; color: var(--blue-800); }
 .coauthor-info { display: flex; flex-direction: column; }
 .coauthor-name { font-size: 0.8rem; font-weight: 600; color: var(--ink); }
@@ -53,7 +54,22 @@
 .ra-period { font-size: 0.82rem; color: var(--gray-500); margin-bottom: 1rem; }
 .ra-desc { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; text-align: justify; }
 .ra-photo { height: 160px; border-radius: 12px; overflow: hidden; background: var(--white); cursor: pointer; position: relative; border: 1px solid var(--gray-200); }
-.ra-photo img { width: 100%; height: 100%; object-fit: cover; }
+.ra-photo::after {
+  content: '🔍';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.ra-photo:hover::after { opacity: 1; }
+.ra-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .skills-grid, .trainings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
 .skill-card, .training-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 1rem; transition: all 0.2s; text-align: justify; }
 .skill-card:hover, .training-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(43,77,184,0.08); border-color: var(--accent); }
@@ -118,8 +134,8 @@ img { cursor: pointer; }
         <p class="ra-desc">Worked under the supervision of <strong>Forhad Mahmud</strong>, Assistant Professor, Department of Applied Mathematics. Research project: <em>"A Hybrid Approach of Infectious Disease Dynamics Using Deep Learning and Numerical Methods: A Case Study on Tuberculosis."</em> Led to a published paper in the Arab Journal of Basic and Applied Sciences (ESCI | Q2 | Impact Factor: 3.5).</p>
         <div style="margin-top:1.25rem;"><a href="https://drive.google.com/file/d/1hTYfoJgksPUjtKTpt3AdW8i64zhlaWnG/view" class="btn btn-primary" target="_blank" style="font-size:0.82rem; padding:8px 18px;">📄 View Appointment Letter</a></div>
       </div>
-      <div class="ra-photo" onclick="openLightbox(this.querySelector('img').src, 'Research Assistant - NSTU')">
-        <img src="../images/activities/academic-journey/fyp-supervisor.jpg" alt="Research Assistant Supervision" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📷<br><small>fyp-supervisor.jpg</small></div>'">
+      <div class="ra-photo" onclick="openLightbox(this.querySelector('img').src, 'Research Assistant - With FYP Supervisor')">
+        <img src="../images/activities/academic-journey/fyp-supervisor.jpg" alt="Research Assistant Supervision" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📷<br><small>fyp-supervisor.jpg</small></div>'">
       </div>
     </div>
   </section>
@@ -144,10 +160,10 @@ img { cursor: pointer; }
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
           <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">MB</div></div><div class="coauthor-info"><span class="coauthor-name">Mehadi Hasan Bijoy</span><span class="coauthor-affil">YSD Consulting, UK</span></div></a>
-            <a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">TI</div></div><div class="coauthor-info"><span class="coauthor-name">Md Tanvir Islam</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">KH</div></div><div class="coauthor-info"><span class="coauthor-name">Kamrul Hasan</span><span class="coauthor-affil">CUET, Chittagong</span></div></a>
-            <a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">SA</div></div><div class="coauthor-info"><span class="coauthor-name">Sangtae Ahn</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/mehadi-hasan-bijoy.jpg" alt="M. H. Bijoy" onerror="this.innerHTML='<div class=\'initial\'>MB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Mehadi Hasan Bijoy</span><span class="coauthor-affil">YSD Consulting, UK</span></div></a>
+            <a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/md-tanvir-islam.jpg" alt="M. T. Islam" onerror="this.innerHTML='<div class=\'initial\'>TI</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Md Tanvir Islam</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/kamrul-hasan.jpg" alt="K. Hasan" onerror="this.innerHTML='<div class=\'initial\'>KH</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Kamrul Hasan</span><span class="coauthor-affil">CUET, Chittagong</span></div></a>
+            <a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/sangtae-ahn.jpg" alt="S. Ahn" onerror="this.innerHTML='<div class=\'initial\'>SA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Sangtae Ahn</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
           </div>
         </div>
       </div>
@@ -168,9 +184,9 @@ img { cursor: pointer; }
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
           <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">SB</div></div><div class="coauthor-info"><span class="coauthor-name">Saleha Begum</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">FM</div></div><div class="coauthor-info"><span class="coauthor-name">Forhad Mahmud</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">MA</div></div><div class="coauthor-info"><span class="coauthor-name">Prof. Dr. M. Ali Akbar</span><span class="coauthor-affil">University of Rajshahi (Top 2% Scientist)</span></div></a>
+            <a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/saleha-begum.jpg" alt="S. Begum" onerror="this.innerHTML='<div class=\'initial\'>SB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Saleha Begum</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/forhad-mahmud.jpg" alt="F. Mahmud" onerror="this.innerHTML='<div class=\'initial\'>FM</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Forhad Mahmud</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/m-ali-akbar.jpg" alt="M. A. Akbar" onerror="this.innerHTML='<div class=\'initial\'>MA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Prof. Dr. M. Ali Akbar</span><span class="coauthor-affil">University of Rajshahi (Top 2% Scientist)</span></div></a>
           </div>
         </div>
       </div>
@@ -191,8 +207,8 @@ img { cursor: pointer; }
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
           <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">TR</div></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">IR</div></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
           </div>
         </div>
       </div>
@@ -213,8 +229,8 @@ img { cursor: pointer; }
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
           <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">TR</div></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">IR</div></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
           </div>
         </div>
       </div>
