@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal — H.M. Nahid Kawsar</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.personal-hero { background: var(--blue-900); color: var(--white); padding: 4rem 6rem 3rem; }
+.personal-hero h1 { font-family: var(--serif); font-size: 3rem; font-weight: 600; }
+.personal-hero p { color: var(--blue-200); max-width: 550px; margin-top: 0.75rem; font-weight: 300; }
+.family-card { display: grid; grid-template-columns: 280px 1fr; gap: 3rem; align-items: center; background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2.5rem; }
+.family-photo { width: 100%; height: 260px; border-radius: 12px; overflow: hidden; background: var(--gray-100); cursor: pointer; position: relative; }
+.family-photo::after {
+  content: '🔍';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.family-photo:hover::after { opacity: 1; }
+.family-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.family-name { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+.family-type { color: var(--accent); font-size: 0.85rem; font-weight: 500; margin-bottom: 1rem; }
+.family-desc { color: var(--gray-600); font-weight: 300; font-size: 0.97rem; line-height: 1.8; }
+.workspace-card { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: center; background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2.5rem; }
+.workspace-photo { width: 100%; height: 260px; border-radius: 12px; overflow: hidden; background: var(--gray-100); order: 2; cursor: pointer; position: relative; }
+.workspace-photo::after {
+  content: '🔍';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.workspace-photo:hover::after { opacity: 1; }
+.workspace-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.workspace-content { order: 1; }
+.workspace-title { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--ink); margin-bottom: 0.75rem; }
+.workspace-desc { color: var(--gray-600); font-weight: 300; font-size: 0.97rem; line-height: 1.8; }
+.hobby-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.hobby-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; text-align: center; transition: transform 0.18s; }
+.hobby-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(43,77,184,0.09); }
+.hobby-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+.hobby-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+.hobby-desc { font-size: 0.82rem; color: var(--gray-400); margin-top: 0.35rem; line-height: 1.5; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.active { display: flex; }
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.lightbox-close:hover { color: var(--accent); }
+.lightbox-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.6);
+  padding: 8px;
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .personal-hero { padding: 4rem 1.5rem 3rem; }
+  .family-card { grid-template-columns: 1fr; text-align: center; }
+  .workspace-card { grid-template-columns: 1fr; text-align: center; }
+  .workspace-photo { order: unset; margin-top: 1rem; }
+  .workspace-content { order: unset; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Research</button>
+      <div class="dropdown-content">
+        <a href="research.html#publications">📄 Publications</a>
+        <a href="research.html#skills">🔬 Research Skills</a>
+        <a href="research.html#trainings">📚 Trainings & Workshops</a>
+        <a href="research.html#experience">👨‍🔬 Research Experience</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Activities</button>
+      <div class="dropdown-content">
+        <a href="activities.html#conferences">🎤 Conference Presentations</a>
+        <a href="activities.html#awards">🏆 Awards & Certificates</a>
+        <a href="activities.html#leadership">👥 Leadership Roles</a>
+        <a href="activities.html#volunteer">🤝 Volunteer Work</a>
+      </div>
+    </div>
+    <a href="certificates.html">📜 Certificates</a>
+    <div class="dropdown">
+      <button class="dropbtn">Skills</button>
+      <div class="dropdown-content">
+        <a href="skills.html#technical">💻 Technical Skills</a>
+        <a href="skills.html#soft">🤝 Soft Skills</a>
+        <a href="skills.html#languages">🌐 Languages</a>
+        <a href="skills.html#tools">🛠️ Tools & Platforms</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Personal</button>
+      <div class="dropdown-content">
+        <a href="personal.html#hobbies">🎨 Hobbies</a>
+        <a href="personal.html#workspace">🖊️ My Workspace</a>
+        <a href="personal.html#family">🐱 Family</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page">
+  <div class="personal-hero">
+    <span class="section-label" style="color:var(--blue-200);">Beyond Work</span>
+    <h1>Personal Interests</h1>
+    <p>The things that make life meaningful — not just data and equations.</p>
+  </div>
+
+  <section id="family" class="section section-alt">
+    <span class="section-label">The Important One</span>
+    <h2 class="section-title" style="margin-bottom: 2.5rem;">Honorable Family Member</h2>
+    <div class="family-card">
+      <div class="family-photo" onclick="openLightbox(this.querySelector('img').src, 'Mizuki - My Beloved Cat')">
+        <img src="../images/profile/pet-mizuki-family.jpg" alt="Mizuki" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🐱<br><small>pet-mizuki-family.jpg</small></div>'">
+      </div>
+      <div><div class="family-name">Mizuki</div><div class="family-type">Persian Cat · 3 years old</div><p class="family-desc">This is the one being who has never questioned my research methodology or publication strategies. When a paper gets rejected, Mizuki is there. When a deadline passes, Mizuki doesn't judge. Pure, unconditional science companion.</p><p class="family-desc" style="margin-top: 1rem;">Her weirdest habit? Walking across my keyboard during critical analysis sessions — especially when I'm about to run an important model. Her preferred napping spot is right on top of my printed research papers. 🐾</p></div>
+    </div>
+  </section>
+
+  <section id="workspace" class="section">
+    <span class="section-label">My Space</span>
+    <h2 class="section-title" style="margin-bottom: 2.5rem;">Where It All Happens</h2>
+    <div class="workspace-card">
+      <div class="workspace-content"><div class="workspace-title">My Workspace</div><p class="workspace-desc">This is where the journey happened. From the first day of my BSc, through countless research papers, late-night problem-solving sessions, and the final draft of my honours project — this table witnessed it all.</p><p class="workspace-desc" style="margin-top: 1rem;">It's not about the desk or the chair. It's about the coffee cups, the scattered notes, the books stacked higher than my ambitions, and the determination that lived in this small corner.</p></div>
+      <div class="workspace-photo" onclick="openLightbox(this.querySelector('img').src, 'My Workspace - Study Table')">
+        <img src="../images/activities/academic-journey/my-workspace-study-table.jpg" alt="Workspace" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>🖊️<br><small>my-workspace-study-table.jpg</small></div>'">
+      </div>
+    </div>
+  </section>
+
+  <section id="hobbies" class="section section-alt">
+    <span class="section-label">Personal</span>
+    <h2 class="section-title" style="margin-bottom: 2.5rem;">Hobbies & Interests</h2>
+    <div class="hobby-grid">
+      <div class="hobby-card"><span class="hobby-icon">🎵</span><div class="hobby-name">Singing</div><p class="hobby-desc">Music for the soul, not the stage.</p></div>
+      <div class="hobby-card"><span class="hobby-icon">✍️</span><div class="hobby-name">Writing Novels</div><p class="hobby-desc">Two completed manuscripts waiting.</p></div>
+      <div class="hobby-card"><span class="hobby-icon">🔍</span><div class="hobby-name">Detective Fiction</div><p class="hobby-desc">Devoted reader of mysteries.</p></div>
+      <div class="hobby-card"><span class="hobby-icon">📖</span><div class="hobby-name">Reading</div><p class="hobby-desc">Academic papers to ancient mythology.</p></div>
+      <div class="hobby-card"><span class="hobby-icon">🎨</span><div class="hobby-name">Art & Drawing</div><p class="hobby-desc">Plate drawing, documentation art.</p></div>
+      <div class="hobby-card"><span class="hobby-icon">🔢</span><div class="hobby-name">Mathematics</div><p class="hobby-desc">Not just a subject — a way of thinking.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+<footer class="sitefooter">
+  © 2025 H.M. Nahid Kawsar · <a href="mailto:nahid.amth@gmail.com">nahid.amth@gmail.com</a>
+</footer>
+
+<script src="../nav.js"></script>
+<script>
+initNav('../');
+
+function openLightbox(imageSrc, caption) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  lightboxImg.src = imageSrc;
+  lightboxCaption.textContent = caption || 'Image';
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>

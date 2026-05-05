@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — H.M. Nahid Kawsar</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.about-hero {
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
+  color: var(--white);
+  padding: 5rem 6rem 4rem;
+  position: relative; overflow: hidden;
+}
+.about-hero::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 450px; height: 450px; border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+.about-hero-grid {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 3rem; align-items: center;
+}
+.about-photo {
+  width: 200px; height: 240px;
+  border-radius: 100px 100px 80px 80px;
+  overflow: hidden; border: 3px solid rgba(255,255,255,0.2);
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-name { font-family: var(--serif); font-size: 3rem; font-weight: 600; line-height: 1.1; margin-bottom: 0.5rem; color: var(--white); }
+.about-subtitle { color: var(--blue-200); font-size: 0.95rem; margin-bottom: 1.25rem; }
+.about-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.about-link {
+  font-size: 0.8rem; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 5px 12px; border-radius: 20px; text-decoration: none;
+  transition: all 0.18s;
+}
+.about-link:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+.edu-timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+.edu-item {
+  display: grid; grid-template-columns: 140px 1fr;
+  gap: 1.5rem; align-items: start;
+}
+.edu-year {
+  font-size: 0.8rem; font-weight: 600; color: var(--accent);
+  letter-spacing: 0.06em; padding-top: 4px;
+  text-align: right;
+}
+.edu-card {
+  border-left: 2px solid var(--blue-200);
+  padding-left: 1.5rem; padding-bottom: 1.5rem;
+  position: relative;
+}
+.edu-card::before {
+  content: ''; position: absolute;
+  left: -6px; top: 6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--white);
+  box-shadow: 0 0 0 3px var(--blue-100);
+}
+.edu-degree { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: #000000; margin-bottom: 0.2rem; }
+.edu-uni { font-size: 0.88rem; color: var(--accent); font-weight: 500; margin-bottom: 0.3rem; }
+.edu-uni a { color: var(--accent); text-decoration: none; }
+.edu-uni a:hover { text-decoration: underline; }
+.edu-detail { font-size: 0.85rem; color: #000000; line-height: 1.6; text-align: justify; }
+.cgpa-badge {
+  display: inline-block; margin-top: 0.4rem;
+  background: var(--blue-50); color: var(--blue-800);
+  border: 1px solid var(--blue-100);
+  font-size: 0.78rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 20px;
+}
+.bio-grid {
+  display: grid; grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  align-items: stretch;
+}
+.bio-text p { 
+  color: #000000; font-weight: 400; font-size: 1rem; margin-bottom: 1.1rem; line-height: 1.85; text-align: justify;
+}
+.bio-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bio-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.univ-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(2px);
+}
+.dept-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.dept-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(43,77,184,0.09); }
+.univ-card h3, .dept-card h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.univ-card p, .dept-card p {
+  color: #000000;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+.ranking-badge {
+  display: inline-block;
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+.ranking-badge .rank { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+.ranking-badge .rank-label { font-size: 0.8rem; color: #000000; }
+.research-score {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--blue-800), var(--accent));
+  color: white;
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.nstu-bg-section {
+  background-image: url('../images/nstu-campus.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  padding: 4rem 6rem;
+}
+.nstu-bg-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+.nstu-bg-section > * { position: relative; z-index: 1; }
+.nstu-bg-section .section-label { color: var(--blue-200); }
+.nstu-bg-section .section-title { color: var(--white); }
+.projects-section { background: var(--white); }
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.18s;
+}
+.project-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(43,77,184,0.09); border-color: var(--accent); }
+.project-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+.project-links { margin-bottom: 0.75rem; }
+.project-links a { color: var(--blue-600); text-decoration: none; font-size: 0.8rem; margin-right: 1rem; }
+.project-links a:hover { text-decoration: underline; }
+.project-desc { font-size: 0.88rem; color: var(--gray-600); margin-bottom: 0.5rem; line-height: 1.6; text-align: justify; }
+.project-tech { font-size: 0.75rem; color: var(--accent); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .about-hero { padding: 4rem 1.5rem 3rem; }
+  .about-hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .about-photo { margin: 0 auto; }
+  .about-links { justify-content: center; }
+  .bio-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .bio-photo { min-height: 300px; }
+  .edu-item { grid-template-columns: 1fr; gap: 0.25rem; }
+  .edu-year { text-align: left; }
+  .univ-card h3, .dept-card h3 { font-size: 1.25rem; }
+  .nstu-bg-section { padding: 3rem 1.5rem; background-attachment: scroll; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+      <button class="dropbtn">Research</button>
+      <div class="dropdown-content">
+        <a href="research.html#publications">📄 Publications</a>
+        <a href="research.html#skills">🔬 Research Skills</a>
+        <a href="research.html#trainings">📚 Trainings & Workshops</a>
+        <a href="research.html#experience">👨‍🔬 Research Experience</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Activities</button>
+      <div class="dropdown-content">
+        <a href="activities.html#conferences">🎤 Conference Presentations</a>
+        <a href="activities.html#awards">🏆 Awards & Certificates</a>
+        <a href="activities.html#leadership">👥 Leadership Roles</a>
+        <a href="activities.html#volunteer">🤝 Volunteer Work</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Skills</button>
+      <div class="dropdown-content">
+        <a href="skills.html#technical">💻 Technical Skills</a>
+        <a href="skills.html#soft">🤝 Soft Skills</a>
+        <a href="skills.html#languages">🌐 Languages</a>
+        <a href="skills.html#tools">🛠️ Tools & Platforms</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Personal</button>
+      <div class="dropdown-content">
+        <a href="personal.html#hobbies">🎨 Hobbies</a>
+        <a href="personal.html#workspace">🖊️ My Workspace</a>
+        <a href="personal.html#family">🐱 Family</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page">
+  <div class="about-hero">
+    <div class="about-hero-grid">
+      <div class="about-photo">
+        <img src="../images/profile/profile-nahid-about.jpg" alt="H.M. Nahid Kawsar"
+             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27200%27 height=%27240%27%3E%3Crect width=%27200%27 height=%27240%27 fill=%27%23333%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23fff%27%3E📷%3C/text%3E%3C/svg%3E'">
+      </div>
+      <div>
+        <div class="about-name">H.M. Nahid Kawsar</div>
+        <div class="about-subtitle">Researcher · ML Engineer · Applied Mathematician</div>
+        <div class="about-subtitle" style="color: var(--white); font-size: 0.9rem; font-weight: 300;">Noakhali, Bangladesh</div>
+        <div class="about-links">
+          <a href="mailto:nahid.amth@gmail.com" class="about-link">✉ Email</a>
+          <a href="tel:+8801737334530" class="about-link">📞 Phone</a>
+          <a href="https://linkedin.com/in/hmnahidkawsar" class="about-link" target="_blank">LinkedIn</a>
+          <a href="https://github.com/nahidkawsar" class="about-link" target="_blank">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=56lmtYcAAAAJ&hl=en" class="about-link" target="_blank">Google Scholar</a>
+          <a href="https://orcid.org/0009-0000-8992-1882" class="about-link" target="_blank">ORCID</a>
+          <a href="https://nahidkawsar.github.io/Nahid-s-Portfolio/" class="about-link" target="_blank">Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-header" style="margin-bottom: 2rem;">
+      <span class="section-label">Who I Am</span>
+      <h2 class="section-title" style="color: #000000;">About Me</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="bio-grid">
+      <div class="bio-text">
+        <p>I am <strong>H.M. Nahid Kawsar</strong>, an Applied Mathematics graduate researcher with a strong interest in Artificial Intelligence, Machine Learning, and data-driven healthcare solutions. I am currently pursuing an MSc in Applied Mathematics at Noakhali Science and Technology University, where I also serve as a Research Assistant.</p>
+        <p>My research focuses on designing intelligent and interpretable AI systems for healthcare and mental health applications. I work at the intersection of mathematical modeling, deep learning, and explainable AI, developing solutions for respiratory disease detection, infectious disease modeling, and student mental health risk assessment using the DASS-21 framework.</p>
+        <p>I have published in peer-reviewed journals, including <em>Biomedical Signal Processing and Control</em> (Q1), <em>Arab Journal of Basic and Applied Sciences</em> (Q2), and presented at international conferences such as IEEE ICCIT, where I received the <strong>Best Technical Presentation Award</strong>. My work emphasizes methodological rigor, real-world applicability, and model interpretability.</p>
+        <p>Beyond research, I actively build practical AI systems, including Retrieval-Augmented Generation (RAG) applications, LLM-based chatbots, and NLP-driven tools. I am passionate about transforming theoretical knowledge into deployable solutions that create meaningful and measurable impact.</p>
+      </div>
+      <div>
+        <div class="bio-photo">
+          <img src="../images/profile/profile-nahid-casual.jpg" alt="Nahid Kawsar - Casual"
+               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27400%27%3E%3Crect width=%27400%27 height=%27400%27 fill=%27%23f0f0f0%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27%3E📸%3C/text%3E%3C/svg%3E'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-header" style="margin-bottom: 3rem;">
+      <span class="section-label">Academic Background</span>
+      <h2 class="section-title" style="color: #000000;">Education</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="edu-timeline">
+      <div class="edu-item">
+        <div class="edu-year">Aug 2025 — Present</div>
+        <div class="edu-card">
+          <div class="edu-degree">MSc in Applied Mathematics</div>
+          <div class="edu-uni"><a href="https://www.nstu.edu.bd/department.php?name=am" target="_blank">Noakhali Science and Technology University (NSTU)</a></div>
+          <div class="edu-detail">Department of Applied Mathematics<br><em>Research Area:</em> Hybrid GARCH and Machine Learning models for time-series forecasting.</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">Jan 2019 — Jul 2025</div>
+        <div class="edu-card">
+          <div class="edu-degree">BSc in Applied Mathematics</div>
+          <div class="edu-uni"><a href="https://nstu.edu.bd/" target="_blank">Noakhali Science and Technology University (NSTU)</a> <a href="https://drive.google.com/file/d/1VsxoPPPxLcNSm1KsZCsCQ3UEHxxNji6N/view" target="_blank">📜 Transcript</a></div>
+          <div class="edu-detail">Department of Applied Mathematics<br><em>Honours Project:</em> DASS-21 Meets Machine Learning: Explainable Student Mental Health Risk Assessment.<div class="cgpa-badge">CGPA: 3.69 / 4.00</div></div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">2016 — 2018</div>
+        <div class="edu-card">
+          <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+          <div class="edu-uni"><a href="https://rgccr.gov.bd/" target="_blank">Rangpur Govt. City College — Rangpur</a></div>
+          <div class="edu-detail">Group: Science<br>Board: Dinajpur Education Board<div class="cgpa-badge">GPA: 4.58 / 5.00</div></div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">2014 — 2016</div>
+        <div class="edu-card">
+          <div class="edu-degree">Secondary School Certificate (SSC)</div>
+          <div class="edu-uni"><a href="https://www.naghst.edu.bd/" target="_blank">Nekmard Alimuddin High School</a></div>
+          <div class="edu-detail">Group: Science<br>Board: Dinajpur Education Board<div class="cgpa-badge">GPA: 4.91 / 5.00</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Experience Section -->
+  <section id="experience" class="section">
+    <span class="section-label">Experience</span>
+    <h2 class="section-title" style="margin-bottom: 2rem;">Research Assistantship</h2>
+    <div class="edu-timeline">
+      <div class="edu-item">
+        <div class="edu-year">Apr 2024 — Oct 2025</div>
+        <div class="edu-card">
+          <div class="edu-degree">Research Assistant</div>
+          <div class="edu-uni"><a href="https://www.nstu.edu.bd/" target="_blank">Noakhali Science and Technology University (NSTU)</a> <a href="https://drive.google.com/file/d/1hTYfoJgksPUjtKTpt3AdW8i64zhlaWnG/view" target="_blank">📜 Appointment Letter</a></div>
+          <div class="edu-detail">Worked under the supervision of <strong>Forhad Mahmud</strong>, Assistant Professor, Department of Applied Mathematics.<br><br>Research project: <em>"A Hybrid Approach of Infectious Disease Dynamics Using Deep Learning and Numerical Methods: A Case Study on Tuberculosis."</em><br><br>Led to a published paper: <em>"A computationally efficient RK4-FNN hybrid approach for high-precision tuberculosis dynamics modeling: SIR/SEIR model applications."</em> <a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" target="_blank">(Published in Arab Journal of Basic and Applied Sciences, 2026)</a>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Experience - Brilliant Brains Valley -->
+  <section class="section section-alt">
+    <span class="section-label">Professional Experience</span>
+    <h2 class="section-title" style="margin-bottom: 2rem;">Brilliant Brains Valley (BBV)</h2>
+    <div class="edu-timeline">
+      <div class="edu-item">
+        <div class="edu-year">Nov 2025 — Present</div>
+        <div class="edu-card">
+          <div class="edu-degree">Junior Associate in Business Development</div>
+          <div class="edu-uni"><a href="https://www.brilliantbrainsvalley.com/" target="_blank">Brilliant Brains Valley (BBV)</a> <a href="https://drive.google.com/file/d/14-b011R4mr6nI_Ai2dZPxXzz5n4DEB7y/view" target="_blank">📜 Offer Letter</a></div>
+          <div class="edu-detail">Engaged in business development, client acquisition, and strategic partnerships.</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-year">Dec 2024 — May 2025</div>
+        <div class="edu-card">
+          <div class="edu-degree">Business Development Intern</div>
+          <div class="edu-uni"><a href="https://www.brilliantbrainsvalley.com/" target="_blank">Brilliant Brains Valley (BBV)</a> <a href="https://drive.google.com/file/d/1hhiBp3wPXTO4M6DJ4Z4feCkNZjuj68Oc/view" target="_blank">📜 Offer Letter</a></div>
+          <div class="edu-detail">Contributed to business development projects through market research and project coordination.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Projects Section -->
+  <section class="section projects-section">
+    <span class="section-label">Portfolio Projects</span>
+    <h2 class="section-title" style="margin-bottom: 2rem;">Selected Projects</h2>
+    
+    <div class="project-card">
+      <div class="project-title">Session-Based Conversational RAG with Document-Specific Answering</div>
+      <div class="project-links">
+        <a href="https://github.com/nahidkawsar/Session-Based-Conversational-RAG-with-Document-Specific-Answering" target="_blank">📂 GitHub</a>
+        <a href="https://youtu.be/O9eiDRdoC8s" target="_blank">▶️ YouTube</a>
+      </div>
+      <div class="project-desc">A conversational AI system using Retrieval-Augmented Generation (RAG) with session-based chat history, document embeddings, vector search, and document-driven question answering.</div>
+      <div class="project-tech">RAG, Conversational AI, Retrieval, Python, NLP</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Customizable LLM Chatbot with LangChain and Groq API</div>
+      <div class="project-links">
+        <a href="https://github.com/nahidkawsar/Customizable-LLM-Chatbot-with-LangChain-and-Groq-API/blob/main/README.md" target="_blank">📂 GitHub</a>
+        <a href="https://youtu.be/Pi61A-Mh_mo?si=wOz5TxkAH2IrtLJc" target="_blank">▶️ YouTube</a>
+      </div>
+      <div class="project-desc">This project demonstrates how to build a Basic LLM App using LangChain and the Groq API. It's designed to help anyone, even those without IT expertise, deploy and run the app using VS Code.</div>
+      <div class="project-tech">LangChain, Groq API, VS Code</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Resume Screening Application</div>
+      <div class="project-links">
+        <a href="https://github.com/nahidkawsar/Resume-Category-Prediction-NLP-" target="_blank">📂 GitHub</a>
+        <a href="https://www.youtube.com/watch?v=s4OJ45x6mvo&list=PLVc3EEjNCr8EHoibuCaoKax5suYPxn_a2&index=1" target="_blank">▶️ YouTube</a>
+      </div>
+      <div class="project-desc">This project demonstrates how to build a web application for resume classification using TF-IDF feature extraction and a trained machine learning model.</div>
+      <div class="project-tech">Python, NLP, Streamlit, scikit-learn, TF-IDF, VS Code</div>
+    </div>
+  </section>
+
+  <div class="nstu-bg-section">
+    <span class="section-label">My Institution</span>
+    <h2 class="section-title" style="margin-bottom: 2rem;">Noakhali Science and Technology University</h2>
+    <div class="univ-card">
+      <h3><span>🎓</span> <a href="https://nstu.edu.bd/" target="_blank" style="color: #000000; text-decoration: none;">NSTU</a></h3>
+      <p>Noakhali Science and Technology University (NSTU) is a leading public university in Bangladesh, dedicated to excellence in science, technology, and research. Since its establishment, NSTU has grown into a hub of innovation and academic excellence.</p>
+      <div class="ranking-badge"><span class="rank">601–800</span><span class="rank-label"> — Asia University Rankings 2026</span><div style="margin-top: 0.5rem;"><span class="research-score">Research Quality Index: 59.3</span></div></div>
+      <p>In the 2026 Asia University Rankings, NSTU is ranked 601–800 overall. Our Research Quality index scored 59.3, showing our dedication to advancing knowledge. A special shoutout to our amazing research team—this ranking reflects even our small but impactful contributions!</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="dept-card">
+      <h3><span>📐</span> <a href="https://www.nstu.edu.bd/department.php?name=am" target="_blank" style="color: #000000; text-decoration: none;">Department of Applied Mathematics</a></h3>
+      <p>The Department of Applied Mathematics is one of the most prominent and well-organized departments of Noakhali Science and Technology University (NSTU). In NSTU, this department was inaugurated in 2010.</p>
+      <p>Dept. of Applied Mathematics offers a 4 years BSc with 160 credit hours and 1 year MSc (Thesis/Non-Thesis) with 34/36 credit hours. In every intake, this department enrolls 50 students under the faculty of science of this university. The 10th batch has already completed their MSc and explored their careers in diversified fields at home and abroad.</p>
+      <p>The Department of Applied Mathematics is facilitated with adequate faculty members of high academic excellence. Different club activities, lab and class facilities, extra-curricular activities, and supporting staff are also available. If you think to get quality education through a sound environment for a better career, then Dept. of Applied Mathematics is welcoming you.</p>
+    </div>
+  </section>
+
+  <!-- References Section -->
+  <section class="section section-alt">
+    <span class="section-label">Academic References</span>
+    <h2 class="section-title" style="margin-bottom: 2rem;">References</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div class="ref-card" style="background: white; border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem;">
+        <div class="ref-name" style="font-weight: 600; font-size: 1rem;">Dr. Md. Jamal Hossain</div>
+        <div class="ref-title" style="color: var(--accent); font-size: 0.85rem;">Professor & Chairman</div>
+        <div class="ref-dept" style="color: var(--gray-600); font-size: 0.8rem;">Department of Applied Mathematics, NSTU</div>
+        <div class="ref-contact" style="margin-top: 0.75rem;">
+          <a href="mailto:mdjamal@nstu.edu.bd" style="color: var(--accent); text-decoration: none;">✉ mdjamal@nstu.edu.bd</a><br>
+          <span>📞 (+880) 1911104423</span>
+        </div>
+      </div>
+      <div class="ref-card" style="background: white; border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem;">
+        <div class="ref-name" style="font-weight: 600; font-size: 1rem;">Forhad Mahmud</div>
+        <div class="ref-title" style="color: var(--accent); font-size: 0.85rem;">Assistant Professor</div>
+        <div class="ref-dept" style="color: var(--gray-600); font-size: 0.8rem;">Department of Applied Mathematics, NSTU</div>
+        <div class="ref-contact" style="margin-top: 0.75rem;">
+          <a href="mailto:forhad.amath@nstu.edu.bd" style="color: var(--accent); text-decoration: none;">✉ forhad.amath@nstu.edu.bd</a><br>
+          <span>📞 (+880) 1750 660144</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="sitefooter">
+  © 2025 H.M. Nahid Kawsar · <a href="mailto:nahid.amth@gmail.com">nahid.amth@gmail.com</a>
+</footer>
+
+<script src="../nav.js"></script>
+<script>initNav('../');</script>
+</body>
+</html>
