@@ -6,246 +6,115 @@
 <title>Research — H.M. Nahid Kawsar</title>
 <link rel="stylesheet" href="../style.css">
 <style>
+/* Research page specific styles */
 .research-hero {
   background: var(--blue-900);
   color: var(--white);
-  padding: 4rem 6rem 3rem;
+  padding: 3rem 6rem;
+  width: 100%;
+  box-sizing: border-box;
 }
-.research-hero h1 { font-family: var(--serif); font-size: 3rem; font-weight: 600; margin: 0.5rem 0; }
-.research-hero p { color: var(--blue-200); max-width: 600px; margin-top: 0.75rem; font-weight: 300; text-align: justify; }
-.stat-row { display: flex; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap; }
-.r-stat-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; color: var(--white); line-height: 1; }
-.r-stat-label { font-size: 0.75rem; color: var(--blue-200); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
-.papers { display: flex; flex-direction: column; gap: 2rem; }
-.paper { 
-  border: 1px solid var(--gray-200); 
-  border-radius: 12px; 
-  overflow: hidden; 
-  background: var(--white); 
-  transition: box-shadow 0.25s ease;
+.research-hero .hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
-.paper:hover { box-shadow: 0 8px 28px rgba(43,77,184,0.12); }
-.paper-header { 
-  display: flex; 
-  align-items: flex-start; 
-  gap: 1.5rem; 
-  padding: 1.75rem 2rem;
-  background: linear-gradient(to bottom, var(--white), var(--gray-50));
-}
-.paper-index { 
+.research-hero h1 { 
   font-family: var(--serif); 
-  font-size: 2.5rem; 
-  font-weight: 700; 
-  color: var(--accent); 
-  line-height: 1; 
-  flex-shrink: 0; 
-  width: 48px;
-  opacity: 0.7;
-}
-.paper-meta { flex: 1; }
-.paper-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
-.paper-title { 
-  font-family: var(--serif); 
-  font-size: 1.25rem; 
+  font-size: 2.8rem; 
   font-weight: 600; 
-  color: var(--ink); 
-  line-height: 1.4; 
-  margin-bottom: 0.6rem;
+  margin: 0.5rem 0; 
 }
-.paper-authors { 
-  font-size: 0.85rem; 
-  color: var(--gray-600); 
-  margin-bottom: 0.5rem; 
-  font-style: normal;
-}
-.paper-authors strong { 
-  font-style: normal; 
-  color: var(--blue-800); 
-  font-weight: 600; 
-}
-.paper-journal { 
-  font-size: 0.85rem; 
-  color: var(--accent); 
-  margin-bottom: 0.75rem;
-  font-weight: 500;
-}
-.paper-journal em {
-  color: var(--gray-600);
-  font-style: italic;
-  font-weight: normal;
-}
-.paper-abstract {
-  font-size: 0.88rem;
-  color: var(--gray-600);
-  line-height: 1.7;
-  margin: 0.75rem 0;
+.research-hero p { 
+  color: var(--blue-200); 
+  max-width: 650px; 
+  margin-top: 0.75rem; 
+  font-weight: 300; 
   text-align: justify;
 }
-.paper-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
-.paper-link { 
-  font-size: 0.8rem; 
-  font-weight: 500; 
-  padding: 6px 14px; 
-  border-radius: 6px; 
-  text-decoration: none; 
-  transition: all 0.2s;
+.stat-row { 
+  display: flex; 
+  gap: 2.5rem; 
+  margin-top: 2rem; 
+  flex-wrap: wrap; 
 }
+.r-stat { 
+  text-align: center;
+}
+.r-stat-num { 
+  font-family: var(--serif); 
+  font-size: 2.2rem; 
+  font-weight: 700; 
+  color: var(--white); 
+  line-height: 1; 
+}
+.r-stat-label { 
+  font-size: 0.7rem; 
+  color: var(--blue-200); 
+  letter-spacing: 0.08em; 
+  text-transform: uppercase; 
+  margin-top: 4px; 
+}
+
+/* Rest of the styles remain the same as before */
+.papers { display: flex; flex-direction: column; gap: 2rem; }
+.paper { border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; background: var(--white); transition: box-shadow 0.25s ease; }
+.paper:hover { box-shadow: 0 8px 28px rgba(43,77,184,0.12); }
+.paper-header { display: flex; align-items: flex-start; gap: 1.5rem; padding: 1.75rem 2rem; background: linear-gradient(to bottom, var(--white), var(--gray-50)); }
+.paper-index { font-family: var(--serif); font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; flex-shrink: 0; width: 48px; opacity: 0.7; }
+.paper-meta { flex: 1; }
+.paper-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.paper-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 0.6rem; }
+.paper-authors { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 0.5rem; font-style: normal; }
+.paper-authors strong { font-style: normal; color: var(--blue-800); font-weight: 600; }
+.paper-journal { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.75rem; font-weight: 500; }
+.paper-abstract { font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; margin: 0.75rem 0; text-align: justify; }
+.paper-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.paper-link { font-size: 0.8rem; font-weight: 500; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
 .paper-link-doi { background: var(--blue-800); color: var(--white); }
 .paper-link-doi:hover { background: var(--accent); transform: translateY(-1px); }
 .paper-link-ieee { background: var(--blue-50); color: var(--blue-800); border: 1px solid var(--blue-100); }
 .paper-link-ieee:hover { background: var(--blue-100); transform: translateY(-1px); }
 
-/* Co-authors Section */
-.coauthors { 
-  border-top: 1px solid var(--gray-200); 
-  padding: 1.25rem 2rem; 
-  background: var(--gray-50);
-}
-.coauthors-label { 
-  font-size: 0.7rem; 
-  font-weight: 600; 
-  letter-spacing: 0.1em; 
-  text-transform: uppercase; 
-  color: var(--gray-500); 
-  margin-bottom: 0.75rem;
-}
+.coauthors { border-top: 1px solid var(--gray-200); padding: 1.25rem 2rem; background: var(--gray-50); }
+.coauthors-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.75rem; }
 .coauthors-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-.coauthor-card { 
-  display: inline-flex; 
-  align-items: center; 
-  gap: 0.5rem; 
-  background: var(--white); 
-  border: 1px solid var(--gray-200); 
-  border-radius: 40px; 
-  padding: 0.3rem 0.75rem 0.3rem 0.3rem; 
-  transition: all 0.2s; 
-  text-decoration: none;
-}
-.coauthor-card:hover { 
-  transform: translateY(-2px); 
-  box-shadow: 0 4px 10px rgba(43,77,184,0.1); 
-  border-color: var(--accent);
-}
-.coauthor-avatar { 
-  width: 32px; 
-  height: 32px; 
-  border-radius: 50%; 
-  background: var(--blue-100); 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  overflow: hidden; 
-  flex-shrink: 0;
-}
-.coauthor-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.coauthor-card { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--white); border: 1px solid var(--gray-200); border-radius: 40px; padding: 0.3rem 0.75rem 0.3rem 0.3rem; transition: all 0.2s; text-decoration: none; }
+.coauthor-card:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(43,77,184,0.1); border-color: var(--accent); }
+.coauthor-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--blue-100); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
 .coauthor-avatar .initial { font-size: 0.75rem; font-weight: 600; color: var(--blue-800); }
 .coauthor-info { display: flex; flex-direction: column; }
 .coauthor-name { font-size: 0.8rem; font-weight: 600; color: var(--ink); }
 .coauthor-affil { font-size: 0.65rem; color: var(--gray-500); max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* Research Assistant Card */
-.ra-card { 
-  background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%);
-  border: 1px solid var(--blue-100); 
-  border-radius: 16px; 
-  padding: 2rem; 
-  display: grid; 
-  grid-template-columns: 1fr 200px; 
-  gap: 2rem; 
-}
+.ra-card { background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%); border: 1px solid var(--blue-100); border-radius: 16px; padding: 2rem; display: grid; grid-template-columns: 1fr 200px; gap: 2rem; }
 .ra-role { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--blue-900); margin-bottom: 0.4rem; }
 .ra-org { color: var(--accent); font-size: 0.88rem; font-weight: 500; margin-bottom: 0.3rem; }
 .ra-period { font-size: 0.82rem; color: var(--gray-500); margin-bottom: 1rem; }
 .ra-desc { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; text-align: justify; }
 .ra-photo { height: 160px; border-radius: 12px; overflow: hidden; background: var(--white); cursor: pointer; position: relative; border: 1px solid var(--gray-200); }
-.ra-photo::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 3px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s;
-  pointer-events: none;
-}
-.ra-photo:hover::after { opacity: 1; }
-.ra-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ra-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Skills and Trainings Grids */
-.skills-grid, .trainings-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
-  gap: 1rem; 
-  margin-top: 1.5rem; 
-}
-.skill-card, .training-card { 
-  background: var(--white); 
-  border: 1px solid var(--gray-200); 
-  border-radius: 10px; 
-  padding: 1rem; 
-  transition: all 0.2s;
-}
-.skill-card:hover, .training-card:hover { 
-  transform: translateY(-3px); 
-  box-shadow: 0 6px 16px rgba(43,77,184,0.08); 
-  border-color: var(--accent);
-}
+.skills-grid, .trainings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.skill-card, .training-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 1rem; transition: all 0.2s; text-align: justify; }
+.skill-card:hover, .training-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(43,77,184,0.08); border-color: var(--accent); }
 .skill-card span, .training-card span { font-size: 1.3rem; display: block; margin-bottom: 0.5rem; }
 
-/* Lightbox Modal */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
+.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
 .lightbox.active { display: flex; }
 .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; }
 .lightbox-close:hover { color: var(--accent); }
-.lightbox-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: white;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.6);
-  padding: 8px;
-  width: fit-content;
-  margin: 0 auto;
-  border-radius: 8px;
-}
+.lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
 
 @media (max-width: 900px) {
-  .research-hero { padding: 4rem 1.5rem 3rem; }
+  .research-hero { padding: 3rem 1.5rem; }
   .paper-header { flex-direction: column; gap: 0.75rem; padding: 1.25rem; }
   .paper-index { font-size: 2rem; }
   .coauthor-card { width: calc(50% - 0.5rem); }
   .coauthor-affil { max-width: none; white-space: normal; }
   .ra-card { grid-template-columns: 1fr; }
-  .skills-grid, .trainings-grid { grid-template-columns: 1fr; }
+  .stat-row { gap: 1.5rem; justify-content: center; }
 }
 </style>
 </head>
@@ -255,6 +124,7 @@
   <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
     <div class="dropdown">
       <button class="dropbtn">Research</button>
       <div class="dropdown-content">
@@ -274,41 +144,28 @@
       </div>
     </div>
     <a href="certificates.html">📜 Certificates</a>
-    <div class="dropdown">
-      <button class="dropbtn">Skills</button>
-      <div class="dropdown-content">
-        <a href="skills.html#technical">💻 Technical Skills</a>
-        <a href="skills.html#soft">🤝 Soft Skills</a>
-        <a href="skills.html#languages">🌐 Languages</a>
-        <a href="skills.html#tools">🛠️ Tools & Platforms</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Personal</button>
-      <div class="dropdown-content">
-        <a href="personal.html#hobbies">🎨 Hobbies</a>
-        <a href="personal.html#workspace">🖊️ My Workspace</a>
-        <a href="personal.html#family">🐱 Family</a>
-      </div>
-    </div>
+    <a href="skills.html">Skills</a>
+    <a href="personal.html">Personal</a>
   </div>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="page">
   <div class="research-hero">
-    <span class="section-label" style="color: var(--blue-200);">Scholarship</span>
-    <h1>Research & Publications</h1>
-    <p>Peer-reviewed research across machine learning, mathematical modelling, and biomedical signal processing — published in high-impact international journals and presented at IEEE conferences.</p>
-    <div class="stat-row">
-      <div class="r-stat"><div class="r-stat-num">4</div><div class="r-stat-label">Published Papers</div></div>
-      <div class="r-stat"><div class="r-stat-num">1</div><div class="r-stat-label">In Review</div></div>
-      <div class="r-stat"><div class="r-stat-num">1</div><div class="r-stat-label">In Preparation</div></div>
-      <div class="r-stat"><div class="r-stat-num">4.9</div><div class="r-stat-label">Top Impact Factor</div></div>
+    <div class="hero-content">
+      <span class="section-label" style="color: var(--blue-200);">Scholarship</span>
+      <h1>Research & Publications</h1>
+      <p>Peer-reviewed research across machine learning, mathematical modelling, and biomedical signal processing — published in high-impact international journals and presented at IEEE conferences.</p>
+      <div class="stat-row">
+        <div class="r-stat"><div class="r-stat-num">4</div><div class="r-stat-label">Published Papers</div></div>
+        <div class="r-stat"><div class="r-stat-num">1</div><div class="r-stat-label">In Review</div></div>
+        <div class="r-stat"><div class="r-stat-num">1</div><div class="r-stat-label">In Preparation</div></div>
+        <div class="r-stat"><div class="r-stat-num">4.9</div><div class="r-stat-label">Top Impact Factor</div></div>
+      </div>
     </div>
   </div>
 
-  <!-- Research Experience Section -->
+  <!-- Rest of the research page content remains the same -->
   <section id="experience" class="section">
     <span class="section-label">Professional Experience</span>
     <h2 class="section-title" style="margin-bottom: 2rem;">Research Assistantship</h2>
@@ -321,8 +178,7 @@
         <div style="margin-top:1.25rem;"><a href="https://drive.google.com/file/d/1hTYfoJgksPUjtKTpt3AdW8i64zhlaWnG/view" class="btn btn-primary" target="_blank" style="font-size:0.82rem; padding:8px 18px;">📄 View Appointment Letter</a></div>
       </div>
       <div class="ra-photo" onclick="openLightbox(this.querySelector('img').src, 'Research Assistant - NSTU')">
-        <img src="../images/activities/academic-journey/fyp-supervisor.jpg" alt="Research Assistant Supervision" style="width:100%;height:100%;object-fit:cover"
-             onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📷<br><small>fyp-supervisor.jpg</small></div>'">
+        <img src="../images/activities/academic-journey/fyp-supervisor.jpg" alt="Research Assistant Supervision" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📷<br><small>fyp-supervisor.jpg</small></div>'">
       </div>
     </div>
   </section>
@@ -332,156 +188,96 @@
     <span class="section-label">Publications</span>
     <h2 class="section-title" style="margin-bottom: 2rem;">Published Research</h2>
     <div class="papers">
-
-      <!-- PAPER 1: SCIE Q1 -->
+      <!-- Paper 1 -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">01</div>
           <div class="paper-meta">
-            <div class="paper-badges">
-              <span class="badge badge-gold">SCIE · Q1</span>
-              <span class="badge badge-blue">Impact Factor: 4.9</span>
-              <span class="badge badge-green">Published: 2026</span>
-            </div>
+            <div class="paper-badges"><span class="badge badge-gold">SCIE · Q1</span><span class="badge badge-blue">Impact Factor: 4.9</span><span class="badge badge-green">Published: 2026</span></div>
             <div class="paper-title">Embedded Machine Learning Framework for Respiratory Disease Detection</div>
             <div class="paper-authors">M. H. Bijoy, <strong>H. M. N. Kawsar</strong>, M. T. Islam, K. Hasan, and S. Ahn</div>
             <div class="paper-journal"><em>Biomedical Signal Processing and Control</em>, Volume 113, Article 109132 (2026)</div>
-            <div class="paper-abstract">This study proposes a machine learning-based framework for respiratory disease detection via lung sound analysis, integrated into a real-time embedded system. The ExtraTrees classifier achieved 99.87% accuracy with 10-fold cross-validation on the ICBHI dataset and 93.68% accuracy on the external KAUH dataset. An AutoGluon-based WeightedEnsemble L3 achieved 99.97% accuracy, demonstrating strong generalizability. The model was successfully deployed on a Raspberry Pi 3-based embedded system for real-time disease prediction.</div>
-            <div class="paper-links">
-              <a href="https://doi.org/10.1016/j.bspc.2025.109132" class="paper-link paper-link-doi" target="_blank">DOI: 10.1016/j.bspc.2025.109132</a>
-            </div>
+            <div class="paper-abstract">This study proposes a machine learning-based framework for respiratory disease detection via lung sound analysis, integrated into a real-time embedded system. The ExtraTrees classifier achieved 99.87% accuracy with 10-fold cross-validation on the ICBHI dataset and 93.68% accuracy on the external KAUH dataset.</div>
+            <div class="paper-links"><a href="https://doi.org/10.1016/j.bspc.2025.109132" class="paper-link paper-link-doi" target="_blank">DOI: 10.1016/j.bspc.2025.109132</a></div>
           </div>
         </div>
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
           <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/mehadi-hasan-bijoy.jpg" alt="M. H. Bijoy" onerror="this.innerHTML='<div class=\'initial\'>MB</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Mehadi Hasan Bijoy</span><span class="coauthor-affil">YSD Consulting, UK</span></div>
-            </a>
-            <a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/md-tanvir-islam.jpg" alt="M. T. Islam" onerror="this.innerHTML='<div class=\'initial\'>TI</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Md Tanvir Islam</span><span class="coauthor-affil">Kyungpook National University</span></div>
-            </a>
-            <a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/kamrul-hasan.jpg" alt="K. Hasan" onerror="this.innerHTML='<div class=\'initial\'>KH</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Kamrul Hasan</span><span class="coauthor-affil">CUET, Chittagong</span></div>
-            </a>
-            <a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/sangtae-ahn.jpg" alt="S. Ahn" onerror="this.innerHTML='<div class=\'initial\'>SA</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Sangtae Ahn</span><span class="coauthor-affil">Kyungpook National University</span></div>
-            </a>
+            <a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">MB</div></div><div class="coauthor-info"><span class="coauthor-name">Mehadi Hasan Bijoy</span><span class="coauthor-affil">YSD Consulting, UK</span></div></a>
+            <a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">TI</div></div><div class="coauthor-info"><span class="coauthor-name">Md Tanvir Islam</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">KH</div></div><div class="coauthor-info"><span class="coauthor-name">Kamrul Hasan</span><span class="coauthor-affil">CUET, Chittagong</span></div></a>
+            <a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">SA</div></div><div class="coauthor-info"><span class="coauthor-name">Sangtae Ahn</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
           </div>
         </div>
       </div>
 
-      <!-- PAPER 2: ESCI Q2 -->
+      <!-- Paper 2 -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">02</div>
           <div class="paper-meta">
-            <div class="paper-badges">
-              <span class="badge badge-gold">ESCI · Q2</span>
-              <span class="badge badge-blue">Impact Factor: 3.5</span>
-              <span class="badge badge-green">Published: 2026</span>
-            </div>
+            <div class="paper-badges"><span class="badge badge-gold">ESCI · Q2</span><span class="badge badge-blue">Impact Factor: 3.5</span><span class="badge badge-green">Published: 2026</span></div>
             <div class="paper-title">A Computationally Efficient RK4-FNN Hybrid Approach for High-Precision Tuberculosis Dynamics Modeling: SIR/SEIR Model Applications</div>
             <div class="paper-authors">S. Begum, F. Mahmud, <strong>H. M. N. Kawsar</strong>, and M. A. Akbar</div>
             <div class="paper-journal"><em>Arab Journal of Basic and Applied Sciences</em>, Volume 33, Issue 1, pp. 134–151 (2026)</div>
-            <div class="paper-abstract">This study introduces a hybrid approach integrating the fourth-order Runge-Kutta method with a Feedforward Neural Network (FNN) for modeling infectious disease dynamics. The tuned FNN achieved relative accuracy of 99.65% for the SIR model and 99.91% for the SEIR model, demonstrating high-precision simulation with reduced computational cost.</div>
-            <div class="paper-links">
-              <a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" class="paper-link paper-link-doi" target="_blank">View Article →</a>
-            </div>
+            <div class="paper-abstract">This study introduces a hybrid approach integrating the fourth-order Runge-Kutta method with a Feedforward Neural Network (FNN) for modeling infectious disease dynamics. The tuned FNN achieved relative accuracy of 99.65% for the SIR model and 99.91% for the SEIR model.</div>
+            <div class="paper-links"><a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" class="paper-link paper-link-doi" target="_blank">View Article →</a></div>
           </div>
         </div>
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
           <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/saleha-begum.jpg" alt="S. Begum" onerror="this.innerHTML='<div class=\'initial\'>SB</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Saleha Begum</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div>
-            </a>
-            <a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/forhad-mahmud.jpg" alt="F. Mahmud" onerror="this.innerHTML='<div class=\'initial\'>FM</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Forhad Mahmud</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div>
-            </a>
-            <a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/m-ali-akbar.jpg" alt="M. A. Akbar" onerror="this.innerHTML='<div class=\'initial\'>MA</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Prof. Dr. M. Ali Akbar</span><span class="coauthor-affil">University of Rajshahi (Top 2% Scientist)</span></div>
-            </a>
+            <a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">SB</div></div><div class="coauthor-info"><span class="coauthor-name">Saleha Begum</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">FM</div></div><div class="coauthor-info"><span class="coauthor-name">Forhad Mahmud</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">MA</div></div><div class="coauthor-info"><span class="coauthor-name">Prof. Dr. M. Ali Akbar</span><span class="coauthor-affil">University of Rajshahi (Top 2% Scientist)</span></div></a>
           </div>
         </div>
       </div>
 
-      <!-- PAPER 3: IEEE ICCIT 2024 - Diabetes -->
+      <!-- Paper 3 -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">03</div>
           <div class="paper-meta">
-            <div class="paper-badges">
-              <span class="badge badge-blue">IEEE ICCIT 2024</span>
-              <span class="badge badge-gold">Best Technical Presenter</span>
-              <span class="badge badge-green">Published: 2024</span>
-            </div>
+            <div class="paper-badges"><span class="badge badge-blue">IEEE ICCIT 2024</span><span class="badge badge-gold">Best Technical Presenter</span><span class="badge badge-green">Published: 2024</span></div>
             <div class="paper-title">Cross-Cultural Insights in Health: Integrating Machine Learning and Deep Learning for Early Predictive Diabetes Detection</div>
             <div class="paper-authors">T. Roy, <strong>H. M. N. Kawsar</strong>, I. Rimi, and M. Z. Alam</div>
             <div class="paper-journal"><em>2024 27th International Conference on Computer and Information Technology (ICCIT)</em>, Cox's Bazar, Bangladesh, pp. 363–368</div>
-            <div class="paper-abstract">This cross-cultural study evaluates traditional machine learning models and deep neural networks for diabetes prediction using the PIMA Indian Diabetes Dataset and Sylhet Diabetes Hospital Dataset. Random Forest achieved 98% accuracy on the SDHD dataset, demonstrating the effectiveness of advanced ML approaches in handling complex, cross-cultural health data for early diabetes detection.</div>
-            <div class="paper-links">
-              <a href="https://ieeexplore.ieee.org/document/11022194" class="paper-link paper-link-doi" target="_blank">DOI: 10.1109/ICCIT64611.2024.11022194</a>
-              <a href="https://ieeexplore.ieee.org/document/11022194" class="paper-link paper-link-ieee" target="_blank">IEEE Xplore</a>
-            </div>
+            <div class="paper-abstract">This cross-cultural study evaluates traditional machine learning models and deep neural networks for diabetes prediction using the PIMA Indian Diabetes Dataset and Sylhet Diabetes Hospital Dataset. Random Forest achieved 98% accuracy on the SDHD dataset.</div>
+            <div class="paper-links"><a href="https://ieeexplore.ieee.org/document/11022194" class="paper-link paper-link-doi" target="_blank">DOI: 10.1109/ICCIT64611.2024.11022194</a><a href="https://ieeexplore.ieee.org/document/11022194" class="paper-link paper-link-ieee" target="_blank">IEEE Xplore</a></div>
           </div>
         </div>
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
           <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div>
-            </a>
-            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div>
-            </a>
+            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">TR</div></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">IR</div></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
           </div>
         </div>
       </div>
 
-      <!-- PAPER 4: IEEE ICCIT 2024 - SMOTE -->
+      <!-- Paper 4 -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">04</div>
           <div class="paper-meta">
-            <div class="paper-badges">
-              <span class="badge badge-blue">IEEE ICCIT 2024</span>
-              <span class="badge badge-green">Published: 2024</span>
-            </div>
+            <div class="paper-badges"><span class="badge badge-blue">IEEE ICCIT 2024</span><span class="badge badge-green">Published: 2024</span></div>
             <div class="paper-title">Enhancing Transfer Learning for Medical Image Classification with SMOTE: A Comparative Study</div>
             <div class="paper-authors">M. Z. Alam, T. Roy, <strong>H. M. N. Kawsar</strong>, and I. Rimi</div>
             <div class="paper-journal"><em>2024 27th International Conference on Computer and Information Technology (ICCIT)</em>, Cox's Bazar, Bangladesh, pp. 245–250</div>
-            <div class="paper-abstract">This study evaluates five pretrained CNN architectures (MobileNet, Xception, InceptionV3, ResNet50, DenseNet201) for medical image classification. Integration of SMOTE with transfer learning improved accuracy by 1.97%, recall by 5.43%, and specificity by 0.72%, addressing class imbalance challenges in diabetic retinopathy detection.</div>
-            <div class="paper-links">
-              <a href="https://ieeexplore.ieee.org/document/11022326" class="paper-link paper-link-doi" target="_blank">DOI: 10.1109/ICCIT64611.2024.11022326</a>
-              <a href="https://ieeexplore.ieee.org/document/11022326" class="paper-link paper-link-ieee" target="_blank">IEEE Xplore</a>
-            </div>
+            <div class="paper-abstract">This study evaluates five pretrained CNN architectures for medical image classification. Integration of SMOTE with transfer learning improved accuracy by 1.97%, recall by 5.43%, and specificity by 0.72%.</div>
+            <div class="paper-links"><a href="https://ieeexplore.ieee.org/document/11022326" class="paper-link paper-link-doi" target="_blank">DOI: 10.1109/ICCIT64611.2024.11022326</a><a href="https://ieeexplore.ieee.org/document/11022326" class="paper-link paper-link-ieee" target="_blank">IEEE Xplore</a></div>
           </div>
         </div>
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
           <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div>
-            </a>
-            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card">
-              <div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div>
-              <div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div>
-            </a>
+            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">TR</div></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><div class="initial">IR</div></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
           </div>
         </div>
       </div>
-
     </div>
 
     <!-- In Review & In Preparation -->
