@@ -1,37 +1,39 @@
-// Simple nav functionality
+// Simple navigation with hamburger menu - NO DROPDOWNS
 (function() {
-  function buildNav(basePath) {
-    // Mark active links
-    const current = window.location.pathname.split('/').pop() || 'index.html';
-    
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      const href = a.getAttribute('href');
-      if (href && href.split('/').pop() === current) {
-        a.classList.add('active');
+  function initNav() {
+    // Mark active links based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) {
+        const linkPage = href.split('/').pop();
+        if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === 'index.html')) {
+          link.classList.add('active');
+        }
       }
     });
 
     // Hamburger menu toggle
-    const ham = document.querySelector('.nav-hamburger');
-    const linksEl = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navLinks = document.querySelector('.nav-links');
     
-    if (ham && linksEl) {
-      ham.addEventListener('click', () => {
-        linksEl.classList.toggle('open');
-        ham.classList.toggle('active');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        hamburger.classList.toggle('active');
       });
       
-      // Close menu when link clicked
-      linksEl.querySelectorAll('a, .dropbtn').forEach(link => {
+      // Close menu when a link is clicked (mobile)
+      navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           if (window.innerWidth <= 900) {
-            linksEl.classList.remove('open');
-            ham.classList.remove('active');
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
           }
         });
       });
     }
   }
 
-  window.initNav = buildNav;
+  window.initNav = initNav;
 })();
