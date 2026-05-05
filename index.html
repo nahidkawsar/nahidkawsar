@@ -7,12 +7,14 @@
 <link rel="stylesheet" href="style.css">
 <style>
 .hero {
-  min-height: 100vh;
-  display: grid; grid-template-columns: 1fr 420px;
+  min-height: auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
   align-items: center;
-  padding: 0 6rem;
+  padding: 4rem 6rem;
   background: linear-gradient(160deg, var(--white) 50%, var(--blue-50) 100%);
-  position: relative; overflow: hidden;
+  position: relative;
+  overflow: hidden;
   gap: 4rem;
 }
 .hero::after {
@@ -31,88 +33,65 @@
   background: var(--blue-50);
   border: 1px solid var(--blue-100);
   padding: 6px 14px; border-radius: 20px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .hero h1 {
   font-family: var(--serif);
-  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 600; line-height: 1.08;
   color: var(--ink); margin-bottom: 0.25rem;
 }
 .hero h1 .last { color: var(--accent); display: block; }
 .hero-role {
-  font-size: 1rem; font-weight: 400;
-  color: var(--gray-600); margin: 1.25rem 0 0.5rem;
+  font-size: 0.95rem; font-weight: 400;
+  color: var(--gray-600); margin: 1rem 0 0.5rem;
   letter-spacing: 0.02em;
 }
 .hero-role strong { color: var(--blue-800); font-weight: 600; }
 .hero-desc {
-  font-size: 1rem; font-weight: 300;
+  font-size: 0.95rem; font-weight: 300;
   color: var(--gray-600); max-width: 520px;
-  line-height: 1.85; margin-bottom: 2.5rem;
+  line-height: 1.75; margin-bottom: 2rem;
   text-align: justify;
 }
-.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
-.hero-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.hero-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0; }
 .hero-pill {
-  font-size: 0.78rem; font-weight: 500;
+  font-size: 0.75rem; font-weight: 500;
   color: var(--gray-600); background: var(--white);
   border: 1px solid var(--gray-200);
-  padding: 5px 12px; border-radius: 20px;
+  padding: 4px 10px; border-radius: 20px;
 }
 .hero-right {
   display: flex; flex-direction: column;
-  align-items: center; gap: 1.5rem; z-index: 1;
+  align-items: center; gap: 1.25rem; z-index: 1;
 }
 .hero-photo-frame {
-  width: 280px; height: 340px;
-  border-radius: 160px 160px 120px 120px;
+  width: 260px; height: 320px;
+  border-radius: 140px 140px 100px 100px;
   background: var(--blue-100);
   border: 4px solid var(--blue-200);
   overflow: hidden;
-  cursor: pointer;
-  position: relative;
 }
-.hero-photo-frame::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-.hero-photo-frame:hover::after { opacity: 1; }
 .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-stat-row { display: flex; gap: 2rem; }
+.hero-stat-row { display: flex; gap: 1.5rem; }
 .hstat { text-align: center; }
-.hstat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--blue-800); line-height: 1; }
-.hstat-label { font-size: 0.72rem; font-weight: 500; color: var(--gray-400); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
-.hero-social { display: flex; gap: 0.75rem; }
+.hstat-num { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--blue-800); line-height: 1; }
+.hstat-label { font-size: 0.7rem; font-weight: 500; color: var(--gray-400); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+.hero-social { display: flex; gap: 0.6rem; }
 .social-btn {
-  width: 38px; height: 38px; border-radius: 8px;
+  width: 34px; height: 34px; border-radius: 8px;
   background: var(--white); border: 1px solid var(--gray-200);
   display: flex; align-items: center; justify-content: center;
-  text-decoration: none; font-size: 0.85rem; font-weight: 600;
+  text-decoration: none; font-size: 0.8rem; font-weight: 600;
   color: var(--blue-800); transition: all 0.18s;
 }
 .social-btn:hover { background: var(--blue-800); color: var(--white); border-color: var(--blue-800); }
+
+/* Remove scroll-cue since banner is smaller now */
 .scroll-cue {
-  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  color: var(--gray-400); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-  animation: bounce 2.2s ease-in-out infinite;
-}
-.scroll-cue::after { content: '↓'; font-size: 1.1rem; }
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(6px); }
+  display: none;
 }
 
 /* Education Timeline */
@@ -152,24 +131,7 @@
   width: 100%; height: 100%; min-height: 400px;
   border-radius: 20px; overflow: hidden; background: var(--gray-100);
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  position: relative;
 }
-.bio-photo::after {
-  content: '🔍';
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-.bio-photo:hover::after { opacity: 1; }
 .bio-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* University & Department Cards */
@@ -287,58 +249,12 @@
 .news-list a { color: var(--blue-600); text-decoration: none; font-weight: 500; }
 .news-list a:hover { text-decoration: underline; color: var(--accent); }
 
-/* Lightbox */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
-.lightbox.active { display: flex; }
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  border-radius: 8px;
-}
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.lightbox-close:hover { color: var(--accent); }
-.lightbox-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: white;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.6);
-  padding: 8px;
-  margin: 0 auto;
-  width: fit-content;
-  border-radius: 8px;
-}
-
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 3rem; text-align: center; }
+  .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; text-align: center; }
   .hero-right { order: -1; }
   .hero-cta, .hero-pills { justify-content: center; }
   .hero-desc { text-align: center; }
+  .hero-photo-frame { width: 220px; height: 270px; margin: 0 auto; }
   .bio-grid { grid-template-columns: 1fr; gap: 2rem; }
   .bio-photo { min-height: 300px; }
   .edu-item { grid-template-columns: 1fr; gap: 0.25rem; }
@@ -354,6 +270,9 @@
   <a href="index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="index.html">Home</a>
+    <a href="pages/about.html">About</a>
+    
+    <!-- RESEARCH DROPDOWN -->
     <div class="dropdown">
       <button class="dropbtn">Research</button>
       <div class="dropdown-content">
@@ -363,6 +282,8 @@
         <a href="pages/research.html#experience">👨‍🔬 Research Experience</a>
       </div>
     </div>
+    
+    <!-- ACTIVITIES DROPDOWN -->
     <div class="dropdown">
       <button class="dropbtn">Activities</button>
       <div class="dropdown-content">
@@ -372,24 +293,10 @@
         <a href="pages/activities.html#volunteer">🤝 Volunteer Work</a>
       </div>
     </div>
+    
     <a href="pages/certificates.html">📜 Certificates</a>
-    <div class="dropdown">
-      <button class="dropbtn">Skills</button>
-      <div class="dropdown-content">
-        <a href="pages/skills.html#technical">💻 Technical Skills</a>
-        <a href="pages/skills.html#soft">🤝 Soft Skills</a>
-        <a href="pages/skills.html#languages">🌐 Languages</a>
-        <a href="pages/skills.html#tools">🛠️ Tools & Platforms</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Personal</button>
-      <div class="dropdown-content">
-        <a href="pages/personal.html#hobbies">🎨 Hobbies</a>
-        <a href="pages/personal.html#workspace">🖊️ My Workspace</a>
-        <a href="pages/personal.html#family">🐱 Family</a>
-      </div>
-    </div>
+    <a href="pages/skills.html">Skills</a>
+    <a href="pages/personal.html">Personal</a>
   </div>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
@@ -397,7 +304,7 @@
 <div class="page">
   <div class="hero">
     <div class="hero-left">
-      <div class="hero-tag fade-up">BSc · Applied Mathematics · NSTU</div>
+      <div class="hero-tag fade-up">BSc · MSc · Applied Mathematics · NSTU</div>
       <h1 class="fade-up delay-1">H.M. Nahid <span class="last">Kawsar.</span></h1>
       <p class="hero-role fade-up delay-2"><strong>Researcher</strong> · ML Engineer · Published Author</p>
       <p class="hero-desc fade-up delay-2">Published researcher in machine learning and mathematical modelling with papers in IEEE and SCIE Q1 journals. Award-winning conference presenter at IEEE ICCIT 2024. Building things that matter through research, code, and rigorous thinking.</p>
@@ -414,7 +321,7 @@
       </div>
     </div>
     <div class="hero-right fade-up delay-2">
-      <div class="hero-photo-frame" onclick="openLightbox(this.querySelector('img').src, 'H.M. Nahid Kawsar - Profile Photo')">
+      <div class="hero-photo-frame">
         <img src="images/profile/profile-nahid-hero.jpg" alt="H.M. Nahid Kawsar"
              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27420%27 height=%27500%27%3E%3Crect width=%27420%27 height=%27500%27 fill=%27%23D6E4FF%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%232B4DB8%27%3E📸%3C/text%3E%3C/svg%3E'">
       </div>
@@ -431,10 +338,9 @@
         <a href="mailto:nahid.amth@gmail.com" class="social-btn" target="_blank" title="Email">✉</a>
       </div>
     </div>
-    <div class="scroll-cue">scroll</div>
   </div>
 
-  <!-- About Me Section with Casual Photo -->
+  <!-- About Me Section -->
   <section class="section">
     <div class="section-header" style="margin-bottom: 2rem;">
       <span class="section-label">Who I Am</span>
@@ -449,8 +355,8 @@
         <p>Beyond research, I actively build practical AI systems, including Retrieval-Augmented Generation (RAG) applications, LLM-based chatbots, and NLP-driven tools. I am passionate about transforming theoretical knowledge into deployable solutions that create meaningful and measurable impact.</p>
       </div>
       <div>
-        <div class="bio-photo" onclick="openLightbox(this.querySelector('img').src, 'H.M. Nahid Kawsar - Casual Photo')">
-          <img src="images/profile/profile-nahid-casual.jpg" alt="H.M. Nahid Kawsar - Casual"
+        <div class="bio-photo">
+          <img src="images/profile/profile-nahid-casual.jpg" alt="Nahid Kawsar - Casual"
                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27400%27%3E%3Crect width=%27400%27 height=%27400%27 fill=%27%23f0f0f0%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27%3E📸%3C/text%3E%3C/svg%3E'">
         </div>
       </div>
@@ -477,7 +383,7 @@
         <div class="edu-year">Jan 2019 — Jul 2025</div>
         <div class="edu-card">
           <div class="edu-degree">BSc in Applied Mathematics</div>
-          <div class="edu-uni"><a href="https://nstu.edu.bd/" target="_blank">Noakhali Science and Technology University (NSTU)</a> <a href="" target="_blank"></a></div>
+          <div class="edu-uni"><a href="https://nstu.edu.bd/" target="_blank">Noakhali Science and Technology University (NSTU)</a></div>
           <div class="edu-detail">Department of Applied Mathematics<br><em>Honours Project:</em> DASS-21 Meets Machine Learning: Explainable Student Mental Health Risk Assessment.<div class="cgpa-badge">CGPA: 3.69 / 4.00</div></div>
         </div>
       </div>
@@ -500,20 +406,17 @@
     </div>
   </section>
 
-  <!-- NSTU & Department Section with Background Image -->
+  <!-- NSTU Section -->
   <div class="nstu-bg-section">
     <span class="section-label">My Institution</span>
     <h2 class="section-title" style="margin-bottom: 2rem;">Noakhali Science and Technology University</h2>
-    
     <div class="univ-card">
       <h3><span>🎓</span> <a href="https://nstu.edu.bd/" target="_blank" style="color: #000000; text-decoration: none;">NSTU</a></h3>
       <p>Noakhali Science and Technology University (NSTU) is a leading public university in Bangladesh, dedicated to excellence in science, technology, and research. Since its establishment, NSTU has grown into a hub of innovation and academic excellence.</p>
       <div class="ranking-badge">
         <span class="rank">601–800</span>
         <span class="rank-label"> — Asia University Rankings 2026</span>
-        <div style="margin-top: 0.5rem;">
-          <span class="research-score">Research Quality Index: 59.3</span>
-        </div>
+        <div style="margin-top: 0.5rem;"><span class="research-score">Research Quality Index: 59.3</span></div>
       </div>
       <p>In the 2026 Asia University Rankings, NSTU is ranked 601–800 overall. Our Research Quality index scored 59.3, showing our dedication to advancing knowledge. A special shoutout to our amazing research team—this ranking reflects even our small but impactful contributions!</p>
     </div>
@@ -532,22 +435,14 @@
   <section class="news-section">
     <h2>Recent News</h2>
     <ul class="news-list">
-      <li><strong>Nov 2025 — Present</strong> — Junior Associate in Business Development, <a href="https://www.brilliantbrainsvalley.com/" target="_blank">Brilliant Brains Valley (BBV)</a> <a href="https://drive.google.com/file/d/14-b011R4mr6nI_Ai2dZPxXzz5n4DEB7y/view" target="_blank">[Offer Letter]</a></li>
-      <li><strong>Mar 2026</strong> — New publication in <em>Arab Journal of Basic and Applied Sciences</em> (Q2, IF: 3.5). <a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" target="_blank">[DOI]</a></li>
-      <li><strong>Dec 2024 — May 2025</strong> — Business Development Intern, <a href="https://www.brilliantbrainsvalley.com/" target="_blank">Brilliant Brains Valley (BBV)</a></li>
-      <li><strong>Oct 2025</strong> — Q1 publication in <a href="https://doi.org/10.1016/j.bspc.2025.109132" target="_blank"><em>Biomedical Signal Processing and Control</em></a> (IF: 4.9)</li>
+      <li><strong>Nov 2025 — Present</strong> — Junior Associate in Business Development, <a href="https://www.brilliantbrainsvalley.com/" target="_blank">Brilliant Brains Valley (BBV)</a></li>
+      <li><strong>Mar 2026</strong> — New publication in <em>Arab Journal of Basic and Applied Sciences</em> (Q2, IF: 3.5)</li>
+      <li><strong>Oct 2025</strong> — Q1 publication in <em>Biomedical Signal Processing and Control</em> (IF: 4.9)</li>
       <li><strong>Jul 2025</strong> — Graduated with First Class Honors, BSc in Applied Mathematics, NSTU</li>
-      <li><strong>Dec 2024</strong> — Best Technical Presentation Award, <a href="https://iccit.org.bd/" target="_blank">IEEE ICCIT 2024</a></li>
+      <li><strong>Dec 2024</strong> — Best Technical Presentation Award, IEEE ICCIT 2024</li>
       <li><strong>Apr 2024 – Oct 2025</strong> — Research Assistant, NSTU</li>
     </ul>
   </section>
-</div>
-
-<!-- Lightbox Modal -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close">&times;</span>
-  <img id="lightbox-img" src="" alt="">
-  <div id="lightbox-caption" class="lightbox-caption"></div>
 </div>
 
 <footer class="sitefooter">
@@ -557,37 +452,11 @@
     <a href="https://github.com/nahidkawsar" target="_blank">🐙 GitHub</a>
     <a href="https://scholar.google.com/citations?user=56lmtYcAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
     <a href="https://orcid.org/0009-0000-8992-1882" target="_blank">🆔 ORCID</a>
-    <a href="https://www.webofscience.com/wos/author/record/OOK-0717-2025" target="_blank">🌐 WoS</a>
-    <a href="https://www.youtube.com/playlist?list=PLVc3EEjNCr8EHoibuCaoKax5suYPxn_a2" target="_blank">📺 YouTube</a>
   </div>
   <div class="last-updated">Last updated: March 2026</div>
 </footer>
 
 <script src="nav.js"></script>
-<script>
-initNav('');
-
-function openLightbox(imageSrc, caption) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  if (imageSrc && !imageSrc.includes('undefined')) {
-    lightboxImg.src = imageSrc;
-    lightboxCaption.textContent = caption || 'Image';
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeLightbox();
-});
-</script>
+<script>initNav('');</script>
 </body>
 </html>
