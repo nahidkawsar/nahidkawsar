@@ -9,7 +9,7 @@
 .cert-hero {
   background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
   color: var(--white);
-  padding: 0.5rem 6rem;
+  padding: 2rem 6rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -79,10 +79,62 @@
 .lightbox-close:hover { color: var(--accent); }
 .lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
 img { cursor: pointer; }
+
+/* MOBILE FIXES */
 @media (max-width: 900px) {
-  .cert-hero { padding: 3rem 1.5rem; }
-  .cert-grid { grid-template-columns: 1fr; }
-  .cert-image { height: 140px; }
+  .cert-hero { 
+    padding: 2rem 1.5rem; 
+  }
+  .cert-hero h1 { 
+    font-size: 2rem; 
+  }
+  .cert-hero p { 
+    font-size: 0.9rem; 
+  }
+  .cert-stats { 
+    gap: 1rem; 
+    justify-content: center; 
+  }
+  .cert-stat-num { 
+    font-size: 1.5rem; 
+  }
+  .cert-stat-label { 
+    font-size: 0.65rem; 
+  }
+  
+  .cert-grid { 
+    grid-template-columns: 1fr; 
+    gap: 1.25rem; 
+  }
+  .cert-image { 
+    height: 140px; 
+  }
+  .cert-name { 
+    font-size: 0.95rem; 
+  }
+  .cert-desc { 
+    font-size: 0.8rem; 
+  }
+  
+  .group-title { 
+    font-size: 1.2rem; 
+    flex-wrap: wrap; 
+  }
+  .group-desc { 
+    font-size: 0.85rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .cert-stats { 
+    gap: 0.75rem; 
+  }
+  .cert-stat-num { 
+    font-size: 1.3rem; 
+  }
+  .cert-stat-label { 
+    font-size: 0.6rem; 
+  }
 }
 </style>
 </head>
