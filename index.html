@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>H.M. Nahid Kawsar — Portfolio</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.hero { min-height: auto; display: grid; grid-template-columns: 1fr 420px; align-items: center; padding: 4rem 6rem; background: linear-gradient(160deg, var(--white) 50%, var(--blue-50) 100%); position: relative; overflow: hidden; gap: 4rem; }
+.hero { min-height: auto; display: flex; align-items: center; justify-content: space-between; padding: 4rem 6rem; background: linear-gradient(160deg, var(--white) 50%, var(--blue-50) 100%); position: relative; overflow: hidden; gap: 3rem; }
+.hero-left { flex: 1; max-width: 600px; z-index: 1; }
 .hero::after { content: ''; position: absolute; bottom: -80px; right: -80px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(43,77,184,0.06) 0%, transparent 70%); pointer-events: none; }
-.hero-left { z-index: 1; }
 .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); background: var(--blue-50); border: 1px solid var(--blue-100); padding: 6px 14px; border-radius: 20px; margin-bottom: 1.5rem; }
 .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 600; line-height: 1.08; color: var(--ink); margin-bottom: 0.25rem; }
@@ -19,7 +20,7 @@
 .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
 .hero-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0; }
 .hero-pill { font-size: 0.75rem; font-weight: 500; color: var(--gray-600); background: var(--white); border: 1px solid var(--gray-200); padding: 4px 10px; border-radius: 20px; }
-.hero-right { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; z-index: 1; }
+.hero-right { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; z-index: 1; justify-self: end; }
 .hero-photo-frame { width: 260px; height: 320px; border-radius: 140px 140px 100px 100px; background: var(--blue-100); border: 4px solid var(--blue-200); overflow: hidden; }
 .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-stat-row { display: flex; gap: 1.5rem; }
@@ -95,7 +96,6 @@ img { cursor: pointer; }
   <a href="index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="pages/about.html">About</a>
     <a href="pages/research.html">Research</a>
     <a href="pages/activities.html">Activities</a>
     <a href="pages/certificates.html">Certificates</a>
@@ -108,38 +108,43 @@ img { cursor: pointer; }
 <div class="page">
   <div class="hero">
     <div class="hero-left">
-      <div class="hero-tag fade-up">BSc · MSc · Applied Mathematics · NSTU</div>
+      <div class="hero-tag fade-up">BSc · Applied Mathematics · NSTU</div>
       <h1 class="fade-up delay-1">H.M. Nahid <span class="last">Kawsar.</span></h1>
-      <p class="hero-role fade-up delay-2"><strong>Researcher</strong> · ML Engineer · Published Author</p>
-      <p class="hero-desc fade-up delay-2">Published researcher in machine learning and mathematical modelling with papers in IEEE and SCIE Q1 journals. Award-winning conference presenter at IEEE ICCIT 2024. Building things that matter through research, code, and rigorous thinking.</p>
+      <p class="hero-role fade-up delay-2"><strong>Applied Mathematician</strong> · ML Researcher · Published Author</p>
+     <p class="hero-desc fade-up delay-2">Researcher in applied mathematics and machine learning with published work in SCIE Q1 and ESCI Q2 journals and IEEE conferences. Best Technical Presenter at IEEE ICCIT 2024. Focused on building efficient ML models for resource-constrained devices using mathematical rigour.</p>
       <div class="hero-cta fade-up delay-3">
         <a href="pages/research.html#publications" class="btn btn-primary">View Research →</a>
         <a href="mailto:nahid.amth@gmail.com" class="btn btn-ghost">Get in Touch</a>
       </div>
-      <div class="hero-pills fade-up delay-4">
-        <span class="hero-pill">Machine Learning</span>
-        <span class="hero-pill">Time-Series Forecasting</span>
-        <span class="hero-pill">IEEE Published</span>
-        <span class="hero-pill">Python · LaTeX</span>
-        <span class="hero-pill">Mathematical Modelling</span>
-      </div>
+<div class="hero-pills fade-up delay-4">
+  <span class="hero-pill">Machine Learning</span>
+  <span class="hero-pill">Efficient ML Systems</span>
+  <span class="hero-pill">IEEE Published</span>
+  <span class="hero-pill">Python · LaTeX</span>
+</div>
     </div>
     <div class="hero-right fade-up delay-2">
       <div class="hero-photo-frame">
         <img src="images/profile/profile-nahid-hero.jpg" alt="H.M. Nahid Kawsar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27420%27 height=%27500%27%3E%3Crect width=%27420%27 height=%27500%27 fill=%27%23D6E4FF%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%232B4DB8%27%3E📸%3C/text%3E%3C/svg%3E'">
       </div>
-      <div class="hero-stat-row">
-        <div class="hstat"><div class="hstat-num">4</div><div class="hstat-label">Papers</div></div>
-        <div class="hstat"><div class="hstat-num">7+</div><div class="hstat-label">Skills</div></div>
-        <div class="hstat"><div class="hstat-num">5</div><div class="hstat-label">Roles</div></div>
-      </div>
-      <div class="hero-social">
-        <a href="https://linkedin.com/in/hmnahidkawsar" class="social-btn" target="_blank">in</a>
-        <a href="https://github.com/nahidkawsar" class="social-btn" target="_blank">gh</a>
-        <a href="https://scholar.google.com/citations?user=56lmtYcAAAAJ&hl=en" class="social-btn" target="_blank">gs</a>
-        <a href="https://orcid.org/0009-0000-8992-1882" class="social-btn" target="_blank">id</a>
-        <a href="mailto:nahid.amth@gmail.com" class="social-btn" target="_blank">✉</a>
-      </div>
+
+<div class="hero-social">
+  <a href="https://linkedin.com/in/hmnahidkawsar" class="social-btn" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://github.com/nahidkawsar" class="social-btn" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://scholar.google.com/citations?user=56lmtYcAAAAJ&hl=en" class="social-btn" target="_blank">
+    <i class="fas fa-graduation-cap"></i>
+  </a>
+  <a href="https://orcid.org/0009-0000-8992-1882" class="social-btn" target="_blank">
+    <i class="fab fa-orcid"></i>
+  </a>
+  <a href="mailto:nahid.amth@gmail.com" class="social-btn" target="_blank">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
     </div>
   </div>
 
@@ -151,11 +156,12 @@ img { cursor: pointer; }
     </div>
     <div class="bio-grid">
       <div class="bio-text">
-        <p>I am <strong>H.M. Nahid Kawsar</strong>, an Applied Mathematics graduate researcher with a strong interest in Artificial Intelligence, Machine Learning, and data-driven healthcare solutions. I am currently pursuing an MSc in Applied Mathematics at Noakhali Science and Technology University, where I also serve as a Research Assistant.</p>
-        <p>My research focuses on designing intelligent and interpretable AI systems for healthcare and mental health applications. I work at the intersection of mathematical modeling, deep learning, and explainable AI, developing solutions for respiratory disease detection, infectious disease modeling, and student mental health risk assessment using the DASS-21 framework.</p>
-        <p>I have published in peer-reviewed journals, including <em>Biomedical Signal Processing and Control</em> (Q1), <em>Arab Journal of Basic and Applied Sciences</em> (Q2), and presented at international conferences such as IEEE ICCIT, where I received the <strong>Best Technical Presentation Award</strong>. My work emphasizes methodological rigor, real-world applicability, and model interpretability.</p>
-        <p>Beyond research, I actively build practical AI systems, including Retrieval-Augmented Generation (RAG) applications, LLM-based chatbots, and NLP-driven tools. I am passionate about transforming theoretical knowledge into deployable solutions that create meaningful and measurable impact.</p>
-      </div>
+  <p>I am <strong>H.M. Nahid Kawsar</strong>, an Applied Mathematics researcher from Noakhali, Bangladesh, with a strong interest in machine learning, mathematical modelling, and building AI systems that work in the real world — not just on paper.</p>
+  <p>My core focus is on designing ML models that are efficient enough to run on low-end, resource-constrained devices without compromising accuracy. I believe the real challenge in machine learning is not just achieving high performance in controlled benchmarks, but making those models lean, interpretable, and deployable where computational resources are limited. Mathematics is my primary tool for doing that rigorously.</p>
+  <p>My research spans several applied domains — from respiratory disease detection and infectious disease dynamics to student mental health risk assessment. Across all of these, the common thread is the same: using mathematical structure to build models that are both accurate and explainable. I work comfortably at the intersection of numerical methods, deep learning, and statistical modelling.</p>
+  <p>I have published in peer-reviewed journals including <em>Biomedical Signal Processing and Control</em> (SCIE Q1, Impact Factor 4.9) and <em>Arab Journal of Basic and Applied Sciences</em> (ESCI Q2, Impact Factor 3.5), and presented at IEEE ICCIT 2024, where I received the <strong>Best Technical Presentation Award</strong> out of Session 37.</p>
+  <p>Beyond research, I actively build practical systems — RAG-based conversational AI, LLM-powered chatbots, and NLP-driven applications — always with an eye toward keeping them lightweight and grounded in sound methodology. I care about work that is reproducible, honest, and actually useful.</p>
+</div>
       <div>
         <div class="bio-photo">
           <img src="images/profile/profile-nahid-casual.jpg" alt="Nahid Kawsar - Casual" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸<br><small>profile-nahid-casual.jpg</small></div>'">
@@ -206,20 +212,34 @@ img { cursor: pointer; }
     </div>
   </section>
 
-  <div class="nstu-bg-section">
-    <span class="section-label">My Institution</span>
-    <h2 class="section-title" style="margin-bottom: 2rem;">Noakhali Science and Technology University</h2>
-    <div class="univ-card">
-      <h3><span>🎓</span> <a href="https://nstu.edu.bd/" target="_blank" style="color: #000000; text-decoration: none;">NSTU</a></h3>
-      <p>Noakhali Science and Technology University (NSTU) is a leading public university in Bangladesh, dedicated to excellence in science, technology, and research. Since its establishment, NSTU has grown into a hub of innovation and academic excellence.</p>
-      <div class="ranking-badge">
-        <span class="rank">601–800</span>
-        <span class="rank-label"> — Asia University Rankings 2026</span>
-        <div style="margin-top: 0.5rem;"><span class="research-score">Research Quality Index: 59.3</span></div>
+<div class="nstu-bg-section">
+  <span class="section-label">My Institution</span>
+  <h2 class="section-title" style="margin-bottom: 2rem;">Noakhali Science and Technology University</h2>
+  <div class="univ-card">
+    <h3><span>🎓</span> <a href="https://nstu.edu.bd/" target="_blank" style="color: #000000; text-decoration: none;">NSTU</a></h3>
+    <p>
+      Noakhali Science and Technology University (NSTU) is a public research university located in Sonapur, Noakhali — a coastal region of southeastern Bangladesh, close to the Bay of Bengal. Founded in 2001 and beginning academic activities in 2006, it is Bangladesh's 27th public university and its fifth dedicated science and technology institution. The university spans a 101-acre campus and currently serves around 6,000–7,000 students across faculties of Engineering & Technology, Science, Biological Sciences, Business Administration, Social Science & Humanities, and Law.
+    </p>
+    <p>
+      NSTU has particular strengths in fisheries, marine science, and oceanography — disciplines that directly serve the local coastal economy — alongside growing research output in mathematics, medicine, chemistry, and computer science. The university operates two specialised institutes focused on information science and information technology.
+    </p>
+
+    <div class="ranking-badge">
+      <span class="rank">851–900</span>
+      <span class="rank-label"> — QS Asia University Rankings 2026</span>
+      <div style="margin-top: 0.5rem;">
+        <span class="research-score">THE World Rankings 2026: 1201–1500 &nbsp;|&nbsp; Research Quality Index: 59.3</span>
       </div>
-      <p>In the 2026 Asia University Rankings, NSTU is ranked 601–800 overall. Our Research Quality index scored 59.3, showing our dedication to advancing knowledge. A special shoutout to our amazing research team—this ranking reflects even our small but impactful contributions!</p>
     </div>
+
+    <p>
+      In the QS Asia University Rankings 2026, NSTU is placed in the 851–900 band, and in the Times Higher Education (THE) World University Rankings 2026, it sits in the 1201–1500 range — a notable achievement for a university less than two decades old. According to EduRank, NSTU ranks 21st in Bangladesh overall, with over 3,200 academic publications and 35,000+ citations attributed to its researchers. In Mathematics specifically — my own department — NSTU ranks 18th in Bangladesh and 3,462nd globally, reflecting the growing research culture within the Applied Mathematics faculty.
+    </p>
+    <p>
+      I am proud to have contributed to that research output in a small way. The rankings are a reflection of collective effort — from faculty supervisors to students who push boundaries despite resource constraints. That spirit is what makes NSTU's growth genuinely meaningful.
+    </p>
   </div>
+</div>
 
   <section class="section">
     <div class="dept-card">
