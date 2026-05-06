@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.00">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research — H.M. Nahid Kawsar</title>
 <link rel="stylesheet" href="../style.css">
 <style>
 .research-hero {
   background: var(--blue-900);
   color: var(--white);
-  padding: 0.25rem 6rem;
+  padding: 2rem 6rem;
   width: 100%;
   box-sizing: border-box;
 }
 .research-hero h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; margin: 0.5rem 0; }
 .research-hero p { color: var(--blue-200); max-width: 100%; margin-top: 0.95rem; font-weight: 300; text-align: justify; }
-.stat-row { display: flex; gap: 2.5rem; margin-top: .5rem; flex-wrap: wrap; }
+.stat-row { display: flex; gap: 2.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
 .r-stat { text-align: center; }
 .r-stat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; color: var(--white); line-height: 1; }
 .r-stat-label { font-size: 0.7rem; color: var(--blue-200); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
@@ -71,7 +71,7 @@
 .ra-photo:hover::after { opacity: 1; }
 .ra-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Professional Skills & Training Sections - Redesigned for Scholarship View */
+/* Professional Skills & Training Sections */
 .prof-skills-section {
   background: var(--white);
   border-radius: 20px;
@@ -169,15 +169,6 @@ hr.divider-light {
   height: 1px;
   background: linear-gradient(to right, var(--gray-200), transparent);
 }
-@media (max-width: 900px) {
-  .research-hero { padding: 3rem 1.5rem; }
-  .paper-header { flex-direction: column; gap: 0.75rem; padding: 1.25rem; }
-  .paper-index { font-size: 2rem; }
-  .coauthor-card { width: calc(50% - 0.5rem); }
-  .coauthor-affil { max-width: none; white-space: normal; }
-  .ra-card { grid-template-columns: 1fr; }
-  .stat-row { gap: 1.5rem; justify-content: center; }
-}
 .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
 .lightbox.active { display: flex; }
 .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
@@ -185,6 +176,125 @@ hr.divider-light {
 .lightbox-close:hover { color: var(--accent); }
 .lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
 img { cursor: pointer; }
+
+/* MOBILE FIXES */
+@media (max-width: 900px) {
+  .research-hero { 
+    padding: 2rem 1.5rem; 
+  }
+  .research-hero h1 { 
+    font-size: 2rem; 
+  }
+  .research-hero p { 
+    font-size: 0.9rem; 
+  }
+  .stat-row { 
+    gap: 1rem; 
+    justify-content: center; 
+  }
+  .r-stat-num { 
+    font-size: 1.6rem; 
+  }
+  .r-stat-label { 
+    font-size: 0.65rem; 
+  }
+  
+  .paper-header { 
+    flex-direction: column; 
+    gap: 0.75rem; 
+    padding: 1.25rem; 
+  }
+  .paper-index { 
+    font-size: 1.8rem; 
+    width: auto; 
+  }
+  .paper-title { 
+    font-size: 1rem; 
+  }
+  .paper-authors, .paper-journal { 
+    font-size: 0.75rem; 
+  }
+  .paper-abstract { 
+    font-size: 0.85rem; 
+  }
+  .paper-badges .badge { 
+    font-size: 0.65rem; 
+  }
+  .paper-links { 
+    flex-direction: column; 
+  }
+  .paper-link { 
+    text-align: center; 
+  }
+  
+  .coauthors { 
+    padding: 1rem 1.25rem; 
+  }
+  .coauthors-grid { 
+    gap: 0.5rem; 
+  }
+  .coauthor-card { 
+    width: calc(50% - 0.5rem); 
+  }
+  .coauthor-name { 
+    font-size: 0.7rem; 
+  }
+  .coauthor-affil { 
+    font-size: 0.6rem; 
+    white-space: normal; 
+    max-width: 120px; 
+  }
+  
+  .ra-card { 
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+    padding: 1.25rem; 
+  }
+  .ra-role { 
+    font-size: 1.1rem; 
+  }
+  .ra-desc { 
+    font-size: 0.85rem; 
+  }
+  .ra-photo { 
+    height: 140px; 
+  }
+  
+  .skills-professional { 
+    grid-template-columns: 1fr; 
+  }
+  .skill-prof-item { 
+    padding: 0.75rem 1rem; 
+  }
+  .skill-prof-title { 
+    font-size: 0.85rem; 
+  }
+  .skill-prof-desc { 
+    font-size: 0.75rem; 
+  }
+  
+  .training-grid-prof { 
+    grid-template-columns: 1fr; 
+  }
+  .training-card-prof { 
+    padding: 0.75rem 1rem; 
+  }
+  .training-title { 
+    font-size: 0.85rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .coauthor-card { 
+    width: 100%; 
+  }
+  .coauthor-affil { 
+    max-width: none; 
+  }
+  .paper-links .paper-link { 
+    width: 100%; 
+  }
+}
 </style>
 </head>
 <body>
@@ -246,7 +356,7 @@ img { cursor: pointer; }
             <div class="paper-authors">M. H. Bijoy, <strong>H. M. N. Kawsar</strong>, M. T. Islam, K. Hasan, and S. Ahn</div>
             <div class="paper-journal"><em>Biomedical Signal Processing and Control</em>, Volume 113, Article 109132 (2026)</div>
             <div class="paper-abstract">This study proposes a machine learning-based framework for respiratory disease detection via lung sound analysis, integrated into a real-time embedded system. The ExtraTrees classifier achieved 99.87% accuracy with 10-fold cross-validation on the ICBHI dataset and 93.68% accuracy on the external KAUH dataset.</div>
-                       <div class="paper-links"><a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" class="paper-link paper-link-doi" target="_blank">View Article →</a></div>
+            <div class="paper-links"><a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" class="paper-link paper-link-doi" target="_blank">View Article →</a></div>
           </div>
         </div>
         <div class="coauthors">
@@ -357,7 +467,7 @@ img { cursor: pointer; }
     </div>
   </section>
 
-  <!-- PROFESSIONAL RESEARCH SKILLS SECTION (Redesigned) -->
+  <!-- PROFESSIONAL RESEARCH SKILLS SECTION -->
   <section id="skills" class="section prof-skills-section">
     <span class="section-label">Methodological Expertise</span>
     <h2 class="section-title" style="margin-bottom: 1rem;">Research Competencies</h2>
@@ -371,7 +481,7 @@ img { cursor: pointer; }
     </div>
   </section>
 
-  <!-- PROFESSIONAL TRAININGS & WORKSHOPS (Redesigned) -->
+  <!-- PROFESSIONAL TRAININGS & WORKSHOPS -->
   <section id="trainings" class="section section-alt">
     <span class="section-label">Advanced Training</span>
     <h2 class="section-title" style="margin-bottom: 0.5rem;">Certified Professional Development</h2>
