@@ -9,12 +9,12 @@
 .act-hero {
   background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
   color: var(--white);
-  padding: 3rem 6rem;
+  padding: 0.5rem 6rem;
   width: 100%;
   box-sizing: border-box;
 }
 .act-hero h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; margin-bottom: 0.5rem; }
-.act-hero p { color: var(--blue-200); max-width: 650px; margin-top: 0.75rem; font-weight: 300; line-height: 1.6; }
+.act-hero p { color: var(--blue-200); max-width: 100%; margin-top: 0.75rem; font-weight: 300; line-height: 1.6; }
 .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
 .video-container { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; transition: transform 0.18s, box-shadow 0.18s; }
 .video-container:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(43,77,184,0.09); }
@@ -50,7 +50,7 @@
 .gallery-photo:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(43,77,184,0.12); }
 .gallery-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .photo-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: var(--gray-400); font-size: 0.7rem; text-align: center; padding: 1rem; }
-.additional-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.additional-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 1rem; }
 .photo-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; overflow: hidden; transition: transform 0.18s; }
 .photo-item:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(43,77,184,0.09); }
 .photo-item-image { width: 100%; height: 200px; overflow: hidden; background: var(--gray-100); cursor: pointer; position: relative; }
@@ -66,7 +66,7 @@
 .lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
 img { cursor: pointer; }
 @media (max-width: 900px) {
-  .act-hero { padding: 3rem 1.5rem; }
+  .act-hero { padding: 1rem 1.5rem; }
   .club-item { grid-template-columns: 1fr; gap: 0.5rem; }
   .club-period { text-align: left; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
@@ -81,7 +81,6 @@ img { cursor: pointer; }
   <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="../index.html">Home</a>
-    <a href="about.html">About</a>
     <a href="research.html">Research</a>
     <a href="activities.html">Activities</a>
     <a href="certificates.html">Certificates</a>
@@ -93,8 +92,7 @@ img { cursor: pointer; }
 
 <div class="page">
   <div class="act-hero">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <span class="section-label" style="color:var(--blue-200);">Involvement</span>
+    <div style="max-width: 2900px; margin: 0 auto;">
       <h1>Activities & Leadership</h1>
       <p>Presentations, awards, roles, and impact across university clubs and international conferences.</p>
     </div>
@@ -102,28 +100,81 @@ img { cursor: pointer; }
 
   <section id="conferences" class="section">
     <span class="section-label">Video Documentation</span>
-    <h2 class="section-title" style="margin-bottom: 2.5rem;">IEEE ICCIT 2024 — Conference Presentations</h2>
+    <h2 class="section-title" style="margin-bottom: 1rem;">IEEE ICCIT 2024 — Conference Presentations</h2>
+    
+    <!-- Conference Details -->
+    <div style="background: var(--blue-50); border-left: 4px solid var(--accent); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div>
+          <div style="font-weight: 700; color: var(--blue-900); margin-bottom: 0.5rem;">📅 27th International Conference on Computer and Information Technology</div>
+          <div style="font-size: 0.85rem; color: var(--gray-600);">📍 Cox's Bazar, Bangladesh — December 20-22, 2024</div>
+          <div style="font-size: 0.85rem; color: var(--gray-600); margin-top: 0.25rem;">🏆 Received <strong>Best Technical Presenter Award</strong> at the conference</div>
+        </div>
+        <a href="https://www.ieeebd.com/27th-ieee-iccit-2024-20-22-dec-2024/" class="btn btn-primary" target="_blank" style="white-space: nowrap; padding: 0.6rem 1.2rem;">🌐 Conference Website →</a>
+      </div>
+    </div>
+
     <div class="video-grid">
       <div class="video-container">
         <div class="video-wrapper"><video controls><source src="../videos/iccit-smote-paper-presentation.mp4" type="video/mp4">Your browser does not support video.</video></div>
-        <div class="video-info"><div class="video-title">SMOTE Paper Presentation</div><div class="video-meta">IEEE ICCIT 2024 — December 2024</div><div class="video-desc">Full technical presentation that earned the Best Technical Presenter Award.</div></div>
+        <div class="video-info">
+          <div class="video-title">Enhancing Transfer Learning for Medical Image Classification with SMOTE — Live Presentation</div>
+          <div class="video-desc"style="text-align: justify;">Presenting my paper on using SMOTE to address class imbalance in medical image classification. While alternative methods like ADASYN, Borderline-SMOTE, and GANs exist, they require powerful GPUs and significant training time. This study demonstrates that applying SMOTE on class probabilities extracted from pre-trained CNN models improves accuracy by 1.97%, recall/sensitivity by 5.43%, and specificity by 0.72% — all with minimal extra computation. The Voting Classifier combined with SMOTE achieved 92.14% accuracy on the imbalanced APTOS 2019 diabetic retinopathy dataset.</div>
+        </div>
       </div>
-      <div class="video-container">
-        <div class="video-wrapper"><video controls><source src="../videos/iccit-keynote-speech-summary.mp4" type="video/mp4">Your browser does not support video.</video></div>
-        <div class="video-info"><div class="video-title">Conference Keynote Speech</div><div class="video-meta">IEEE ICCIT 2024 — December 2024</div><div class="video-desc">Summary of keynote presentations highlighting current trends in AI.</div></div>
-      </div>
-    </div>
+
+<div class="video-container">
+  <div class="video-wrapper"><video controls><source src="../videos/iccit-keynote-speech-summary.mp4" type="video/mp4">Your browser does not support video.</video></div>
+  <div class="video-info">
+    <div class="video-title">Conference Tour — IEEE ICCIT 2024 Venue Walkthrough</div>
+     <div class="video-desc" style="text-align: justify;">A complete tour of the IEEE ICCIT 2024 conference venue in Cox's Bazar — exploring different presentation rooms, the keynote hall where distinguished speakers delivered invited talks, and the virtual presentation corridor where remote participants joined online with their laptops and setups. The video captures the conference atmosphere, networking spaces, and behind-the-scenes infrastructure that made the event successful.</div>
+  </div>
+</div>
   </section>
 
-  <section id="awards" class="section section-alt">
-    <span class="section-label">Recognition</span>
-    <h2 class="section-title" style="margin-bottom: 2.5rem;">Major Awards</h2>
-    <div class="award-grid">
-      <div class="award-card"><div class="award-icon">🏆</div><div class="award-name">Best Technical Presenter</div><div class="award-org">IEEE ICCIT 2024</div><div class="award-date">December 2024</div><div class="award-desc">Awarded for outstanding technical presentation on two papers at Cox's Bazar.</div></div>
-      <div class="award-card"><div class="award-icon">🥈</div><div class="award-name">Runner-up Prize</div><div class="award-org">NSTU Math Olympiad</div><div class="award-date">2024</div><div class="award-desc">Runner-up prize for excellence in mathematical problem-solving.</div></div>
-      <div class="award-card"><div class="award-icon">🎖️</div><div class="award-name">Scientific Article Writing Merit Award</div><div class="award-org">Science Club, NSTU</div><div class="award-date">December 2023</div><div class="award-desc">Awarded for excellence in a Scientific Article Writing Competition.</div></div>
+<section id="awards" class="section section-alt">
+  <span class="section-label">Recognition</span>
+  <h2 class="section-title" style="margin-bottom: 2.5rem;">Major Awards</h2>
+  <div class="award-grid">
+    
+    <!-- Award 1: Best Technical Presenter -->
+    <div class="award-card">
+      <div class="award-icon">🏆</div>
+      <div class="award-name">Best Technical Presenter</div>
+      <div class="award-org">IEEE ICCIT 2024</div>
+      <div class="award-date">December 2024</div>
+      <div class="award-desc">Awarded as Best Technical Presenter of the session for presenting the paper <strong>"Cross-Cultural Insights in Health: Integrating Machine Learning and Deep Learning for Early Predictive Diabetes Detection"</strong> at the 27th IEEE International Conference on Computer and Information Technology, Cox's Bazar, Bangladesh.</div>
+      <div class="award-certificate" style="margin-top: 1rem;">
+        <img src="../images/certificates/best-presenter-certificate.jpg" alt="Best Technical Presenter Certificate" class="certificate-img" style="width: 100%; max-width: 280px; border-radius: 8px; border: 1px solid var(--gray-200); cursor: pointer; transition: transform 0.2s;" onclick="openLightbox(this.src, 'Best Technical Presenter Award Certificate - IEEE ICCIT 2024')" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
     </div>
-  </section>
+
+    <!-- Award 2: Runner-up Prize Math Olympiad -->
+    <div class="award-card">
+      <div class="award-icon">🥈</div>
+      <div class="award-name">Runner-up Prize</div>
+      <div class="award-org">NSTU Math Olympiad</div>
+      <div class="award-date">March 2023</div>
+      <div class="award-desc">Achieved second position (Runner-up) in the Math Olympiad organized by NSTU Math Club. Received the prize from a faculty member in the presence of all department faculty members.</div>
+      <div class="award-certificate" style="margin-top: 1rem;">
+        <img src="../images/certificates/math-olympiad-runnerup.jpg" alt="Math Olympiad Runner-up Prize" class="certificate-img" style="width: 100%; max-width: 280px; border-radius: 8px; border: 1px solid var(--gray-200); cursor: pointer; transition: transform 0.2s;" onclick="openLightbox(this.src, 'Runner-up Prize - NSTU Math Olympiad 2024')" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+    </div>
+
+    <!-- Award 3: Scientific Article Writing Merit Award -->
+    <div class="award-card">
+      <div class="award-icon">🎖️</div>
+      <div class="award-name">Scientific Article Writing Merit Award</div>
+      <div class="award-org">Science Club, NSTU</div>
+      <div class="award-date">December 2023</div>
+      <div class="award-desc">"Light: A Distinguished Phenomenon in the Universe" — An article exploring how light reveals cosmic mysteries through spectroscopy, redshift, and gravitational lensing — inspired by the James Webb Space Telescope's first images released by NASA on July 12, 2022.</div>
+      <div class="award-certificate" style="margin-top: 1rem;">
+        <img src="../images/certificates/scientific-article-award.jpg" alt="Scientific Article Writing Award" class="certificate-img" style="width: 100%; max-width: 280px; border-radius: 8px; border: 1px solid var(--gray-200); cursor: pointer; transition: transform 0.2s;" onclick="openLightbox(this.src, 'Scientific Article Writing Merit Award - Received from University VC, December 2023')" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <section class="section">
     <span class="section-label">Photo Gallery</span>
@@ -131,7 +182,7 @@ img { cursor: pointer; }
     <div class="gallery-container">
       <div class="gallery-item">
         <div class="gallery-title"><span>🎤</span> IEEE ICCIT 2024 — Best Technical Presenter</div>
-        <p class="gallery-desc">Presented two research papers at the IEEE International Conference on Computer and Information Technology in Cox's Bazar. Recognized with the Best Technical Presentation Award.</p>
+<p class="gallery-desc">A gallery of important moments captured in photos — presenting my first paper "Cross-Cultural Insights in Health: Integrating Machine Learning and Deep Learning for Early Predictive Diabetes Detection" at IEEE ICCIT 2024, receiving the presentation certificate, presenting my second paper "Enhancing Transfer Learning for Medical Image Classification with SMOTE: A Comparative Study," and receiving the second presentation certificate. These moments document the journey from preparation to recognition at the conference.</p>
         <div class="photo-grid grid-2">
           <div class="gallery-photo"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper1-presenting.jpg" alt="Presenting Paper 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>ieee-iccit-paper1-presenting.jpg</small></div>'"></div>
           <div class="gallery-photo"><img src="../images/activities/ieee-iccit-2024/ieee-iccit-paper1-certificate.jpg" alt="Certificate Paper 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏅<br><small>ieee-iccit-paper1-certificate.jpg</small></div>'"></div>
@@ -142,16 +193,17 @@ img { cursor: pointer; }
 
       <div class="gallery-item">
         <div class="gallery-title"><span>🤝</span> NSTU Shine — Bangla Sign Language Program</div>
-        <p class="gallery-desc">Served as Joint Secretary of NSTU Shine. Actively participated in organizing a sign language awareness program for the university community.</p>
+<p class="gallery-desc">As Joint Secretary of NSTU Shine (formerly NSTU Society for the Disabled), I played a key role in organizing and successfully executing a Bangla Sign Language awareness program for the university community. From managing mentors and securing administrative permissions to crowd control, arranging meals for participants, and preparing certificates — this was a massive undertaking that required meticulous planning and coordination. The program was completed successfully, making sign language education more accessible to students.</p>
         <div class="photo-grid grid-2">
           <div class="gallery-photo"><img src="../images/activities/shine-sign-language/shine-sign-language-event.jpg" alt="Sign Language Event" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🤝<br><small>shine-sign-language-event.jpg</small></div>'"></div>
           <div class="gallery-photo"><img src="../images/activities/shine-sign-language/shine-sign-language-prize.jpg" alt="Sign Language Prize" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏆<br><small>shine-sign-language-prize.jpg</small></div>'"></div>
+<div class="gallery-photo"><img src="../images/activities/shine-sign-language/shine-sign-language-booth.jpg" alt="Sign Language Event Booth" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🤝<br><small>shine-sign-language-event.jpg</small></div>'"></div>
         </div>
       </div>
 
       <div class="gallery-item">
         <div class="gallery-title"><span>🔥</span> NSTU Blood Brigade — Fire Safety Program</div>
-        <p class="gallery-desc">Participated in comprehensive fire safety awareness program. Competed in fire safety quiz and secured 2nd prize.</p>
+        <p class="gallery-desc">A 3-day comprehensive fire safety and first aid awareness program organized by NSTU Blood Brigade. We were trained in immediate first aid techniques — including CPR, wound dressing, fracture immobilization, choking management, and burn treatment. Additionally, we learned fire safety protocols such as fire prevention, using different types of fire extinguishers (CO2, dry powder, foam), evacuation procedures, and emergency response coordination. A quiz competition was held based on the training, where I secured 2nd position.</p>
         <div class="photo-grid grid-2">
           <div class="gallery-photo"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-fire-work-1.jpg" alt="Fire Work 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔥<br><small>blood-brigade-fire-work-1.jpg</small></div>'"></div>
           <div class="gallery-photo"><img src="../images/activities/blood-brigade-fire-safety/blood-brigade-fire-work-2.jpg" alt="Fire Work 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔥<br><small>blood-brigade-fire-work-2.jpg</small></div>'"></div>
@@ -162,17 +214,19 @@ img { cursor: pointer; }
 
       <div class="gallery-item">
         <div class="gallery-title"><span>🏃</span> NSTU Blood Brigade — Cancer Awareness Long Run</div>
-        <p class="gallery-desc">Participated as Associate Member in organizing a long-distance charity run for cancer awareness.</p>
+        <p class="gallery-desc">A marathon organized by NSTU Blood Brigade with the theme "Run Against Cancer" to raise cancer awareness. While I did not participate in the run itself, I served as a volunteer at hydration points, ensuring participants stayed hydrated throughout the event. Additionally, I provided technical support to the organizers and contributed my management skills to help coordinate the event smoothly.</p>
         <div class="photo-grid grid-2">
           <div class="gallery-photo"><img src="../images/activities/cancer-awareness-run/cancer-run-event-1.jpg" alt="Run Event 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏃<br><small>cancer-run-event-1.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/cancer-awareness-run/cancer-run-event-3.jpg" alt="Run Event 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏃<br><small>cancer-run-event-3.jpg</small></div>'"></div>
           <div class="gallery-photo"><img src="../images/activities/cancer-awareness-run/cancer-run-event-2.jpg" alt="Run Event 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏃<br><small>cancer-run-event-2.jpg</small></div>'"></div>
         </div>
       </div>
 
       <div class="gallery-item">
         <div class="gallery-title"><span>🔢</span> NSTU Math Club — Math Olympiad (Runner-up)</div>
-        <p class="gallery-desc">Served as Vice President of NSTU Math Club. Competed in university Math Olympiad and achieved runner-up prize.</p>
+        <p class="gallery-desc">Served as Vice President of NSTU Math Club, leading mathematical initiatives and organizing problem-solving workshops for club members. Competed in the university Math Olympiad organized by the club, where participants solved complex problems across algebra, calculus, geometry, and number theory. Achieved the Runner-up prize (2nd position) in the competition, which was attended by faculty members from the Department of Applied Mathematics. Received the award from a faculty member in recognition of mathematical problem-solving excellence.</p>
         <div class="photo-grid grid-2">
+          <div class="gallery-photo"><img src="../images/activities/math-olympiad/math-olympiad-rally.jpg" alt="Pi Day Rally " onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏆<br><small>math-olympiad-prize.jpg</small></div>'"></div>
           <div class="gallery-photo"><img src="../images/activities/math-olympiad/math-olympiad-prize.jpg" alt="Math Prize" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🏆<br><small>math-olympiad-prize.jpg</small></div>'"></div>
           <div class="gallery-photo"><img src="../images/activities/math-olympiad/math-olympiad-event.jpg" alt="Math Event" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🔢<br><small>math-olympiad-event.jpg</small></div>'"></div>
         </div>
@@ -180,18 +234,21 @@ img { cursor: pointer; }
 
       <div class="gallery-item">
         <div class="gallery-title"><span>🎨</span> Chitrokrit — Plate Drawing & Documentation</div>
-        <p class="gallery-desc">Served as Documentation Secretary of Chitrokrit, the university art club. Participated in plate drawing workshops.</p>
+        <p class="gallery-desc"><p class="gallery-desc">Served as Documentation Secretary of Chitrokrit, the university art club. Responsible for documenting all club activities, workshops, art competitions, and exhibitions through photography and written records. Participated in plate drawing workshops and other artistic events, capturing moments that preserve the club's legacy and promote its creative endeavors across the university.</p>
         <div class="photo-grid grid-1">
           <div class="gallery-photo"><img src="../images/activities/chitrokrit-art/chitrokrit-plate-drawing.jpg" alt="Plate Drawing" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🎨<br><small>chitrokrit-plate-drawing.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/chitrokrit-art/Member Recruitment.jpg" alt="Plate Drawing" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🎨<br><small>Member Recruitment.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/chitrokrit-art/Poster.jpg" alt="Plate Drawing" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>🎨<br><small>Poster.jpg</small></div>'"></div>
         </div>
       </div>
 
       <div class="gallery-item">
         <div class="gallery-title"><span>📚</span> Research Methodology Course Completion</div>
-        <p class="gallery-desc">Successfully completed "Introduction to Research Methodology" course from NSTU Research Society.</p>
+        <p class="gallery-desc"><p class="gallery-desc">Successfully completed a 5-month intensive "Introduction to Research Methodology" course (February to June) conducted by NSTU Research Society. The course covered essential research skills including research design, literature review techniques, data collection methods, statistical analysis, academic writing, publication ethics, and manuscript preparation. This comprehensive training strengthened the foundation for conducting rigorous research and authoring peer-reviewed publications.</p>
         <div class="photo-grid grid-2">
           <div class="gallery-photo"><img src="../images/activities/research-methodology/research-methodology-cert-1.jpg" alt="Certificate 1" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📜<br><small>research-methodology-cert-1.jpg</small></div>'"></div>
           <div class="gallery-photo"><img src="../images/activities/research-methodology/research-methodology-cert-2.jpg" alt="Certificate 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📜<br><small>research-methodology-cert-2.jpg</small></div>'"></div>
+          <div class="gallery-photo"><img src="../images/activities/research-methodology/Class.jpg" alt="Certificate 2" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📜<br><small>Class.jpg</small></div>'"></div>
         </div>
       </div>
     </div>
@@ -208,24 +265,77 @@ img { cursor: pointer; }
   </section>
 
   <section id="leadership" class="section">
-    <span class="section-label">Leadership</span>
-    <h2 class="section-title" style="margin-bottom: 2.5rem;">Club Positions & Roles</h2>
-    <div class="club-list">
-      <div class="club-item"><div class="club-period">2024 — 2025</div><div class="club-body"><div class="club-name">NSTU Math Club</div><div class="club-role">Vice President</div><div class="club-desc">Led mathematical initiatives, organized problem-solving workshops, and coordinated the Math Olympiad competition.</div></div></div>
-      <div class="club-item"><div class="club-period">2024 — Present</div><div class="club-body"><div class="club-name">NSTU Shine</div><div class="club-role">Joint Secretary</div><div class="club-desc">Organized social responsibility programs including Bangla sign language awareness initiative.</div><div class="club-link"><a href="https://www.facebook.com/100009184573282/posts/3701833753466074/?app=fbl" target="_blank">📜 Reference Post</a></div></div></div>
-      <div class="club-item"><div class="club-period">2024 — Present</div><div class="club-body"><div class="club-name">Chitrokrit (Art Club)</div><div class="club-role">Documentation Secretary</div><div class="club-desc">Documented all club activities, workshops, and exhibitions.</div><div class="club-link"><a href="https://www.facebook.com/share/p/sg5ZbQiHbras41H2" target="_blank">📜 Reference Post</a></div></div></div>
-      <div class="club-item"><div class="club-period">2023 — 2025</div><div class="club-body"><div class="club-name">NSTU Blood Brigade</div><div class="club-role">Associate Member</div><div class="club-desc">Participated in blood donation drives, fire safety programs, and cancer awareness campaigns.</div></div></div>
+  <span class="section-label">Leadership</span>
+  <h2 class="section-title" style="margin-bottom: 2.5rem;">Club Positions & Roles</h2>
+  <div class="club-list">
+    
+    <div class="club-item">
+      <div class="club-period">March 2024 — Present</div>
+      <div class="club-body">
+        <div class="club-name">NSTU Math Club</div>
+        <div class="club-role">Vice President</div>
+        <div class="club-desc">Leading mathematical initiatives across the university, organizing problem-solving workshops and seminars, coordinating the annual Math Olympiad competition, and mentoring junior students in advanced mathematical concepts and competition preparation.</div>
+      </div>
     </div>
-  </section>
 
-  <section id="volunteer" class="section section-alt">
-    <span class="section-label">Community Service</span>
-    <h2 class="section-title" style="margin-bottom: 2.5rem;">Volunteer Work</h2>
-    <div class="club-list">
-      <div class="club-item"><div class="club-period">March 2025</div><div class="club-body"><div class="club-name">Run for Cancer Awareness 2025</div><div class="club-role">Volunteer</div><div class="club-desc">Participated in organizing a long-distance charity run for cancer awareness.</div><div class="club-link"><a href="https://www.facebook.com/photo.php?fbid=122220388334196651&id=61555899540106&set=a.122099350934196651" target="_blank">📜 Reference Post</a></div></div></div>
-      <div class="club-item"><div class="club-period">December 2024</div><div class="club-body"><div class="club-name">Fire Safety and First Aid Program</div><div class="club-role">Participant</div><div class="club-desc">Participated in comprehensive fire safety awareness program and secured 2nd prize in quiz.</div></div></div>
+    <div class="club-item">
+      <div class="club-period">2024 — Present</div>
+      <div class="club-body">
+        <div class="club-name">NSTU Shine</div>
+        <div class="club-role">Joint Secretary</div>
+        <div class="club-desc">Previously known as NSTU Society for the Disabled. Responsible for organizing social responsibility programs, including a successful Bangla Sign Language awareness initiative. Manage team coordination, event planning, administrative approvals, and participant engagement.</div>
+        <div class="club-link"><a href="https://www.facebook.com/100009184573282/posts/3701833753466074/?app=fbl" target="_blank">📜 Reference Post</a></div>
+      </div>
     </div>
-  </section>
+
+    <div class="club-item">
+      <div class="club-period">2024 — Present</div>
+      <div class="club-body">
+        <div class="club-name">Chitrokrit (Art Club)</div>
+        <div class="club-role">Documentation Secretary</div>
+        <div class="club-desc">Responsible for documenting all club activities, workshops, art competitions, and exhibitions through professional photography and written records. Preserving the club's creative legacy and promoting artistic endeavors across the university.</div>
+        <div class="club-link"><a href="https://www.facebook.com/share/p/sg5ZbQiHbras41H2" target="_blank">📜 Reference Post</a></div>
+      </div>
+    </div>
+
+    <div class="club-item">
+      <div class="club-period">2023 — 2025</div>
+      <div class="club-body">
+        <div class="club-name">NSTU Blood Brigade</div>
+        <div class="club-role">Associate Member</div>
+        <div class="club-desc">Actively participated in blood donation drives, fire safety awareness programs, first aid training sessions, and cancer awareness campaigns. Contributed to community service initiatives promoting health and safety awareness.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="volunteer" class="section section-alt">
+  <span class="section-label">Community Service</span>
+  <h2 class="section-title" style="margin-bottom: 2.5rem;">Volunteer Work</h2>
+  <div class="club-list">
+    
+    <div class="club-item">
+      <div class="club-period">March 2025</div>
+      <div class="club-body">
+        <div class="club-name">Run for Cancer Awareness 2025</div>
+        <div class="club-role">Volunteer & Technical Support</div>
+        <div class="club-desc">Served as a volunteer at hydration points during the marathon organized by NSTU Blood Brigade. Provided technical support to event organizers and contributed management skills to ensure smooth coordination of the "Run Against Cancer" awareness campaign.</div>
+        <div class="club-link"><a href="https://www.facebook.com/photo.php?fbid=122220388334196651&id=61555899540106&set=a.122099350934196651" target="_blank">📜 Reference Post</a></div>
+      </div>
+    </div>
+
+    <div class="club-item">
+      <div class="club-period">December 2024</div>
+      <div class="club-body">
+        <div class="club-name">Fire Safety & First Aid Program</div>
+        <div class="club-role">Participant</div>
+        <div class="club-desc">Completed a comprehensive 3-day fire safety and first aid training program organized by NSTU Blood Brigade. Learned CPR, wound dressing, fracture immobilization, choking management, fire extinguisher operation, and evacuation procedures. Secured 2nd position in the concluding quiz competition.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
 </div>
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -235,26 +345,48 @@ img { cursor: pointer; }
 </div>
 
 <footer class="sitefooter">
-  © 2025 H.M. Nahid Kawsar · <a href="mailto:nahid.amth@gmail.com">nahid.amth@gmail.com</a>
+  <div>© 2025 H.M. Nahid Kawsar · Noakhali, Bangladesh</div>
+  <div class="footer-links">
+    <a href="mailto:nahid.amth@gmail.com"><i class="fas fa-envelope"></i> nahid.amth@gmail.com</a>
+    <a href="https://github.com/nahidkawsar" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://scholar.google.com/citations?user=56lmtYcAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+    <a href="https://orcid.org/0009-0000-8992-1882" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+  </div>
+  <div class="last-updated">Last updated: March 2026</div>
 </footer>
 
 <script src="../nav.js"></script>
 <script>
+function initNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+  }
+}
 initNav();
+
 function openLightbox(imageSrc, caption) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
-  lightboxImg.src = imageSrc;
-  lightboxCaption.textContent = caption || 'Image';
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  if (imageSrc && imageSrc !== 'undefined') {
+    lightboxImg.src = imageSrc;
+    lightboxCaption.textContent = caption || 'Image';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 }
+
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
 }
+
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', function(e) {
@@ -263,7 +395,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+document.addEventListener('keydown', function(e) { 
+  if (e.key === 'Escape') closeLightbox(); 
+});
 </script>
 </body>
 </html>

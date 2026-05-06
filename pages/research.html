@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.00">
 <title>Research — H.M. Nahid Kawsar</title>
 <link rel="stylesheet" href="../style.css">
 <style>
 .research-hero {
   background: var(--blue-900);
   color: var(--white);
-  padding: 3rem 6rem;
+  padding: 0.25rem 6rem;
   width: 100%;
   box-sizing: border-box;
 }
 .research-hero h1 { font-family: var(--serif); font-size: 2.8rem; font-weight: 600; margin: 0.5rem 0; }
-.research-hero p { color: var(--blue-200); max-width: 650px; margin-top: 0.75rem; font-weight: 300; text-align: justify; }
-.stat-row { display: flex; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap; }
+.research-hero p { color: var(--blue-200); max-width: 100%; margin-top: 0.95rem; font-weight: 300; text-align: justify; }
+.stat-row { display: flex; gap: 2.5rem; margin-top: .5rem; flex-wrap: wrap; }
 .r-stat { text-align: center; }
 .r-stat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; color: var(--white); line-height: 1; }
 .r-stat-label { font-size: 0.7rem; color: var(--blue-200); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
@@ -70,17 +70,105 @@
 }
 .ra-photo:hover::after { opacity: 1; }
 .ra-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.skills-grid, .trainings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-.skill-card, .training-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 1rem; transition: all 0.2s; text-align: justify; }
-.skill-card:hover, .training-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(43,77,184,0.08); border-color: var(--accent); }
-.skill-card span, .training-card span { font-size: 1.3rem; display: block; margin-bottom: 0.5rem; }
-.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
-.lightbox.active { display: flex; }
-.lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
-.lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; }
-.lightbox-close:hover { color: var(--accent); }
-.lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
-img { cursor: pointer; }
+
+/* Professional Skills & Training Sections - Redesigned for Scholarship View */
+.prof-skills-section {
+  background: var(--white);
+  border-radius: 20px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+.skills-professional {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.skill-prof-item {
+  background: var(--gray-50);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+.skill-prof-item:hover {
+  background: var(--white);
+  box-shadow: 0 6px 14px rgba(43,77,184,0.08);
+  transform: translateY(-2px);
+}
+.skill-prof-title {
+  font-weight: 700;
+  color: var(--blue-900);
+  font-size: 0.9rem;
+  letter-spacing: -0.2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+.skill-prof-desc {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+.training-grid-prof {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.training-card-prof {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.training-card-prof:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 14px rgba(43,77,184,0.06);
+}
+.training-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+.training-content {
+  flex: 1;
+}
+.training-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.training-org {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+.training-date {
+  font-size: 0.7rem;
+  color: var(--gray-500);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+hr.divider-light {
+  margin: 2rem 0 1rem;
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--gray-200), transparent);
+}
 @media (max-width: 900px) {
   .research-hero { padding: 3rem 1.5rem; }
   .paper-header { flex-direction: column; gap: 0.75rem; padding: 1.25rem; }
@@ -90,6 +178,13 @@ img { cursor: pointer; }
   .ra-card { grid-template-columns: 1fr; }
   .stat-row { gap: 1.5rem; justify-content: center; }
 }
+.lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; cursor: pointer; align-items: center; justify-content: center; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.lightbox-close:hover { color: var(--accent); }
+.lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
+img { cursor: pointer; }
 </style>
 </head>
 <body>
@@ -98,7 +193,6 @@ img { cursor: pointer; }
   <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="../index.html">Home</a>
-    <a href="about.html">About</a>
     <a href="research.html">Research</a>
     <a href="activities.html">Activities</a>
     <a href="certificates.html">Certificates</a>
@@ -110,14 +204,12 @@ img { cursor: pointer; }
 
 <div class="page">
   <div class="research-hero">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <span class="section-label" style="color: var(--blue-200);">Scholarship</span>
+    <div style="max-width: 1900px; margin: 0 auto;">
       <h1>Research & Publications</h1>
-      <p>Peer-reviewed research across machine learning, mathematical modelling, and biomedical signal processing — published in high-impact international journals and presented at IEEE conferences.</p>
+      <p>Peer-reviewed research spanning machine learning, mathematical modelling, and biomedical applications — published in SCIE Q1 and ESCI Q2 indexed journals and presented at IEEE international conferences. My work applies mathematical rigour to build efficient, interpretable models for real-world problems in healthcare and disease dynamics.</p>
       <div class="stat-row">
         <div class="r-stat"><div class="r-stat-num">4</div><div class="r-stat-label">Published Papers</div></div>
-        <div class="r-stat"><div class="r-stat-num">1</div><div class="r-stat-label">In Review</div></div>
-        <div class="r-stat"><div class="r-stat-num">1</div><div class="r-stat-label">In Preparation</div></div>
+        <div class="r-stat"><div class="r-stat-num">2</div><div class="r-stat-label">In Review</div></div>
         <div class="r-stat"><div class="r-stat-num">4.9</div><div class="r-stat-label">Top Impact Factor</div></div>
       </div>
     </div>
@@ -154,7 +246,7 @@ img { cursor: pointer; }
             <div class="paper-authors">M. H. Bijoy, <strong>H. M. N. Kawsar</strong>, M. T. Islam, K. Hasan, and S. Ahn</div>
             <div class="paper-journal"><em>Biomedical Signal Processing and Control</em>, Volume 113, Article 109132 (2026)</div>
             <div class="paper-abstract">This study proposes a machine learning-based framework for respiratory disease detection via lung sound analysis, integrated into a real-time embedded system. The ExtraTrees classifier achieved 99.87% accuracy with 10-fold cross-validation on the ICBHI dataset and 93.68% accuracy on the external KAUH dataset.</div>
-            <div class="paper-links"><a href="https://doi.org/10.1016/j.bspc.2025.109132" class="paper-link paper-link-doi" target="_blank">DOI: 10.1016/j.bspc.2025.109132</a></div>
+                       <div class="paper-links"><a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" class="paper-link paper-link-doi" target="_blank">View Article →</a></div>
           </div>
         </div>
         <div class="coauthors">
@@ -237,60 +329,64 @@ img { cursor: pointer; }
     </div>
 
     <div style="margin-top: 2rem;">
-      <div class="paper" style="border-color: var(--blue-100); background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%); margin-bottom: 1rem;">
+      <!-- Paper 5: Under Review -->
+      <div class="paper" style="border-color: var(--blue-100); background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%);">
         <div class="paper-header">
           <div class="paper-index" style="color: var(--blue-400);">05</div>
           <div class="paper-meta">
-            <div class="paper-badges"><span class="badge" style="background:#FFF4E5;color:#7C4A00;border:1px solid #FFCC80;">Under Review · ESCI Q1 · Impact Factor: 5.6</span></div>
-            <div class="paper-title">Improving User Experience in dApps with ML and AI-Driven Personalized Onboarding and In-App Guidance</div>
-            <div class="paper-authors">M. Farooq, <strong>H. M. N. Kawsar</strong>, M. W. Iqbal, M. T. Islam, and A. Karim</div>
-            <div class="paper-journal"><em>Blockchain: Research and Applications</em> — Under Review</div>
-          </div>
-        </div>
-      </div>
-      <div class="paper" style="border-color: var(--gray-200); background: var(--gray-50);">
-        <div class="paper-header">
-          <div class="paper-index" style="color: var(--gray-400);">06</div>
-          <div class="paper-meta">
-            <div class="paper-badges"><span class="badge" style="background:var(--gray-200);color:var(--gray-600);border:1px solid var(--gray-200);">In Preparation</span></div>
+            <div class="paper-badges"><span class="badge" style="background:#E8F0FE;color:#1A56DB;border:1px solid #B3D4FF;">Under Review · Alexandria Engineering Journal</span></div>
             <div class="paper-title">UniMind-39: A Dataset to Benchmark Machine Learning Models for Student Mental Health Assessment</div>
             <div class="paper-authors"><strong>H. M. N. Kawsar</strong>, M. T. Islam, M. M. Hasan, and M. H. Bijoy</div>
-            <div class="paper-journal">Manuscript in preparation — Expected submission 2025</div>
+            <div class="paper-journal"><em>Alexandria Engineering Journal</em> — Under Review (Submitted: 2026)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paper 6: Under Review Blockchain -->
+      <div class="paper" style="border-color: var(--blue-100); background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%); margin-bottom: 1rem;">
+        <div class="paper-header">
+          <div class="paper-index" style="color: var(--blue-400);">06</div>
+          <div class="paper-meta">
+            <div class="paper-badges"><span class="badge" style="background:#FFF4E5;color:#7C4A00;border:1px solid #FFCC80;">Under Review · Blockchain: Research and Applications</span></div>
+            <div class="paper-title">Improving User Experience in dApps with ML and AI-Driven Personalized Onboarding and In-App Guidance</div>
+            <div class="paper-authors">M. Farooq, <strong>H. M. N. Kawsar</strong>, M. W. Iqbal, M. T. Islam, and A. Karim</div>
+            <div class="paper-journal"><em>Blockchain: Research and Applications Journal</em> — Under Review (Submitted: 2026)</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="section">
-    <span class="section-label">Core Competencies</span>
-    <h2 class="section-title" style="margin-bottom: 1.5rem;">Research Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card"><span>🐍</span>Python Programming (NumPy, Pandas, Scikit-learn)</div>
-      <div class="skill-card"><span>🧠</span>Deep Learning (TensorFlow, Keras)</div>
-      <div class="skill-card"><span>📊</span>Statistical Modelling & Analysis</div>
-      <div class="skill-card"><span>🔍</span>Natural Language Processing</div>
-      <div class="skill-card"><span>📈</span>Time-Series Forecasting (GARCH Models)</div>
-      <div class="skill-card"><span>🦠</span>Epidemiological Modeling (SIR/SEIR)</div>
-      <div class="skill-card"><span>🔄</span>Transfer Learning & Domain Adaptation</div>
-      <div class="skill-card"><span>💡</span>Explainable AI (SHAP, LIME)</div>
-      <div class="skill-card"><span>✍️</span>Scientific Writing & Publishing (LaTeX)</div>
-      <div class="skill-card"><span>📚</span>Systematic Literature Review</div>
+  <!-- PROFESSIONAL RESEARCH SKILLS SECTION (Redesigned) -->
+  <section id="skills" class="section prof-skills-section">
+    <span class="section-label">Methodological Expertise</span>
+    <h2 class="section-title" style="margin-bottom: 1rem;">Research Competencies</h2>
+    <div class="skills-professional">
+      <div class="skill-prof-item"><div class="skill-prof-title">📐 Mathematical Epidemiology & ODE Modelling</div><div class="skill-prof-desc">SIR/SEIR frameworks, RK4-FNN hybrid methods, parameter estimation, and sensitivity analysis for infectious disease dynamics.</div></div>
+      <div class="skill-prof-item"><div class="skill-prof-title">🧠 Deep Learning & Neural Architectures</div><div class="skill-prof-desc">TensorFlow/Keras, CNN transfer learning (ResNet, EfficientNet), FNN optimization, and embedded ML for medical diagnostics.</div></div>
+      <div class="skill-prof-item"><div class="skill-prof-title">📉 Statistical Learning & Explainable AI</div><div class="skill-prof-desc">SHAP, LIME, GARCH models, cross-validation strategies, and robust inference for biomedical data.</div></div>
+      <div class="skill-prof-item"><div class="skill-prof-title">⚙️ Scientific Computing & Reproducibility</div><div class="skill-prof-desc">Python (NumPy, Pandas, Scikit-learn), LaTeX, version control (Git), and high-performance experiment tracking.</div></div>
+      <div class="skill-prof-item"><div class="skill-prof-title">🩺 Biomedical Signal & Image Analysis</div><div class="skill-prof-desc">Respiratory sound classification, medical image preprocessing, SMOTE for class imbalance, and transfer learning adaptation.</div></div>
+      <div class="skill-prof-item"><div class="skill-prof-title">📄 Scholarly Communication & Peer Review</div><div class="skill-prof-desc">First-author publications in Q1/Q2 journals, conference presentations, and systematic literature mapping.</div></div>
     </div>
   </section>
 
+  <!-- PROFESSIONAL TRAININGS & WORKSHOPS (Redesigned) -->
   <section id="trainings" class="section section-alt">
-    <span class="section-label">Professional Development</span>
-    <h2 class="section-title" style="margin-bottom: 1.5rem;">Trainings & Workshops</h2>
-    <div class="trainings-grid">
-      <div class="training-card"><span>💼</span>Employability Skills Program<br><small>Wadhwani Foundation | November 2024</small></div>
-      <div class="training-card"><span>🤖</span>NLP End-to-End Project Implementation<br><small>iNeuron.ai | March 2024</small></div>
-      <div class="training-card"><span>📊</span>Data Science Foundations<br><small>Great Learning | March 2024</small></div>
-      <div class="training-card"><span>📈</span>Power BI Data Analysis & Visualization<br><small>Simplilearn | March 2024</small></div>
-      <div class="training-card"><span>🐍</span>Machine Learning with Python<br><small>Udemy | January 2024</small></div>
-      <div class="training-card"><span>📖</span>AI-Powered Literature Review Workshop<br><small>ABS Research Academy | September 2025</small></div>
-      <div class="training-card"><span>🔬</span>Introduction to Research Methodology<br><small>NSTU Research Society | February 2023</small></div>
+    <span class="section-label">Advanced Training</span>
+    <h2 class="section-title" style="margin-bottom: 0.5rem;">Certified Professional Development</h2>
+    <div class="training-grid-prof">
+      <div class="training-card-prof"><div class="training-icon">📘</div><div class="training-content"><div class="training-title">Systematic Literature Review & AI-assisted Research</div><div class="training-org">ABS Research Academy</div><div class="training-date">Sept 2025 | 12h intensive workshop</div></div></div>
+      <div class="training-card-prof"><div class="training-icon">💼</div><div class="training-content"><div class="training-title">Employability Skills for Research Scientists</div><div class="training-org">Wadhwani Foundation</div><div class="training-date">Nov 2024 | Professional certification</div></div></div>
+      <div class="training-card-prof"><div class="training-icon">🤖</div><div class="training-content"><div class="training-title">End-to-End NLP Project Implementation</div><div class="training-org">iNeuron.ai</div><div class="training-date">Mar 2024 | Hands-on project based</div></div></div>
+      <div class="training-card-prof"><div class="training-icon">📊</div><div class="training-content"><div class="training-title">Data Science Foundations for Research</div><div class="training-org">Great Learning</div><div class="training-date">Mar 2024 | Accredited program</div></div></div>
+      <div class="training-card-prof"><div class="training-icon">📈</div><div class="training-content"><div class="training-title">Power BI for Data Analysis & Visualization</div><div class="training-org">Simplilearn</div><div class="training-date">Mar 2024 | Industry-recognized</div></div></div>
+      <div class="training-card-prof"><div class="training-icon">🐍</div><div class="training-content"><div class="training-title">Machine Learning with Python (Advanced)</div><div class="training-org">Udemy</div><div class="training-date">Jan 2024 | 40+ hours</div></div></div>
+      <div class="training-card-prof"><div class="training-icon">🔬</div><div class="training-content"><div class="training-title">Research Methodology & Scientific Writing</div><div class="training-org">NSTU Research Society</div><div class="training-date">Feb 2023 | Workshop series</div></div></div>
+      <div class="training-card-prof"><div class="training-icon">📖</div><div class="training-content"><div class="training-title">LaTeX for Academic Publishing</div><div class="training-org">Self-directed / Applied in 4+ manuscripts</div><div class="training-date">Ongoing proficiency</div></div></div>
     </div>
+    <hr class="divider-light">
+    <div style="margin-top: 0.75rem; font-size: 0.75rem; text-align: center; color: var(--gray-500);">Continuous upskilling in computational epidemiology, deep learning, and reproducible research workflows.</div>
   </section>
 </div>
 
@@ -306,15 +402,27 @@ img { cursor: pointer; }
 
 <script src="../nav.js"></script>
 <script>
+function initNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+  }
+}
 initNav();
 function openLightbox(imageSrc, caption) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
-  lightboxImg.src = imageSrc;
-  lightboxCaption.textContent = caption || 'Image';
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  if (imageSrc && imageSrc !== 'undefined') {
+    lightboxImg.src = imageSrc;
+    lightboxCaption.textContent = caption || 'Image';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 }
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
