@@ -9,7 +9,7 @@
 .personal-hero {
   background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 100%);
   color: var(--white);
-  padding: 2rem 6rem;
+  padding: .5rem 6rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -120,100 +120,14 @@
 .lightbox-close:hover { color: var(--accent); }
 .lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
 img { cursor: pointer; }
-
-/* MOBILE FIXES */
 @media (max-width: 900px) {
-  .personal-hero { 
-    padding: 2rem 1.5rem; 
-  }
-  .personal-hero h1 { 
-    font-size: 2rem; 
-  }
-  .personal-hero p { 
-    font-size: 0.9rem; 
-  }
-  
-  .family-card { 
-    grid-template-columns: 1fr; 
-    text-align: center; 
-    padding: 1.5rem;
-  }
-  .family-photo { 
-    height: 200px; 
-  }
-  .family-name { 
-    font-size: 1.5rem; 
-  }
-  .family-desc { 
-    font-size: 0.85rem; 
-  }
-  
-  .workspace-card { 
-    grid-template-columns: 1fr; 
-    text-align: center; 
-    padding: 1.5rem;
-  }
-  .workspace-photo { 
-    order: unset; 
-    margin-top: 1rem; 
-    height: 200px;
-  }
-  .workspace-content { 
-    order: unset; 
-  }
-  .workspace-title { 
-    font-size: 1.5rem; 
-  }
-  .workspace-desc { 
-    font-size: 0.85rem; 
-  }
-  
-  .books-grid { 
-    grid-template-columns: 1fr; 
-    gap: 1.5rem;
-  }
-  .book-cover { 
-    height: 220px; 
-  }
-  .book-title { 
-    font-size: 1rem; 
-  }
-  .book-desc { 
-    font-size: 0.8rem; 
-  }
-  
-  .section-subtitle { 
-    font-size: 1.2rem; 
-  }
-  
-  .hobby-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 0.75rem;
-  }
-  .hobby-card { 
-    padding: 1rem; 
-  }
-  .hobby-name { 
-    font-size: 0.9rem; 
-  }
-  .hobby-desc { 
-    font-size: 0.7rem; 
-  }
-}
-
-@media (max-width: 480px) {
-  .hobby-grid { 
-    grid-template-columns: 1fr; 
-  }
-  .family-photo { 
-    height: 180px; 
-  }
-  .workspace-photo { 
-    height: 180px; 
-  }
-  .book-cover { 
-    height: 200px; 
-  }
+  .personal-hero { padding: .5rem 1.5rem; }
+  .family-card { grid-template-columns: 1fr; text-align: center; }
+  .workspace-card { grid-template-columns: 1fr; text-align: center; }
+  .workspace-photo { order: unset; margin-top: 1rem; }
+  .workspace-content { order: unset; }
+  .books-grid { grid-template-columns: 1fr; }
+  .book-cover { height: 240px; }
 }
 </style>
 </head>
@@ -223,6 +137,7 @@ img { cursor: pointer; }
   <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
     <a href="../index.html">Home</a>
+    <a href="../Education.html">Education</a>
     <a href="research.html">Research</a>
     <a href="activities.html">Activities</a>
     <a href="certificates.html">Certificates</a>
@@ -316,9 +231,9 @@ img { cursor: pointer; }
         </div>
       </div>
       <div class="book-card manuscript-card">
-        <div class="book-cover"><img src="../images/books/memiraze.jpg" alt="Sayost" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📖<br><small>memiraze.jpg</small></div>'"></div>
+        <div class="book-cover"><img src="../images/books/memiraze.jpg" alt="The Memiraze" onerror="this.parentElement.innerHTML='<div style=\'height:100%;display:flex;align-items:center;justify-content:center;\'>📖<br><small>memiraze.jpg</small></div>'"></div>
         <div class="book-info">
-          <div class="book-title">Sayost</div>
+          <div class="book-title">The Memiraze</div>
           <div class="book-author">H.M. Nahid Kawsar (Unpublished Manuscript)</div>
           <div class="book-desc">A time-travel suspense thriller with horror elements. A group of friends discovers a hidden canal beneath an ancient king's palace. They uncover the truth behind mysterious deaths, a brutally killed monkey hanging from the ceiling, and a silent mysterious girl. A gripping tale of love at first sight that shapes an entire destiny.</div>
           <span class="book-badge">⏰ Time Travel · Suspense · Horror</span>
