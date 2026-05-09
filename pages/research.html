@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research — H.M. Nahid Kawsar</title>
+<title>Research — H.M. Nahid Kawsar with Journal Covers</title>
 <link rel="stylesheet" href="../style.css">
 <style>
 .research-hero {
@@ -48,6 +48,48 @@
 .coauthor-info { display: flex; flex-direction: column; }
 .coauthor-name { font-size: 0.8rem; font-weight: 600; color: var(--ink); }
 .coauthor-affil { font-size: 0.65rem; color: var(--gray-500); max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* New: Journal cover thumbnail + styling */
+.paper-cover-col {
+  flex-shrink: 0;
+  width: 110px;
+  margin-top: 0.2rem;
+}
+.paper-cover-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid var(--gray-200);
+  background: #f8f9fc;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.paper-cover-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(43,77,184,0.2);
+}
+.paper-cover-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(145deg, #eef2ff, #ffffff);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--blue-300);
+  font-size: 0.7rem;
+  color: var(--blue-600);
+  text-align: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.paper-cover-placeholder span:first-child {
+  font-size: 1.8rem;
+  opacity: 0.6;
+}
 .ra-card { background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%); border: 1px solid var(--blue-100); border-radius: 16px; padding: 2rem; display: grid; grid-template-columns: 1fr 200px; gap: 2rem; }
 .ra-role { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--blue-900); margin-bottom: 0.4rem; }
 .ra-org { color: var(--accent); font-size: 0.88rem; font-weight: 500; margin-bottom: 0.3rem; }
@@ -179,121 +221,33 @@ img { cursor: pointer; }
 
 /* MOBILE FIXES */
 @media (max-width: 900px) {
-  .research-hero { 
-    padding: 2rem 1.5rem; 
-  }
-  .research-hero h1 { 
-    font-size: 2rem; 
-  }
-  .research-hero p { 
-    font-size: 0.9rem; 
-  }
-  .stat-row { 
-    gap: 1rem; 
-    justify-content: center; 
-  }
-  .r-stat-num { 
-    font-size: 1.6rem; 
-  }
-  .r-stat-label { 
-    font-size: 0.65rem; 
-  }
-  
-  .paper-header { 
-    flex-direction: column; 
-    gap: 0.75rem; 
-    padding: 1.25rem; 
-  }
-  .paper-index { 
-    font-size: 1.8rem; 
-    width: auto; 
-  }
-  .paper-title { 
-    font-size: 1rem; 
-  }
-  .paper-authors, .paper-journal { 
-    font-size: 0.75rem; 
-  }
-  .paper-abstract { 
-    font-size: 0.85rem; 
-  }
-  .paper-badges .badge { 
-    font-size: 0.65rem; 
-  }
-  .paper-links { 
-    flex-direction: column; 
-  }
-  .paper-link { 
-    text-align: center; 
-  }
-  
-  .coauthors { 
-    padding: 1rem 1.25rem; 
-  }
-  .coauthors-grid { 
-    gap: 0.5rem; 
-  }
-  .coauthor-card { 
-    width: calc(50% - 0.5rem); 
-  }
-  .coauthor-name { 
-    font-size: 0.7rem; 
-  }
-  .coauthor-affil { 
-    font-size: 0.6rem; 
-    white-space: normal; 
-    max-width: 120px; 
-  }
-  
-  .ra-card { 
-    grid-template-columns: 1fr; 
-    gap: 1rem; 
-    padding: 1.25rem; 
-  }
-  .ra-role { 
-    font-size: 1.1rem; 
-  }
-  .ra-desc { 
-    font-size: 0.85rem; 
-  }
-  .ra-photo { 
-    height: 140px; 
-  }
-  
-  .skills-professional { 
-    grid-template-columns: 1fr; 
-  }
-  .skill-prof-item { 
-    padding: 0.75rem 1rem; 
-  }
-  .skill-prof-title { 
-    font-size: 0.85rem; 
-  }
-  .skill-prof-desc { 
-    font-size: 0.75rem; 
-  }
-  
-  .training-grid-prof { 
-    grid-template-columns: 1fr; 
-  }
-  .training-card-prof { 
-    padding: 0.75rem 1rem; 
-  }
-  .training-title { 
-    font-size: 0.85rem; 
-  }
+  .research-hero { padding: 2rem 1.5rem; }
+  .research-hero h1 { font-size: 2rem; }
+  .research-hero p { font-size: 0.9rem; }
+  .stat-row { gap: 1rem; justify-content: center; }
+  .r-stat-num { font-size: 1.6rem; }
+  .r-stat-label { font-size: 0.65rem; }
+  .paper-header { flex-direction: column; gap: 0.75rem; padding: 1.25rem; }
+  .paper-index { font-size: 1.8rem; width: auto; }
+  .paper-cover-col { width: 100%; display: flex; justify-content: center; margin-top: 0.5rem; }
+  .paper-cover-img, .paper-cover-placeholder { max-width: 140px; width: auto; }
+  .paper-title { font-size: 1rem; }
+  .paper-authors, .paper-journal { font-size: 0.75rem; }
+  .paper-abstract { font-size: 0.85rem; }
+  .paper-links { flex-direction: column; }
+  .paper-link { text-align: center; }
+  .coauthors { padding: 1rem 1.25rem; }
+  .coauthors-grid { gap: 0.5rem; }
+  .coauthor-card { width: calc(50% - 0.5rem); }
+  .coauthor-name { font-size: 0.7rem; }
+  .coauthor-affil { font-size: 0.6rem; white-space: normal; max-width: 120px; }
+  .ra-card { grid-template-columns: 1fr; gap: 1rem; padding: 1.25rem; }
+  .skills-professional { grid-template-columns: 1fr; }
+  .training-grid-prof { grid-template-columns: 1fr; }
 }
-
 @media (max-width: 480px) {
-  .coauthor-card { 
-    width: 100%; 
-  }
-  .coauthor-affil { 
-    max-width: none; 
-  }
-  .paper-links .paper-link { 
-    width: 100%; 
-  }
+  .coauthor-card { width: 100%; }
+  .paper-links .paper-link { width: 100%; }
 }
 </style>
 </head>
@@ -346,10 +300,16 @@ img { cursor: pointer; }
     <span class="section-label">Publications</span>
     <h2 class="section-title" style="margin-bottom: 2rem;">Published Research</h2>
     <div class="papers">
-      <!-- Paper 1 -->
+      <!-- Paper 1 with Journal Cover Placeholder -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">01</div>
+          <div class="paper-cover-col">
+            <!-- Journal cover image placeholder: Biomedical Signal Processing and Control -->
+            <img class="paper-cover-img" src="../images/journal-covers/cover-bspc.jpg" 
+                 alt="Biomedical Signal Processing and Control Cover" 
+                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'paper-cover-placeholder\' onclick=\'openLightbox(null, \\\'Journal Cover: Biomedical Signal Processing and Control (Placeholder). Add image at images/journal-covers/cover-bspc.jpg\\\')\'><span>📘</span><span>Cover Preview</span><span style=\'font-size:9px;\'>bspc.jpg</span></div>';">
+          </div>
           <div class="paper-meta">
             <div class="paper-badges"><span class="badge badge-gold">SCIE · Q1</span><span class="badge badge-blue">Impact Factor: 4.9</span><span class="badge badge-green">Published: 2026</span></div>
             <div class="paper-title">Embedded Machine Learning Framework for Respiratory Disease Detection</div>
@@ -361,19 +321,19 @@ img { cursor: pointer; }
         </div>
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
-          <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/mehadi-hasan-bijoy.jpg" alt="M. H. Bijoy" onerror="this.innerHTML='<div class=\'initial\'>MB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Mehadi Hasan Bijoy</span><span class="coauthor-affil">YSD Consulting, UK</span></div></a>
-            <a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/md-tanvir-islam.jpg" alt="M. T. Islam" onerror="this.innerHTML='<div class=\'initial\'>TI</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Md Tanvir Islam</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/kamrul-hasan.jpg" alt="K. Hasan" onerror="this.innerHTML='<div class=\'initial\'>KH</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Kamrul Hasan</span><span class="coauthor-affil">CUET, Chittagong</span></div></a>
-            <a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/sangtae-ahn.jpg" alt="S. Ahn" onerror="this.innerHTML='<div class=\'initial\'>SA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Sangtae Ahn</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
-          </div>
+          <div class="coauthors-grid"><!-- same as original --><a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/mehadi-hasan-bijoy.jpg" alt="M. H. Bijoy" onerror="this.innerHTML='<div class=\'initial\'>MB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Mehadi Hasan Bijoy</span><span class="coauthor-affil">YSD Consulting, UK</span></div></a><a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/md-tanvir-islam.jpg" alt="M. T. Islam" onerror="this.innerHTML='<div class=\'initial\'>TI</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Md Tanvir Islam</span><span class="coauthor-affil">Kyungpook National University</span></div></a><a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/kamrul-hasan.jpg" alt="K. Hasan" onerror="this.innerHTML='<div class=\'initial\'>KH</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Kamrul Hasan</span><span class="coauthor-affil">CUET, Chittagong</span></div></a><a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/sangtae-ahn.jpg" alt="S. Ahn" onerror="this.innerHTML='<div class=\'initial\'>SA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Sangtae Ahn</span><span class="coauthor-affil">Kyungpook National University</span></div></a></div>
         </div>
       </div>
 
-      <!-- Paper 2 -->
+      <!-- Paper 2 with Journal Cover -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">02</div>
+          <div class="paper-cover-col">
+            <img class="paper-cover-img" src="../images/journal-covers/cover-arab-journal.jpg" 
+                 alt="Arab Journal of Basic and Applied Sciences Cover" 
+                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'paper-cover-placeholder\' onclick=\'openLightbox(null, \\\'Journal Cover: Arab Journal of Basic and Applied Sciences. Place image at images/journal-covers/cover-arab-journal.jpg\\\')\'><span>📖</span><span>Cover</span><span>arab-journal.jpg</span></div>';">
+          </div>
           <div class="paper-meta">
             <div class="paper-badges"><span class="badge badge-gold">ESCI · Q2</span><span class="badge badge-blue">Impact Factor: 3.5</span><span class="badge badge-green">Published: 2026</span></div>
             <div class="paper-title">A Computationally Efficient RK4-FNN Hybrid Approach for High-Precision Tuberculosis Dynamics Modeling: SIR/SEIR Model Applications</div>
@@ -383,20 +343,18 @@ img { cursor: pointer; }
             <div class="paper-links"><a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" class="paper-link paper-link-doi" target="_blank">View Article →</a></div>
           </div>
         </div>
-        <div class="coauthors">
-          <div class="coauthors-label">Contributing Authors</div>
-          <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/saleha-begum.jpg" alt="S. Begum" onerror="this.innerHTML='<div class=\'initial\'>SB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Saleha Begum</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/forhad-mahmud.jpg" alt="F. Mahmud" onerror="this.innerHTML='<div class=\'initial\'>FM</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Forhad Mahmud</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/m-ali-akbar.jpg" alt="M. A. Akbar" onerror="this.innerHTML='<div class=\'initial\'>MA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Prof. Dr. M. Ali Akbar</span><span class="coauthor-affil">University of Rajshahi (Top 2% Scientist)</span></div></a>
-          </div>
-        </div>
+        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid"><a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/saleha-begum.jpg" alt="S. Begum" onerror="this.innerHTML='<div class=\'initial\'>SB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Saleha Begum</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a><a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/forhad-mahmud.jpg" alt="F. Mahmud" onerror="this.innerHTML='<div class=\'initial\'>FM</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Forhad Mahmud</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a><a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/m-ali-akbar.jpg" alt="M. A. Akbar" onerror="this.innerHTML='<div class=\'initial\'>MA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Prof. Dr. M. Ali Akbar</span><span class="coauthor-affil">University of Rajshahi (Top 2% Scientist)</span></div></a></div></div>
       </div>
 
-      <!-- Paper 3 -->
+      <!-- Paper 3 (IEEE) – optional cover; I'll add a generic proceedings cover placeholder -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">03</div>
+          <div class="paper-cover-col">
+            <img class="paper-cover-img" src="../images/journal-covers/cover-ieee-iccit.jpg" 
+                 alt="IEEE ICCIT 2024 Cover" 
+                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'paper-cover-placeholder\' onclick=\'openLightbox(null, \\\'Conference proceedings cover: IEEE ICCIT 2024. Add image at images/journal-covers/cover-ieee-iccit.jpg\\\')\'><span>⚡</span><span>IEEE ICCIT</span><span>iccit.jpg</span></div>';">
+          </div>
           <div class="paper-meta">
             <div class="paper-badges"><span class="badge badge-blue">IEEE ICCIT 2024</span><span class="badge badge-gold">Best Technical Presenter</span><span class="badge badge-green">Published: 2024</span></div>
             <div class="paper-title">Cross-Cultural Insights in Health: Integrating Machine Learning and Deep Learning for Early Predictive Diabetes Detection</div>
@@ -406,19 +364,18 @@ img { cursor: pointer; }
             <div class="paper-links"><a href="https://ieeexplore.ieee.org/document/11022194" class="paper-link paper-link-doi" target="_blank">DOI: 10.1109/ICCIT64611.2024.11022194</a><a href="https://ieeexplore.ieee.org/document/11022194" class="paper-link paper-link-ieee" target="_blank">IEEE Xplore</a></div>
           </div>
         </div>
-        <div class="coauthors">
-          <div class="coauthors-label">Contributing Authors</div>
-          <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
-          </div>
-        </div>
+        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid"><a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a><a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a></div></div>
       </div>
 
-      <!-- Paper 4 -->
+      <!-- Paper 4 (Second IEEE) -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">04</div>
+          <div class="paper-cover-col">
+            <img class="paper-cover-img" src="../images/journal-covers/cover-ieee-iccit2.jpg" 
+                 alt="IEEE ICCIT 2024 - Medical Imaging" 
+                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'paper-cover-placeholder\' onclick=\'openLightbox(null, \\\'IEEE ICCIT 2024 Medical Imaging track cover. Add image at images/journal-covers/cover-ieee-iccit2.jpg\\\')\'><span>🩻</span><span>Conf. Cover</span><span>iccit2.jpg</span></div>';">
+          </div>
           <div class="paper-meta">
             <div class="paper-badges"><span class="badge badge-blue">IEEE ICCIT 2024</span><span class="badge badge-green">Published: 2024</span></div>
             <div class="paper-title">Enhancing Transfer Learning for Medical Image Classification with SMOTE: A Comparative Study</div>
@@ -428,21 +385,20 @@ img { cursor: pointer; }
             <div class="paper-links"><a href="https://ieeexplore.ieee.org/document/11022326" class="paper-link paper-link-doi" target="_blank">DOI: 10.1109/ICCIT64611.2024.11022326</a><a href="https://ieeexplore.ieee.org/document/11022326" class="paper-link paper-link-ieee" target="_blank">IEEE Xplore</a></div>
           </div>
         </div>
-        <div class="coauthors">
-          <div class="coauthors-label">Contributing Authors</div>
-          <div class="coauthors-grid">
-            <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
-            <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
-          </div>
-        </div>
+        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid"><a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a><a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a></div></div>
       </div>
     </div>
 
     <div style="margin-top: 2rem;">
-      <!-- Paper 5: Under Review -->
+      <!-- Under review papers also with optional cover placeholders (abstract style) -->
       <div class="paper" style="border-color: var(--blue-100); background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%);">
         <div class="paper-header">
           <div class="paper-index" style="color: var(--blue-400);">05</div>
+          <div class="paper-cover-col">
+            <img class="paper-cover-img" src="../images/journal-covers/cover-alexandria.jpg"
+     alt="Alexandria Engineering Journal Cover"
+     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'paper-cover-placeholder\'><span>📘</span><span>Under Review</span><span>Alexandria EJ</span></div>';">
+          </div>
           <div class="paper-meta">
             <div class="paper-badges"><span class="badge" style="background:#E8F0FE;color:#1A56DB;border:1px solid #B3D4FF;">Under Review · Alexandria Engineering Journal</span></div>
             <div class="paper-title">UniMind-39: A Dataset to Benchmark Machine Learning Models for Student Mental Health Assessment</div>
@@ -452,10 +408,14 @@ img { cursor: pointer; }
         </div>
       </div>
 
-      <!-- Paper 6: Under Review Blockchain -->
       <div class="paper" style="border-color: var(--blue-100); background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%); margin-bottom: 1rem;">
         <div class="paper-header">
           <div class="paper-index" style="color: var(--blue-400);">06</div>
+          <div class="paper-cover-col">
+            <img class="paper-cover-img" src="../images/journal-covers/cover-blockchain.jpg"
+     alt="Blockchain: Research and Applications Cover"
+     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'paper-cover-placeholder\'><span>🔗</span><span>Blockchain Journal</span><span>Review</span></div>';">
+          </div>
           <div class="paper-meta">
             <div class="paper-badges"><span class="badge" style="background:#FFF4E5;color:#7C4A00;border:1px solid #FFCC80;">Under Review · Blockchain: Research and Applications</span></div>
             <div class="paper-title">Improving User Experience in dApps with ML and AI-Driven Personalized Onboarding and In-App Guidance</div>
@@ -467,11 +427,10 @@ img { cursor: pointer; }
     </div>
   </section>
 
-  <!-- PROFESSIONAL RESEARCH SKILLS SECTION -->
   <section id="skills" class="section prof-skills-section">
     <span class="section-label">Methodological Expertise</span>
     <h2 class="section-title" style="margin-bottom: 1rem;">Research Competencies</h2>
-    <div class="skills-professional">
+    <div class="skills-professional"><!-- unchanged skills list -->
       <div class="skill-prof-item"><div class="skill-prof-title">📐 Mathematical Epidemiology & ODE Modelling</div><div class="skill-prof-desc">SIR/SEIR frameworks, RK4-FNN hybrid methods, parameter estimation, and sensitivity analysis for infectious disease dynamics.</div></div>
       <div class="skill-prof-item"><div class="skill-prof-title">🧠 Deep Learning & Neural Architectures</div><div class="skill-prof-desc">TensorFlow/Keras, CNN transfer learning (ResNet, EfficientNet), FNN optimization, and embedded ML for medical diagnostics.</div></div>
       <div class="skill-prof-item"><div class="skill-prof-title">📉 Statistical Learning & Explainable AI</div><div class="skill-prof-desc">SHAP, LIME, GARCH models, cross-validation strategies, and robust inference for biomedical data.</div></div>
@@ -481,11 +440,10 @@ img { cursor: pointer; }
     </div>
   </section>
 
-  <!-- PROFESSIONAL TRAININGS & WORKSHOPS -->
   <section id="trainings" class="section section-alt">
     <span class="section-label">Advanced Training</span>
     <h2 class="section-title" style="margin-bottom: 0.5rem;">Certified Professional Development</h2>
-    <div class="training-grid-prof">
+    <div class="training-grid-prof"><!-- same training content -->
       <div class="training-card-prof"><div class="training-icon">📘</div><div class="training-content"><div class="training-title">Systematic Literature Review & AI-assisted Research</div><div class="training-org">ABS Research Academy</div><div class="training-date">Sept 2025 | 12h intensive workshop</div></div></div>
       <div class="training-card-prof"><div class="training-icon">💼</div><div class="training-content"><div class="training-title">Employability Skills for Research Scientists</div><div class="training-org">Wadhwani Foundation</div><div class="training-date">Nov 2024 | Professional certification</div></div></div>
       <div class="training-card-prof"><div class="training-icon">🤖</div><div class="training-content"><div class="training-title">End-to-End NLP Project Implementation</div><div class="training-org">iNeuron.ai</div><div class="training-date">Mar 2024 | Hands-on project based</div></div></div>
@@ -527,11 +485,13 @@ function openLightbox(imageSrc, caption) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
-  if (imageSrc && imageSrc !== 'undefined') {
+  if (imageSrc && imageSrc !== 'undefined' && imageSrc !== 'null') {
     lightboxImg.src = imageSrc;
-    lightboxCaption.textContent = caption || 'Image';
+    lightboxCaption.textContent = caption || 'Image preview';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+  } else {
+    alert(caption || 'Placeholder: Please add the journal cover image at specified path.');
   }
 }
 function closeLightbox() {
@@ -540,11 +500,12 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('click', function(e) {
-      e.stopPropagation();
-      openLightbox(this.src, this.alt || this.title || 'Image preview');
-    });
+  document.querySelectorAll('.paper-cover-img, .paper-cover-placeholder, .ra-photo img').forEach(el => {
+    if(el.classList && el.classList.contains('paper-cover-placeholder')) {
+      el.addEventListener('click', (e) => { e.stopPropagation(); const msg = el.getAttribute('onclick') ? '' : 'Cover placeholder'; openLightbox(null, msg || 'Add journal cover image (JPG/PNG)'); });
+    } else {
+      el.addEventListener('click', function(e) { e.stopPropagation(); if(this.tagName === 'IMG' && this.src) openLightbox(this.src, this.alt); });
+    }
   });
 });
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
