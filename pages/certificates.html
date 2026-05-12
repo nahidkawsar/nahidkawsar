@@ -136,6 +136,27 @@ img { cursor: pointer; }
     font-size: 0.6rem; 
   }
 }
+
+/* ── NAV TOOLTIPS ── */
+.nav-links a { position: relative; }
+.nav-tooltip {
+  visibility: hidden; opacity: 0; pointer-events: none;
+  position: absolute; top: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--blue-900); color: var(--gray-200);
+  border-radius: 8px; padding: 0.4rem 0.75rem;
+  font-size: 0.78rem; white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(13,27,62,0.18);
+  z-index: 999; transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.nav-tooltip::before {
+  content: ''; position: absolute; top: -6px; left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 6px 6px 6px; border-style: solid;
+  border-color: transparent transparent var(--blue-900) transparent;
+}
+.nav-links a:hover .nav-tooltip { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); }
+@media (max-width: 900px) { .nav-tooltip { display: none; } }
 </style>
 </head>
 <body>
@@ -143,13 +164,13 @@ img { cursor: pointer; }
 <nav class="topnav">
   <a href="../index.html" class="nav-brand">Nahid <span>Kawsar</span></a>
   <div class="nav-links">
-    <a href="../index.html">Home</a>
-    <a href="../Education.html">Education</a>
-    <a href="research.html">Research</a>
-    <a href="activities.html">Recognition & Impact</a>
-    <a href="certificates.html">Certificates</a>
-    <a href="skills.html">Skills</a>
-    <a href="personal.html">Personal</a>
+    <a href="../index.html">Home<span class="nav-tooltip">🏠 Intro, Bio & Recent News</span></a>
+    <a href="../Education.html">Education<span class="nav-tooltip">🎓 BSc · HSC · SSC</span></a>
+    <a href="research.html">Research<span class="nav-tooltip">🔬 Papers, Projects & Publications</span></a>
+    <a href="activities.html">Recognition & Impact<span class="nav-tooltip">🏆 Awards, Talks & Leadership</span></a>
+    <a href="certificates.html">Certificates<span class="nav-tooltip">📜 Courses & Certifications earned</span></a>
+    <a href="skills.html">Skills<span class="nav-tooltip">💻 Tech, Tools & Languages</span></a>
+    <a href="personal.html">Personal<span class="nav-tooltip">📖 Books & Life beyond work</span></a>
   </div>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
