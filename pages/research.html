@@ -31,6 +31,27 @@
 .paper-authors strong { font-style: normal; color: var(--blue-800); font-weight: 600; }
 .paper-journal { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.75rem; font-weight: 500; }
 .paper-abstract { font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; margin: 0.75rem 0; text-align: justify; }
+.paper-contributions {
+  font-size: 0.82rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--gray-50);
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+}
+.paper-contributions strong {
+  color: var(--blue-800);
+}
+.paper-contributions a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.paper-contributions a:hover {
+  text-decoration: underline;
+}
 .paper-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
 .paper-link { font-size: 0.8rem; font-weight: 500; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
 .paper-link-doi { background: var(--blue-800); color: var(--white); }
@@ -234,6 +255,7 @@ img { cursor: pointer; }
   .paper-title { font-size: 1rem; }
   .paper-authors, .paper-journal { font-size: 0.75rem; }
   .paper-abstract { font-size: 0.85rem; }
+  .paper-contributions { font-size: 0.75rem; padding: 0.6rem 0.8rem; }
   .paper-links { flex-direction: column; }
   .paper-link { text-align: center; }
   .coauthors { padding: 1rem 1.25rem; }
@@ -270,6 +292,93 @@ img { cursor: pointer; }
 }
 .nav-links a:hover .nav-tooltip { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); }
 @media (max-width: 900px) { .nav-tooltip { display: none; } }
+
+/* International Collaboration custom styles */
+.collab-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.25s ease;
+}
+.collab-card:hover {
+  box-shadow: 0 8px 24px rgba(43,77,184,0.1);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.collab-left {
+  flex-shrink: 0;
+  text-align: center;
+  min-width: 110px;
+}
+.collab-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--blue-100);
+  background: var(--gray-50);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.collab-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--blue-900);
+  margin-top: 0.5rem;
+}
+.collab-right {
+  flex: 1;
+}
+.collab-affil {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+.collab-role {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-bottom: 0.5rem;
+}
+.collab-connection {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  text-align: justify;
+}
+.collab-badge {
+  display: inline-block;
+  background: var(--blue-50);
+  color: var(--blue-800);
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+}
+.collab-gscholar {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+.collab-gscholar a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.collab-gscholar a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .collab-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .collab-connection {
+    text-align: center;
+  }
+}
 </style>
 </head>
 <body>
@@ -313,16 +422,81 @@ img { cursor: pointer; }
     </div>
   </section>
 
+  <!-- INTERNATIONAL COLLABORATIONS SECTION -->
+  <section id="collaboration" class="section">
+    <span class="section-label">Global Research Network</span>
+    <h2 class="section-title" style="margin-bottom: 2rem;">International Collaborations</h2>
+    
+    <!-- Tonmoy Roy - USA -->
+    <div class="collab-card" style="margin-bottom: 1.25rem;">
+      <div class="collab-left">
+        <img class="collab-photo" src="../images/coauthors/tonmoy-roy.jpg" alt="Tonmoy Roy" onerror="this.src='https://via.placeholder.com/80x80?text=TR'; this.onerror=null;">
+        <div class="collab-name">Tonmoy Roy</div>
+        <div class="collab-gscholar"><a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a></div>
+      </div>
+      <div class="collab-right">
+        <div class="collab-affil">Utah State University, USA</div>
+        <div class="collab-role">PhD Student, Electrical & Computer Engineering</div>
+        <div class="collab-connection">Co-authored two IEEE ICCIT 2024 papers on diabetes prediction using ML/DL and transfer learning with SMOTE for medical image classification. I led the experimental design and deep learning implementation.</div>
+        <div class="collab-badge">✓ Two joint conference papers</div>
+      </div>
+    </div>
+
+    <!-- Md Tanvir Islam - South Korea -->
+    <div class="collab-card" style="margin-bottom: 1.25rem;">
+      <div class="collab-left">
+        <img class="collab-photo" src="../images/coauthors/md-tanvir-islam.jpg" alt="Md Tanvir Islam" onerror="this.src='https://via.placeholder.com/80x80?text=TI'; this.onerror=null;">
+        <div class="collab-name">Md Tanvir Islam</div>
+        <div class="collab-gscholar"><a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a></div>
+      </div>
+      <div class="collab-right">
+        <div class="collab-affil">Kyungpook National University, South Korea</div>
+        <div class="collab-role">PhD Researcher</div>
+        <div class="collab-connection">Co-authored BSPC journal paper (SCIE Q1, IF: 4.9) on embedded ML for respiratory disease detection. Currently collaborating on UniMind-39 dataset for student mental health assessment (under review at Alexandria Engineering Journal).</div>
+        <div class="collab-badge">✓ Q1 publication + ongoing research</div>
+      </div>
+    </div>
+
+    <!-- Prof. Sangtae Ahn - South Korea -->
+    <div class="collab-card" style="margin-bottom: 1.25rem;">
+      <div class="collab-left">
+        <img class="collab-photo" src="../images/coauthors/sangtae-ahn.jpg" alt="Prof. Sangtae Ahn" onerror="this.src='https://via.placeholder.com/80x80?text=SA'; this.onerror=null;">
+        <div class="collab-name">Prof. Sangtae Ahn</div>
+        <div class="collab-gscholar"><a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a></div>
+      </div>
+      <div class="collab-right">
+        <div class="collab-affil">Kyungpook National University, South Korea</div>
+        <div class="collab-role">Professor, School of Electronics Engineering</div>
+        <div class="collab-connection">Supervised joint work on embedded ML framework for respiratory disease detection — published in Biomedical Signal Processing and Control (SCIE Q1, IF: 4.9). I contributed to model optimization and cross-validation strategy.</div>
+        <div class="collab-badge">✓ Q1 journal publication</div>
+      </div>
+    </div>
+
+    <!-- Prof. M. Ali Akbar - Bangladesh (Top 2% Scientist) -->
+    <div class="collab-card" style="margin-bottom: 1.25rem; background: linear-gradient(135deg, #FFF8E7, #FFFFFF); border-color: #FFE5B4;">
+      <div class="collab-left">
+        <img class="collab-photo" src="../images/coauthors/m-ali-akbar.jpg" alt="Prof. M. Ali Akbar" onerror="this.src='https://via.placeholder.com/80x80?text=AA'; this.onerror=null;">
+        <div class="collab-name">Prof. M. Ali Akbar</div>
+        <div class="collab-gscholar"><a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank">🎓 Google Scholar</a></div>
+      </div>
+      <div class="collab-right">
+        <div class="collab-affil">University of Rajshahi, Bangladesh</div>
+        <div class="collab-role">Professor, Department of Applied Mathematics | <strong style="color:#B45309;">★ World's Top 2% Scientist (Stanford/Elsevier 2022)</strong></div>
+        <div class="collab-connection">Collaboration on Arab Journal of Basic and Applied Sciences (ESCI Q2, IF: 3.5) — RK4-FNN hybrid approach for tuberculosis dynamics modeling. Prof. Akbar's expertise in nonlinear dynamics and mathematical physics guided the model formulation.</div>
+        <div class="collab-badge" style="background:#FEF3C7; color:#B45309;">✓ Q2 publication · Top 2% Scientist</div>
+      </div>
+    </div>
+  </section>
+
   <section id="publications" class="section section-alt">
     <span class="section-label">Publications</span>
     <h2 class="section-title" style="margin-bottom: 2rem;">Published Research</h2>
     <div class="papers">
-      <!-- Paper 1 with Journal Cover Placeholder -->
+      <!-- Paper 1 with CRediT Statement + Google Scholar Links -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">01</div>
           <div class="paper-cover-col">
-            <!-- Journal cover image placeholder: Biomedical Signal Processing and Control -->
             <img class="paper-cover-img" src="../images/journal-covers/cover-bspc.jpg" 
                  alt="Biomedical Signal Processing and Control Cover" 
                  onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'paper-cover-placeholder\' onclick=\'openLightbox(null, \\\'Journal Cover: Biomedical Signal Processing and Control (Placeholder). Add image at images/journal-covers/cover-bspc.jpg\\\')\'><span>📘</span><span>Cover Preview</span><span style=\'font-size:9px;\'>bspc.jpg</span></div>';">
@@ -333,16 +507,29 @@ img { cursor: pointer; }
             <div class="paper-authors">M. H. Bijoy, <strong>H. M. N. Kawsar</strong>, M. T. Islam, K. Hasan, and S. Ahn</div>
             <div class="paper-journal"><em>Biomedical Signal Processing and Control</em>, Volume 113, Article 109132 (2026)</div>
             <div class="paper-abstract">This study proposes a machine learning-based framework for respiratory disease detection via lung sound analysis, integrated into a real-time embedded system. The ExtraTrees classifier achieved 99.87% accuracy with 10-fold cross-validation on the ICBHI dataset and 93.68% accuracy on the external KAUH dataset.</div>
+            <div class="paper-contributions">
+              <strong>📋 CRediT Author Contribution Statement:</strong><br>
+              <strong><a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" style="color: var(--accent);">Mehadi Hasan Bijoy</a>:</strong> Writing – original draft, Visualization, Methodology, Formal analysis, Conceptualization.<br>
+              <strong><a href="#" style="color: var(--accent);">H.M. Nahid Kawsar</a>:</strong> Writing – original draft, Visualization, Validation, Software.<br>
+              <strong><a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" style="color: var(--accent);">Md Tanvir Islam</a>:</strong> Writing – review & editing, Supervision, Resources, Investigation.<br>
+              <strong><a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" style="color: var(--accent);">Kamrul Hasan</a>:</strong> Writing – review & editing, Supervision, Project administration.<br>
+              <strong><a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" style="color: var(--accent);">Sangtae Ahn</a>:</strong> Writing – review & editing, Resources, Funding acquisition.
+            </div>
             <div class="paper-links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S174680942501643X" class="paper-link paper-link-doi" target="_blank">View Article →</a></div>
           </div>
         </div>
         <div class="coauthors">
           <div class="coauthors-label">Contributing Authors</div>
-          <div class="coauthors-grid"><!-- same as original --><a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/mehadi-hasan-bijoy.jpg" alt="M. H. Bijoy" onerror="this.innerHTML='<div class=\'initial\'>MB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Mehadi Hasan Bijoy</span><span class="coauthor-affil">YSD Consulting, UK</span></div></a><a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/md-tanvir-islam.jpg" alt="M. T. Islam" onerror="this.innerHTML='<div class=\'initial\'>TI</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Md Tanvir Islam</span><span class="coauthor-affil">Kyungpook National University</span></div></a><a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/kamrul-hasan.jpg" alt="K. Hasan" onerror="this.innerHTML='<div class=\'initial\'>KH</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Kamrul Hasan</span><span class="coauthor-affil">CUET, Chittagong</span></div></a><a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/sangtae-ahn.jpg" alt="S. Ahn" onerror="this.innerHTML='<div class=\'initial\'>SA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Sangtae Ahn</span><span class="coauthor-affil">Kyungpook National University</span></div></a></div>
+          <div class="coauthors-grid">
+            <a href="https://scholar.google.com/citations?user=V75nVVoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/mehadi-hasan-bijoy.jpg" alt="M. H. Bijoy" onerror="this.innerHTML='<div class=\'initial\'>MB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Mehadi Hasan Bijoy</span><span class="coauthor-affil">YSD Consulting, UK</span></div></a>
+            <a href="https://scholar.google.com/citations?user=UvINe-sAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/md-tanvir-islam.jpg" alt="M. T. Islam" onerror="this.innerHTML='<div class=\'initial\'>TI</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Md Tanvir Islam</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
+            <a href="https://scholar.google.com/citations?user=7JUhP4EAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/kamrul-hasan.jpg" alt="K. Hasan" onerror="this.innerHTML='<div class=\'initial\'>KH</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Kamrul Hasan</span><span class="coauthor-affil">CUET, Chittagong</span></div></a>
+            <a href="https://scholar.google.com/citations?user=F-LXQwcAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/sangtae-ahn.jpg" alt="S. Ahn" onerror="this.innerHTML='<div class=\'initial\'>SA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Sangtae Ahn</span><span class="coauthor-affil">Kyungpook National University</span></div></a>
+          </div>
         </div>
       </div>
 
-      <!-- Paper 2 with Journal Cover -->
+      <!-- Paper 2 with Author Contributions + Google Scholar Links -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">02</div>
@@ -357,13 +544,23 @@ img { cursor: pointer; }
             <div class="paper-authors">S. Begum, F. Mahmud, <strong>H. M. N. Kawsar</strong>, and M. A. Akbar</div>
             <div class="paper-journal"><em>Arab Journal of Basic and Applied Sciences</em>, Volume 33, Issue 1, pp. 134–151 (2026)</div>
             <div class="paper-abstract">This study introduces a hybrid approach integrating the fourth-order Runge-Kutta method with a Feedforward Neural Network (FNN) for modeling infectious disease dynamics. The tuned FNN achieved relative accuracy of 99.65% for the SIR model and 99.91% for the SEIR model.</div>
+            <div class="paper-contributions">
+              <strong>📋 Author Contributions:</strong><br>
+              <strong><a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" style="color: var(--accent);">Saleha Begum</a> and <a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" style="color: var(--accent);">Forhad Mahmud</a>:</strong> Conceptualization, Methodology, Software, Validation, Resources, Funding acquisition, Writing – original draft.<br>
+              <strong><a href="#" style="color: var(--accent);">H. M. Nahid Kawsar</a>:</strong> Data curation, Visualization, Writing – review & editing.<br>
+              <strong><a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" style="color: var(--accent);">M. Ali Akbar</a>:</strong> Supervision, Project administration, Writing – review & editing.
+            </div>
             <div class="paper-links"><a href="https://www.tandfonline.com/doi/full/10.1080/25765299.2026.2646030" class="paper-link paper-link-doi" target="_blank">View Article →</a></div>
           </div>
         </div>
-        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid"><a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/saleha-begum.jpg" alt="S. Begum" onerror="this.innerHTML='<div class=\'initial\'>SB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Saleha Begum</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a><a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/forhad-mahmud.jpg" alt="F. Mahmud" onerror="this.innerHTML='<div class=\'initial\'>FM</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Forhad Mahmud</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a><a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/m-ali-akbar.jpg" alt="M. A. Akbar" onerror="this.innerHTML='<div class=\'initial\'>MA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Prof. Dr. M. Ali Akbar</span><span class="coauthor-affil">University of Rajshahi (Top 2% Scientist)</span></div></a></div></div>
+        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid">
+          <a href="https://scholar.google.com/citations?hl=en&user=_MttsF4AAAAJ" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/saleha-begum.jpg" alt="S. Begum" onerror="this.innerHTML='<div class=\'initial\'>SB</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Saleha Begum</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
+          <a href="https://scholar.google.com/citations?user=mqp9H-AAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/forhad-mahmud.jpg" alt="F. Mahmud" onerror="this.innerHTML='<div class=\'initial\'>FM</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Forhad Mahmud</span><span class="coauthor-affil">Noakhali Science and Technology University</span></div></a>
+          <a href="https://scholar.google.com/citations?user=CZOx8l8AAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/m-ali-akbar.jpg" alt="M. A. Akbar" onerror="this.innerHTML='<div class=\'initial\'>MA</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Prof. Dr. M. Ali Akbar</span><span class="coauthor-affil">University of Rajshahi (Top 2% Scientist)</span></div></a>
+        </div></div>
       </div>
 
-      <!-- Paper 3 (IEEE) – optional cover; I'll add a generic proceedings cover placeholder -->
+      <!-- Paper 3 (IEEE) -->
       <div class="paper">
         <div class="paper-header">
           <div class="paper-index">03</div>
@@ -381,7 +578,10 @@ img { cursor: pointer; }
             <div class="paper-links"><a href="https://ieeexplore.ieee.org/document/11022194" class="paper-link paper-link-doi" target="_blank">DOI: 10.1109/ICCIT64611.2024.11022194</a><a href="https://ieeexplore.ieee.org/document/11022194" class="paper-link paper-link-ieee" target="_blank">IEEE Xplore</a></div>
           </div>
         </div>
-        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid"><a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a><a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a></div></div>
+        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid">
+          <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
+          <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
+        </div></div>
       </div>
 
       <!-- Paper 4 (Second IEEE) -->
@@ -402,12 +602,15 @@ img { cursor: pointer; }
             <div class="paper-links"><a href="https://ieeexplore.ieee.org/document/11022326" class="paper-link paper-link-doi" target="_blank">DOI: 10.1109/ICCIT64611.2024.11022326</a><a href="https://ieeexplore.ieee.org/document/11022326" class="paper-link paper-link-ieee" target="_blank">IEEE Xplore</a></div>
           </div>
         </div>
-        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid"><a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a><a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a></div></div>
+        <div class="coauthors"><div class="coauthors-label">Contributing Authors</div><div class="coauthors-grid">
+          <a href="https://scholar.google.com/citations?user=f29FK1gAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/tonmoy-roy.jpg" alt="T. Roy" onerror="this.innerHTML='<div class=\'initial\'>TR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Tonmoy Roy</span><span class="coauthor-affil">Utah State University</span></div></a>
+          <a href="https://scholar.google.com/citations?user=XQjvWDoAAAAJ&hl=en" target="_blank" class="coauthor-card"><div class="coauthor-avatar"><img src="../images/coauthors/iffat-rimi.jpg" alt="I. Rimi" onerror="this.innerHTML='<div class=\'initial\'>IR</div>'"></div><div class="coauthor-info"><span class="coauthor-name">Iffat Firozy Rimi</span><span class="coauthor-affil">Daffodil International University</span></div></a>
+        </div></div>
       </div>
     </div>
 
     <div style="margin-top: 2rem;">
-      <!-- Under review papers also with optional cover placeholders (abstract style) -->
+      <!-- Under review papers -->
       <div class="paper" style="border-color: var(--blue-100); background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 100%);">
         <div class="paper-header">
           <div class="paper-index" style="color: var(--blue-400);">05</div>
@@ -447,7 +650,7 @@ img { cursor: pointer; }
   <section id="skills" class="section prof-skills-section">
     <span class="section-label">Methodological Expertise</span>
     <h2 class="section-title" style="margin-bottom: 1rem;">Research Competencies</h2>
-    <div class="skills-professional"><!-- unchanged skills list -->
+    <div class="skills-professional">
       <div class="skill-prof-item"><div class="skill-prof-title">📐 Mathematical Epidemiology & ODE Modelling</div><div class="skill-prof-desc">SIR/SEIR frameworks, RK4-FNN hybrid methods, parameter estimation, and sensitivity analysis for infectious disease dynamics.</div></div>
       <div class="skill-prof-item"><div class="skill-prof-title">🧠 Deep Learning & Neural Architectures</div><div class="skill-prof-desc">TensorFlow/Keras, CNN transfer learning (ResNet, EfficientNet), FNN optimization, and embedded ML for medical diagnostics.</div></div>
       <div class="skill-prof-item"><div class="skill-prof-title">📉 Statistical Learning & Explainable AI</div><div class="skill-prof-desc">SHAP, LIME, GARCH models, cross-validation strategies, and robust inference for biomedical data.</div></div>
@@ -460,7 +663,7 @@ img { cursor: pointer; }
   <section id="trainings" class="section section-alt">
     <span class="section-label">Advanced Training</span>
     <h2 class="section-title" style="margin-bottom: 0.5rem;">Certified Professional Development</h2>
-    <div class="training-grid-prof"><!-- same training content -->
+    <div class="training-grid-prof">
       <div class="training-card-prof"><div class="training-icon">📘</div><div class="training-content"><div class="training-title">Systematic Literature Review & AI-assisted Research</div><div class="training-org">ABS Research Academy</div><div class="training-date">Sept 2025 | 12h intensive workshop</div></div></div>
       <div class="training-card-prof"><div class="training-icon">💼</div><div class="training-content"><div class="training-title">Employability Skills for Research Scientists</div><div class="training-org">Wadhwani Foundation</div><div class="training-date">Nov 2024 | Professional certification</div></div></div>
       <div class="training-card-prof"><div class="training-icon">🤖</div><div class="training-content"><div class="training-title">End-to-End NLP Project Implementation</div><div class="training-org">iNeuron.ai</div><div class="training-date">Mar 2024 | Hands-on project based</div></div></div>
