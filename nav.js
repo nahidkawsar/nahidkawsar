@@ -20,7 +20,7 @@
     if (hamburger && navLinks) {
       hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('open');
-        hamburger.classList.toggle('active');
+        hamburger.classList.toggle('active');H. M. Nahid Kawsar
       });
       
       // Close menu when a link is clicked (mobile)

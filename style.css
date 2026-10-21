@@ -276,3 +276,164 @@ p, .hero-desc, .bio-text p, .edu-detail, .univ-card p, .dept-card p,
   flex: 1;
   text-align: justify;
 }
+
+
+/* ── EDUCATION DOCUMENT PREVIEWS ── */
+.edu-docs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1.1rem;
+  margin-top: 1.25rem;
+  align-items: stretch;
+}
+.edu-doc-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(13, 27, 62, .045);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.edu-doc-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue-200);
+  box-shadow: 0 8px 22px rgba(43, 77, 184, .09);
+}
+.edu-doc-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 180px;
+  padding: 12px;
+  overflow: hidden;
+  border: 0;
+  border-bottom: 1px solid var(--gray-200);
+  background: linear-gradient(145deg, #f7f9fd, #edf2fa);
+  cursor: zoom-in;
+}
+.edu-doc-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 3px;
+  transition: transform .2s ease;
+}
+.edu-doc-card:hover .edu-doc-preview img { transform: scale(1.02); }
+.edu-doc-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  width: 100%;
+  height: 100%;
+  color: var(--blue-800);
+  font-size: .8rem;
+  text-align: center;
+}
+.edu-doc-placeholder[hidden] { display: none !important; }
+.edu-doc-placeholder i { font-size: 2.2rem; }
+.edu-doc-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+.edu-doc-title {
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: .4rem;
+}
+.edu-doc-note {
+  color: var(--gray-600);
+  font-size: .78rem;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+.edu-doc-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: auto; }
+.edu-doc-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  color: var(--blue-800);
+  font-size: .76rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .18s ease, background .18s ease;
+}
+.edu-doc-link:hover { color: var(--accent); text-decoration: underline; }
+.edu-doc-link.primary {
+  padding: .5rem .7rem;
+  border: 1px solid var(--blue-100);
+  border-radius: 7px;
+  background: var(--blue-50);
+}
+.edu-doc-link.primary:hover { background: var(--blue-100); text-decoration: none; }
+#edu-doc-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem 5rem;
+  box-sizing: border-box;
+  background: rgba(8, 14, 30, .94);
+  cursor: zoom-out;
+}
+#edu-doc-lightbox.active { display: flex; }
+#edu-doc-lightbox img {
+  display: block;
+  max-width: min(94vw, 1200px);
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 6px;
+  background: white;
+  cursor: default;
+}
+.edu-doc-lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 1;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.edu-doc-lightbox-caption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1.2rem;
+  color: white;
+  text-align: center;
+  font-size: .9rem;
+}
+@media (max-width: 600px) {
+  .edu-docs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+  .edu-doc-preview { height: 135px; padding: 8px; }
+  .edu-doc-info { padding: .75rem; }
+  .edu-doc-title { font-size: .82rem; }
+  .edu-doc-note { font-size: .72rem; }
+  .edu-doc-link { font-size: .7rem; }
+}
+@media (max-width: 360px) {
+  .edu-docs { grid-template-columns: 1fr; }
+  .edu-doc-preview { height: 165px; }
+}
+
+/* Direct links to education sections: keep headings visible below the fixed navigation */
+.edu-item[id] { scroll-margin-top: 110px; }
