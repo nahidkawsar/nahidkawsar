@@ -19,7 +19,7 @@
 .cert-stat { text-align: center; }
 .cert-stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--white); }
 .cert-stat-label { font-size: 0.75rem; color: var(--blue-200); letter-spacing: 0.08em; text-transform: uppercase; }
-.cert-group { margin-bottom: 3rem; }
+.cert-group { margin-bottom: 3rem; scroll-margin-top: 90px; }
 .group-title {
   font-family: var(--serif);
   font-size: 1.5rem;
@@ -80,6 +80,7 @@
 .lightbox-close:hover { color: var(--accent); }
 .lightbox-caption { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; font-size: 0.9rem; background: rgba(0,0,0,0.6); padding: 8px; margin: 0 auto; width: fit-content; border-radius: 8px; }
 img { cursor: pointer; }
+
 
 /* MOBILE FIXES */
 @media (max-width: 900px) {
@@ -186,8 +187,26 @@ img { cursor: pointer; }
 
   <section class="section">
     
+    <!-- IELTS -->
+    <div class="cert-group" id="ielts">
+      <div class="group-title"><span>🎓</span> IELTS Academic</div>
+      <p class="group-desc">Official English proficiency test result — Overall Band 7.0 (CEFR C1).</p>
+      <div class="cert-grid">
+        <div class="cert-card" id="ielts-trf">
+          <div class="cert-image"><img src="https://drive.google.com/thumbnail?id=1rQIndmMT9SQIAI5xRiMl3scMAyN_bO9T&sz=w1200" alt="IELTS Test Report Form (TRF)" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br><small>Preview unavailable</small></div>'"></div>
+          <div class="cert-info">
+            <div class="cert-name">IELTS Test Report Form (TRF)</div>
+            <div class="cert-issuer">IELTS Academic</div>
+            <div class="cert-date">September 2026</div>
+            <div class="cert-desc">Overall Band Score: 7.0 (CEFR C1). Listening: 8.0 | Reading: 6.5 | Writing: 6.5 | Speaking: 6.5.</div>
+            <a href="https://drive.google.com/open?id=1rQIndmMT9SQIAI5xRiMl3scMAyN_bO9T&usp=drive_fs" target="_blank" rel="noopener noreferrer" class="cert-link">📜 View Report →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- GROUP 1: IEEE ICCIT 2024 (International Conference - Highest Priority) -->
-    <div class="cert-group">
+    <div class="cert-group" id="ieee-iccit-2024">
       <div class="group-title"><span>🏆</span> IEEE ICCIT 2024</div>
       <p class="group-desc">International conference presentations and recognition at IEEE ICCIT 2024 in Cox's Bazar.</p>
       <div class="cert-grid">
@@ -215,7 +234,7 @@ img { cursor: pointer; }
     </div>
 
     <!-- GROUP 2: Letters of Recognition & Awards (Wadhwani Foundation + Others) -->
-    <div class="cert-group">
+    <div class="cert-group" id="letters-of-recognition-awards">
       <div class="group-title"><span>🏅</span> Letters of Recognition & Awards</div>
       <p class="group-desc">Official recognition from international foundations and organizations for outstanding contributions.</p>
       <div class="cert-grid">
@@ -243,7 +262,7 @@ img { cursor: pointer; }
     </div>
 
     <!-- GROUP 3: Peer Review Recognition (Elsevier Q1 - Prestigious, moved up) -->
-    <div class="cert-group">
+    <div class="cert-group" id="peer-review-recognition">
       <div class="group-title"><span>🔬</span> Peer Review Recognition</div>
       <p class="group-desc">Certificate awarded by Elsevier for contributing a peer review to an indexed international journal.</p>
       <div class="cert-grid">
@@ -261,7 +280,7 @@ img { cursor: pointer; }
     </div>
 
     <!-- GROUP 4: Professor's Letters of Appreciation (Departmental Recognition) -->
-    <div class="cert-group">
+    <div class="cert-group" id="professors-letters-of-appreciation">
       <div class="group-title"><span>⭐</span> Professor's Letters of Appreciation</div>
       <p class="group-desc">Recognition from professors for excellence in course presentations across multiple evaluation categories.</p>
       <div class="cert-grid">
@@ -305,7 +324,7 @@ img { cursor: pointer; }
     </div>
 
     <!-- GROUP 5: Appointment Letters -->
-    <div class="cert-group">
+    <div class="cert-group" id="important-letters">
       <div class="group-title"><span>📄</span> Important Letters</div>
       <p class="group-desc">Professional appointments and research assistantship letters from Brilliant Brains Valley and NSTU.</p>
       <div class="cert-grid">
@@ -343,7 +362,7 @@ img { cursor: pointer; }
     </div>
 
     <!-- GROUP 6: Research & Academic Certificates -->
-    <div class="cert-group">
+    <div class="cert-group" id="research-academic-certificates">
       <div class="group-title"><span>🔬</span> Research & Academic Certificates</div>
       <p class="group-desc">Formal training in research methodology, academic writing, and literature review techniques from NSTU Research Society and ABS Research Academy.</p>
       <div class="cert-grid">
@@ -371,7 +390,7 @@ img { cursor: pointer; }
     </div>
 
     <!-- GROUP 7: Professional Development -->
-    <div class="cert-group">
+    <div class="cert-group" id="professional-development">
       <div class="group-title"><span>💼</span> Professional Development</div>
       <p class="group-desc">Career readiness training and professional skills development programs from Wadhwani Foundation.</p>
       <div class="cert-grid">
@@ -399,7 +418,7 @@ img { cursor: pointer; }
     </div>
 
     <!-- GROUP 8: Machine Learning & Data Science (Routine Certifications - Lower Priority) -->
-    <div class="cert-group">
+    <div class="cert-group" id="machine-learning-data-science">
       <div class="group-title"><span>🤖</span> Machine Learning & Data Science</div>
       <p class="group-desc">Comprehensive training in data science, machine learning, neural networks, and NLP from Great Learning, Simplilearn, iNeuron, and Skillshare.</p>
       <div class="cert-grid">
@@ -467,7 +486,7 @@ img { cursor: pointer; }
     </div>
 
     <!-- GROUP 9: Programming & Tools (Routine Certifications - Lowest Priority) -->
-    <div class="cert-group">
+    <div class="cert-group" id="programming-tools">
       <div class="group-title"><span>💻</span> Programming & Tools</div>
       <p class="group-desc">Technical certifications in programming languages and development tools from Simplilearn.</p>
       <div class="cert-grid">
@@ -507,32 +526,102 @@ img { cursor: pointer; }
   © 2025 H.M. Nahid Kawsar · <a href="mailto:nahid.amth@gmail.com">nahid.amth@gmail.com</a>
 </footer>
 
-<script src="../nav.js"></script>
 <script>
-initNav();
-function openLightbox(imageSrc, caption) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  lightboxImg.src = imageSrc;
-  lightboxCaption.textContent = caption || 'Certificate';
-  lightbox.classList.add('active');
+var zs = {scale:1, x:0, y:0};
+function applyZoom() {
+  var img = document.getElementById('lightbox-img');
+  img.style.transform = 'translate(' + zs.x + 'px,' + zs.y + 'px) scale(' + zs.scale + ')';
+  img.style.cursor = zs.scale > 1 ? 'grab' : 'zoom-in';
+}
+function resetZoom() { zs = {scale:1, x:0, y:0}; applyZoom(); }
+function setZoom(s) {
+  zs.scale = Math.min(6, Math.max(1, s));
+  if (zs.scale === 1) { zs.x = 0; zs.y = 0; }
+  applyZoom();
+}
+function openLightbox(src, caption) {
+  var lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-caption').textContent = caption || 'Certificate';
+  resetZoom();
+  lb.classList.add('active');
+  lb.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.classList.remove('active');
+  var lb = document.getElementById('lightbox');
+  lb.classList.remove('active');
+  lb.style.display = 'none';
+  document.getElementById('lightbox-img').src = '';
+  resetZoom();
   document.body.style.overflow = '';
 }
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('click', function(e) {
-      e.stopPropagation();
-      openLightbox(this.src, this.alt || this.title || 'Certificate preview');
-    });
+(function () {
+  var lb = document.getElementById('lightbox');
+  var img = document.getElementById('lightbox-img');
+  img.style.transition = 'transform 0.15s ease';
+  img.style.touchAction = 'none';
+  img.draggable = false;
+  var pts = {}, moved = false, startDist = 0, startScale = 1, last = null;
+  function dist() { var k = Object.keys(pts); var a = pts[k[0]], b = pts[k[1]]; return Math.hypot(a.x - b.x, a.y - b.y); }
+  img.addEventListener('dragstart', function (e) { e.preventDefault(); });
+  img.addEventListener('pointerdown', function (e) {
+    e.preventDefault(); e.stopPropagation();
+    img.setPointerCapture(e.pointerId);
+    pts[e.pointerId] = {x: e.clientX, y: e.clientY};
+    moved = false;
+    last = {x: e.clientX, y: e.clientY};
+    if (Object.keys(pts).length === 2) { startDist = dist(); startScale = zs.scale; }
+    img.style.transition = 'none';
   });
+  img.addEventListener('pointermove', function (e) {
+    if (!pts[e.pointerId]) return;
+    pts[e.pointerId] = {x: e.clientX, y: e.clientY};
+    if (Object.keys(pts).length === 2) {
+      moved = true;
+      setZoom(startScale * dist() / startDist);
+    } else if (zs.scale > 1) {
+      var dx = e.clientX - last.x, dy = e.clientY - last.y;
+      if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
+      zs.x += dx; zs.y += dy; last = {x: e.clientX, y: e.clientY};
+      applyZoom();
+    }
+  });
+  function up(e) {
+    delete pts[e.pointerId];
+    img.style.transition = 'transform 0.15s ease';
+  }
+  img.addEventListener('pointerup', up);
+  img.addEventListener('pointercancel', up);
+  img.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (moved) return;
+    setZoom(zs.scale > 1 ? 1 : 2.5);
+  });
+  lb.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    setZoom(zs.scale * (e.deltaY < 0 ? 1.2 : 1 / 1.2));
+  }, {passive: false});
+  lb.addEventListener('keydown', function () {});
+  document.addEventListener('keydown', function (e) {
+    if (lb.style.display !== 'flex') return;
+    if (e.key === '+' || e.key === '=') setZoom(zs.scale * 1.25);
+    if (e.key === '-') setZoom(zs.scale / 1.25);
+    if (e.key === '0') resetZoom();
+  });
+})();
+document.addEventListener('click', function(e) {
+  var box = e.target.closest('.cert-image');
+  if (!box) return;
+  var img = box.querySelector('img');
+  if (!img) return;
+  openLightbox(img.currentSrc || img.src, img.alt || 'Certificate preview');
 });
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+</script>
+<script src="../nav.js"></script>
+<script>
+if (typeof initNav === 'function') initNav();
 </script>
 </body>
 </html>

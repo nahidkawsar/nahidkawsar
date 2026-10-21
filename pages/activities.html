@@ -94,6 +94,9 @@ img { cursor: pointer; }
 }
 .nav-links a:hover .nav-tooltip { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); }
 @media (max-width: 900px) { .nav-tooltip { display: none; } }
+
+/* anchor offset for #id links */
+section[id], .gallery-item[id] { scroll-margin-top: 90px; }
 </style>
 </head>
 <body>
@@ -198,11 +201,11 @@ img { cursor: pointer; }
   </div>
 </section>
 
-  <section class="section">
+  <section id="activities-events" class="section">
     <span class="section-label">Photo Gallery</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Activities & Events</h2>
     <div class="gallery-container">
-      <div class="gallery-item">
+      <div class="gallery-item" id="ieee-iccit-2024-best-presenter">
         <div class="gallery-title"><span>🎤</span> IEEE ICCIT 2024 — Best Technical Presenter</div>
 <p class="gallery-desc">A gallery of important moments captured in photos — presenting my first paper "Cross-Cultural Insights in Health: Integrating Machine Learning and Deep Learning for Early Predictive Diabetes Detection" at IEEE ICCIT 2024, receiving the presentation certificate, presenting my second paper "Enhancing Transfer Learning for Medical Image Classification with SMOTE: A Comparative Study," and receiving the second presentation certificate. These moments document the journey from preparation to recognition at the conference.</p>
         <div class="photo-grid grid-2">
@@ -213,7 +216,7 @@ img { cursor: pointer; }
         </div>
       </div>
 
-      <div class="gallery-item">
+      <div class="gallery-item" id="nstu-shine-sign-language">
         <div class="gallery-title"><span>🤝</span> NSTU Shine — Bangla Sign Language Program</div>
 <p class="gallery-desc">As Joint Secretary of NSTU Shine (formerly NSTU Society for the Disabled), I played a key role in organizing and successfully executing a Bangla Sign Language awareness program for the university community. From managing mentors and securing administrative permissions to crowd control, arranging meals for participants, and preparing certificates — this was a massive undertaking that required meticulous planning and coordination. The program was completed successfully, making sign language education more accessible to students.</p>
         <div class="photo-grid grid-2">
@@ -223,7 +226,7 @@ img { cursor: pointer; }
         </div>
       </div>
 
-      <div class="gallery-item">
+      <div class="gallery-item" id="nstu-blood-brigade-fire-safety">
         <div class="gallery-title"><span>🔥</span> NSTU Blood Brigade — Fire Safety Program</div>
         <p class="gallery-desc">A 3-day comprehensive fire safety and first aid awareness program organized by NSTU Blood Brigade. We were trained in immediate first aid techniques — including CPR, wound dressing, fracture immobilization, choking management, and burn treatment. Additionally, we learned fire safety protocols such as fire prevention, using different types of fire extinguishers (CO2, dry powder, foam), evacuation procedures, and emergency response coordination. A quiz competition was held based on the training, where I secured 2nd position.</p>
         <div class="photo-grid grid-2">
@@ -234,7 +237,7 @@ img { cursor: pointer; }
         </div>
       </div>
 
-      <div class="gallery-item">
+      <div class="gallery-item" id="nstu-blood-brigade-cancer-run">
         <div class="gallery-title"><span>🏃</span> NSTU Blood Brigade — Cancer Awareness Long Run</div>
         <p class="gallery-desc">A marathon organized by NSTU Blood Brigade with the theme "Run Against Cancer" to raise cancer awareness. While I did not participate in the run itself, I served as a volunteer at hydration points, ensuring participants stayed hydrated throughout the event. Additionally, I provided technical support to the organizers and contributed my management skills to help coordinate the event smoothly.</p>
         <div class="photo-grid grid-2">
@@ -244,7 +247,7 @@ img { cursor: pointer; }
         </div>
       </div>
 
-      <div class="gallery-item">
+      <div class="gallery-item" id="nstu-math-club-olympiad">
         <div class="gallery-title"><span>🔢</span> NSTU Math Club — Math Olympiad (Runner-up)</div>
         <p class="gallery-desc">Served as Vice President of NSTU Math Club, leading mathematical initiatives and organizing problem-solving workshops for club members. Competed in the university Math Olympiad organized by the club, where participants solved complex problems across algebra, calculus, geometry, and number theory. Achieved the Runner-up prize (2nd position) in the competition, which was attended by faculty members from the Department of Applied Mathematics. Received the award from a faculty member in recognition of mathematical problem-solving excellence.</p>
         <div class="photo-grid grid-2">
@@ -254,7 +257,7 @@ img { cursor: pointer; }
         </div>
       </div>
 
-      <div class="gallery-item">
+      <div class="gallery-item" id="chitrokrit-plate-drawing">
         <div class="gallery-title"><span>🎨</span> Chitrokrit — Plate Drawing & Documentation</div>
         <p class="gallery-desc"><p class="gallery-desc">Served as Documentation Secretary of Chitrokrit, the university art club. Responsible for documenting all club activities, workshops, art competitions, and exhibitions through photography and written records. Participated in plate drawing workshops and other artistic events, capturing moments that preserve the club's legacy and promote its creative endeavors across the university.</p>
         <div class="photo-grid grid-1">
@@ -264,7 +267,7 @@ img { cursor: pointer; }
         </div>
       </div>
 
-      <div class="gallery-item">
+      <div class="gallery-item" id="research-methodology-course">
         <div class="gallery-title"><span>📚</span> Research Methodology Course Completion</div>
         <p class="gallery-desc"><p class="gallery-desc">Successfully completed a 5-month intensive "Introduction to Research Methodology" course (February to June) conducted by NSTU Research Society. The course covered essential research skills including research design, literature review techniques, data collection methods, statistical analysis, academic writing, publication ethics, and manuscript preparation. This comprehensive training strengthened the foundation for conducting rigorous research and authoring peer-reviewed publications.</p>
         <div class="photo-grid grid-2">
@@ -276,7 +279,7 @@ img { cursor: pointer; }
     </div>
   </section>
 
-  <section class="section section-alt">
+  <section id="personal-milestones" class="section section-alt">
     <span class="section-label">Academic Journey</span>
     <h2 class="section-title" style="margin-bottom: 2.5rem;">Personal Milestones</h2>
     <div class="additional-photos">
@@ -421,6 +424,78 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('keydown', function(e) { 
   if (e.key === 'Escape') closeLightbox(); 
 });
+</script>
+<!-- ZOOM PREVIEW -->
+<style>
+#zl-box{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100000;align-items:center;justify-content:center;overflow:hidden}
+#zl-img{max-width:90%;max-height:90%;object-fit:contain;border-radius:8px;user-select:none;-webkit-user-drag:none;touch-action:none;cursor:zoom-in;transition:transform .15s ease}
+#zl-close{position:absolute;top:14px;right:24px;color:#fff;font-size:40px;line-height:1;background:none;border:0;cursor:pointer;z-index:2}
+#zl-close:hover{opacity:.7}
+#zl-cap{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);max-width:90%;text-align:center;color:#fff;font-size:.9rem;background:rgba(0,0,0,.6);padding:8px 14px;border-radius:8px}
+</style>
+<div id="zl-box" role="dialog" aria-modal="true"><button id="zl-close" type="button" aria-label="Close">&times;</button><img id="zl-img" src="" alt=""><div id="zl-cap"></div></div>
+<script>
+(function () {
+  var box = document.getElementById('zl-box'), img = document.getElementById('zl-img'), cap = document.getElementById('zl-cap');
+  var z = {s: 1, x: 0, y: 0}, pts = {}, moved = false, sd = 0, ss = 1, last = null;
+  function apply() { img.style.transform = 'translate(' + z.x + 'px,' + z.y + 'px) scale(' + z.s + ')'; img.style.cursor = z.s > 1 ? 'grab' : 'zoom-in'; }
+  function reset() { z = {s: 1, x: 0, y: 0}; apply(); }
+  function setZoom(s) { z.s = Math.min(6, Math.max(1, s)); if (z.s === 1) { z.x = 0; z.y = 0; } apply(); }
+  function open(src, caption) {
+    if (!src) return;
+    img.src = src; cap.textContent = caption || ''; cap.style.display = caption ? '' : 'none';
+    reset(); box.style.display = 'flex'; document.body.style.overflow = 'hidden';
+  }
+  function close() { box.style.display = 'none'; img.src = ''; reset(); document.body.style.overflow = ''; }
+  window.openLightbox = open;
+  window.closeLightbox = close;
+  function dist() { var k = Object.keys(pts), a = pts[k[0]], b = pts[k[1]]; return Math.hypot(a.x - b.x, a.y - b.y); }
+  img.addEventListener('pointerdown', function (e) {
+    e.stopPropagation(); img.setPointerCapture(e.pointerId);
+    pts[e.pointerId] = {x: e.clientX, y: e.clientY}; moved = false; last = {x: e.clientX, y: e.clientY};
+    if (Object.keys(pts).length === 2) { sd = dist(); ss = z.s; }
+    img.style.transition = 'none';
+  });
+  img.addEventListener('pointermove', function (e) {
+    if (!pts[e.pointerId]) return;
+    pts[e.pointerId] = {x: e.clientX, y: e.clientY};
+    if (Object.keys(pts).length === 2) { moved = true; setZoom(ss * dist() / sd); }
+    else if (z.s > 1) {
+      var dx = e.clientX - last.x, dy = e.clientY - last.y;
+      if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
+      z.x += dx; z.y += dy; last = {x: e.clientX, y: e.clientY}; apply();
+    }
+  });
+  function up(e) { delete pts[e.pointerId]; img.style.transition = 'transform .15s ease'; }
+  img.addEventListener('pointerup', up); img.addEventListener('pointercancel', up);
+  img.addEventListener('click', function (e) { e.stopPropagation(); if (!moved) setZoom(z.s > 1 ? 1 : 2.5); });
+  box.addEventListener('click', close);
+  document.getElementById('zl-close').addEventListener('click', function (e) { e.stopPropagation(); close(); });
+  box.addEventListener('wheel', function (e) { e.preventDefault(); setZoom(z.s * (e.deltaY < 0 ? 1.2 : 1 / 1.2)); }, {passive: false});
+  document.addEventListener('keydown', function (e) {
+    if (box.style.display !== 'flex') return;
+    if (e.key === 'Escape') close();
+    if (e.key === '+' || e.key === '=') setZoom(z.s * 1.25);
+    if (e.key === '-') setZoom(z.s / 1.25);
+    if (e.key === '0') reset();
+  });
+  // Intercept image clicks (capture phase) so old handlers/lightboxes don't also fire
+  document.addEventListener('click', function (e) {
+    if (box.contains(e.target)) return;
+    var btn = e.target.closest && e.target.closest('[data-doc-preview]');
+    if (btn) {
+      e.stopPropagation(); e.preventDefault();
+      open(btn.getAttribute('data-doc-preview'), btn.getAttribute('data-doc-caption'));
+      return;
+    }
+    var t = e.target;
+    if (!t || t.tagName !== 'IMG') return;
+    if (t.closest('nav') || t.closest('a[href]')) return;
+    if (t.complete && t.naturalWidth === 0) return;
+    e.stopPropagation(); e.preventDefault();
+    open(t.currentSrc || t.src, t.alt || t.title || '');
+  }, true);
+})();
 </script>
 </body>
 </html>

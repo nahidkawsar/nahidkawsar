@@ -1,0 +1,59 @@
+education.html
+#bsc
+#hsc
+#ssc
+
+
+certificates.html
+#ielts
+#ieee-iccit-2024
+#letters-of-recognition-awards
+#peer-review-recognition
+#professors-letters-of-appreciation
+#important-letters
+#research-academic-certificates
+#professional-development
+#machine-learning-data-science
+#programming-tools
+
+
+activities.html
+#conferences
+#awards
+#activities-events new
+#ieee-iccit-2024-best-presenter new
+#nstu-shine-sign-language new
+#nstu-blood-brigade-fire-safety new
+#nstu-blood-brigade-cancer-run new
+#nstu-math-club-olympiad new
+#chitrokrit-plate-drawing new
+#research-methodology-course new
+#personal-milestones new
+#leadership
+#volunteer
+
+
+
+personal.html
+#family
+#workspace
+#hobbies (this is the Books section; I kept the name so old links don’t break)
+#manuscripts new
+#hobbies-interests new
+
+
+
+research.html (every section already had an id)
+#experience
+#collaboration
+#publications
+#skills
+#trainings
+
+
+
+skills.html (every category already had an id)
+#technical
+#soft
+#tools
+#languages
